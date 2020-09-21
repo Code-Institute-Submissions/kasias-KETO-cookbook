@@ -95,9 +95,8 @@ MONGO_URI: "link to your MongoDB"
 
 ```
 
-You can find your MongoDB link by going into your MongoDB Atlas account and clicking the ‘connect’ button. From there you have the option to choose to connect to your application and can select the correct language and version.
 
-With the Heroku settings sorted, you can head back to your IDE. There a few things you now need to set up:
+With the Heroku settings in place, you can head back to your IDE. The below will need to be set up:
 
 1.	A ‘Procfile’ which will tell Heroku what kind of application it is and how it should be run.
 2.	A ‘requirements.txt’ which will tell Heroku which dependencies it needs to install in order for the app to run. The command for ‘procfile’ is:
@@ -121,16 +120,14 @@ $ git push -u Heroku master
 
 # To run the app locally
 
-To run this project locally, please ensure you have an IDE installed on your computer. Popular ones are gitpod, Visual Studio or PyCharm (for python projects specifically).
+To run this project locally, you need an IDE installed on your computer. I used Gitpod
 
-Regardless of which IDE you choose, you will also need the following installed.
 •	This project uses MongoDB as a database, and therefore you will need either a MongoDB Atlas account or have MongoDB running locally on your machine. 
 o	To set up MongoDB Atlas please see the documentation MongoDB Atlas
 •	PIP – to install packages such as pyMongo
 •	Python3 – the project uses Python3 for the backend language – specially Python 3.8
 •	Git – for easy version control
 
-The next step is to access your github repository. 
 
 # Option 1 is to download a zip file.
 
