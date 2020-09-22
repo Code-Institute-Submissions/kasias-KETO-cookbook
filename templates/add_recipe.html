@@ -1,7 +1,51 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="center-align">Add Recipe</h3>         
+<h3 class="center-align">Add Recipe</h3>  
+
+ <div class="row">
+    <form class="col s12" method="POST" action="">
+      <div class="row">
+       
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input  name="category_name" id="category_name" type="text" class="validate">
+          <label for="category_name">Category</label>
+        </div>
+      </div>
+      <div class="row">
+       <div class="input-field col s12">
+          <input  name="recipe_name" id="recipe_name" type="text" class="validate">
+          <label for="recipe_name">Recipe Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input  name="ingredience_list" id="ingredience_list" type="text" class="validate">
+          <label for="ingredience_list">Ingredience List</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input  name="method" id="method" type="text" class="validate">
+          <label for="method">Method</label>
+        </div>
+      </div>
+            <div class="row">
+        <div class="input-field col s6">
+          <input  name="preparation_time" id="preparation_time" type="text" class="validate">
+          <label for="preparation_time">Preparation Time</label>
+        </div>
+             
+        <div class="input-field col s6">
+          <input  name="difficulty" id="difficulty" type="text" class="validate">
+          <label for="difficulty">Difficulty</label>
+        </div>
+      </div>
+ 
+    </form>
+  </div>
 
 
 
