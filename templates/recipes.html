@@ -1,27 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 
-    {% for recipe in recipes %}
-        {{ recipe.recipe_name }}<br>
-        {{ recipe.category_name }}<br>
-        {{ recipe.ingredience_list }}<br>
-        {{ recipe.method }}<br>
-        {{ recipe.preparation_time }}<br>
-        {{ recipe.difficulty }}<br>
-    {% endfor %}
-    
 <div class="row">
-    
+    {% for recipe in recipes %}
     <div class="row">
     <div class="col s4">
       <div class="card">
         <div class="card-image">
-          <img src="https://res.cloudinary.com/dugnokxox/image/upload/v1600773412/Recipes/Low-carb_baked_eggs_jpkhsb.jpg">
-          <span class="card-title">Card Title</span>
+          <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_image }}">
+          <span class="card-title"><strong>{{ recipe.recipe_name }}</strong></span>
         </div>
         <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
+          {{ recipe.category_name }}
         </div>
         <div class="card-action">
           <a href="#">This is a link</a>
@@ -29,7 +19,7 @@
       </div>
     </div>
   </div>
-    
+    {% endfor %}
 </div>            
 
 {% endblock %}
