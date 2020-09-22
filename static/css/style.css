@@ -5,3 +5,21 @@
 .flashes h4{
     line-height: 2;
 }
+
+.tabs{
+    opacity:50;
+    background-image: url("https://res.cloudinary.com/dugnokxox/image/upload/v1600814676/Backgrounds/Vector_Floral_vintage_rustic_seamless_pattern._Background_can_be_used_for_wallpaper_fills_web_page_surface_textures_cbwphv.jpg");
+}
+
+body{
+    background-color: beige;
+}
+
+nav ul a{
+    font-family: 'Poppins', sans-serif;
+    color:brown;
+    font-size: 22px;
+    padding-bottom:0;
+}
+
+
