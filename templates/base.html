@@ -48,7 +48,7 @@
                 >Profile</a
               >
             </li>
-            <li><a href="#">Add Recipe</a></li>
+            <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
             <li><a href="#">Manage Recipes</a></li>
             <li><a href="{{ url_for('logout') }}">Logout</a></li>
             {% else %}
@@ -76,7 +76,7 @@
             >Profile</a
           >
         </li>
-        <li><a href="#">Add Recipe</a></li>
+        <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
         <li><a href="#">Manage Recipes</a></li>
         <li><a href="{{ url_for('logout') }}">Logout</a></li>
         {% else %}
