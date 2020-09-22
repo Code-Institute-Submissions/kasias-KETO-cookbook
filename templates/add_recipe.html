@@ -3,44 +3,49 @@
 
 <h3 class="center-align">Add Recipe</h3>  
 
- <div class="row">
+ <div class="row card-panel gret lighten-5">
     <form class="col s12" method="POST" action="">
       <div class="row">
        
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input  name="category_name" id="category_name" type="text" class="validate">
-          <label for="category_name">Category</label>
+        
+          <input  name="category_name" id="category_name" type="text" class="validate" required>
+          <label for="category_name"><i class="fas fa-clipboard-list"></i>    Category</label>
         </div>
       </div>
       <div class="row">
        <div class="input-field col s12">
-          <input  name="recipe_name" id="recipe_name" type="text" class="validate">
-          <label for="recipe_name">Recipe Name</label>
+          <input  name="recipe_name" id="recipe_name" minlength="5" maxlength="25" 
+          type="text" class="validate" required>
+          <label for="recipe_name"><i class="fas fa-utensils"></i> Recipe Name</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input  name="ingredience_list" id="ingredience_list" type="text" class="validate">
-          <label for="ingredience_list">Ingredience List</label>
+          <input  name="ingredience_list" id="ingredience_list" minlength="5" maxlength="100" 
+          type="text" class="validate" required>
+          <label for="ingredience_list"><i class="fas fa-shopping-cart"></i> Ingredience List</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input  name="method" id="method" type="text" class="validate">
-          <label for="method">Method</label>
+          <textarea id="method" class="materialize-textarea" minlength="5"
+          maxlength="200" required></textarea>
+          <label for="method"><i class="fas fa-utensil-spoon"></i> Method</label>
         </div>
       </div>
             <div class="row">
         <div class="input-field col s6">
-          <input  name="preparation_time" id="preparation_time" type="text" class="validate">
-          <label for="preparation_time">Preparation Time</label>
+          <input  name="preparation_time" id="preparation_time" 
+          type="number" class="validate" min="1" required>
+          <label for="preparation_time"><i class="fas fa-hourglass-half"></i> Preparation Time in minutes</label>
         </div>
              
         <div class="input-field col s6">
-          <input  name="difficulty" id="difficulty" type="text" class="validate">
-          <label for="difficulty">Difficulty</label>
+          <input  name="difficulty" id="difficulty" type="text" class="validate" required>
+          <label for="difficulty"><i class="far fa-thumbs-up"></i> Difficulty</label>
         </div>
       </div>
  
