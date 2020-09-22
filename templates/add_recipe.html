@@ -1,57 +1,95 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
-<h3 class="center-align">Add Recipe</h3>  
+<h3 class="center-align">Add Recipe</h3>
 
- <div class="row card-panel gret lighten-5">
-    <form class="col s12" method="POST" action="">
-      <div class="row">
-       
+<div class="row card-panel gret lighten-5">
+  <form class="col s12" method="POST" action="">
+    <div class="row">
+      <div class="input-field col s12">
+        <select id="category_name" name="category_name" >
+          <option value="" disabled selected>Choose Category</option>
+          {% for category in categories %}
+                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+          {% endfor %}
+        </select>
+        <label for="category_name"><i class="fas fa-folder-open"></i> Meal Category</label>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-        
-          <input  name="category_name" id="category_name" type="text" class="validate" required>
-          <label for="category_name"><i class="fas fa-clipboard-list"></i>    Category</label>
-        </div>
-      </div>
-      <div class="row">
-       <div class="input-field col s12">
-          <input  name="recipe_name" id="recipe_name" minlength="5" maxlength="25" 
-          type="text" class="validate" required>
-          <label for="recipe_name"><i class="fas fa-utensils"></i> Recipe Name</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input  name="ingredience_list" id="ingredience_list" minlength="5" maxlength="100" 
-          type="text" class="validate" required>
-          <label for="ingredience_list"><i class="fas fa-shopping-cart"></i> Ingredience List</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <textarea id="method" class="materialize-textarea" minlength="5"
-          maxlength="200" required></textarea>
-          <label for="method"><i class="fas fa-utensil-spoon"></i> Method</label>
-        </div>
-      </div>
-            <div class="row">
-        <div class="input-field col s6">
-          <input  name="preparation_time" id="preparation_time" 
-          type="number" class="validate" min="1" required>
-          <label for="preparation_time"><i class="fas fa-hourglass-half"></i> Preparation Time in minutes</label>
-        </div>
-             
-        <div class="input-field col s6">
-          <input  name="difficulty" id="difficulty" type="text" class="validate" required>
-          <label for="difficulty"><i class="far fa-thumbs-up"></i> Difficulty</label>
-        </div>
-      </div>
- 
-    </form>
-  </div>
+    </div>
 
+    <div class="row">
+      <div class="input-field col s12">
+        <input
+          name="recipe_name"
+          id="recipe_name"
+          minlength="5"
+          maxlength="25"
+          type="text"
+          class="validate"
+          required
+        />
+        <label for="recipe_name"
+          ><i class="fas fa-utensils"></i> Recipe Name</label
+        >
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input
+          name="ingredience_list"
+          id="ingredience_list"
+          minlength="5"
+          maxlength="100"
+          type="text"
+          class="validate"
+          required
+        />
+        <label for="ingredience_list"
+          ><i class="fas fa-shopping-cart"></i> Ingredience List</label
+        >
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea
+          id="method"
+          class="materialize-textarea"
+          minlength="5"
+          maxlength="200"
+          required
+        ></textarea>
+        <label for="method"><i class="fas fa-utensil-spoon"></i> Method</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input
+          name="preparation_time"
+          id="preparation_time"
+          type="number"
+          class="validate"
+          min="1"
+          required
+        />
+        <label for="preparation_time"
+          ><i class="fas fa-hourglass-half"></i> Preparation Time in
+          minutes</label
+        >
+      </div>
 
+      <div class="input-field col s6">
+        <input
+          name="difficulty"
+          id="difficulty"
+          type="text"
+          class="validate"
+          required
+        />
+        <label for="difficulty"
+          ><i class="far fa-thumbs-up"></i> Difficulty</label
+        >
+      </div>
+    </div>
+  </form>
+</div>
 
 {% endblock %}
