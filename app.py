@@ -18,13 +18,22 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+# ------HOME----- #
+
 @app.route("/")
-@app.route("/get_recipes")
-def get_recipes():
-    recipes = list(mongo.db.recipes.find())
-    return render_template("recipes.html", recipes=recipes)
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
+# -----SHOP-----#
 
+@app.route("/shop")
+def shop():
+    return render_template("shop.html")
+
+# ------PROFILE-----#
+
+# register account
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -49,6 +58,7 @@ def register():
     return render_template("register.html")
 
 
+# login
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -77,18 +87,19 @@ def login():
     return render_template("login.html")
 
 
+# profile
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username from database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    
+
     if session["user"]:
         return render_template("profile.html", username=username)
-    
+
     return redirect(url_for("login"))
 
-
+# logout
 @app.route("/logout")
 def logout():
     # remove user from session cookies
@@ -97,8 +108,40 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_recipe")
+# ------RECIPES------ #
+
+# all recipes
+@app.route("/get_recipes")
+def get_recipes():
+    recipes = list(mongo.db.recipes.find())
+    return render_template("recipes.html", recipes=recipes)
+
+
+# single recipe
+@app.route("/recipe/<recipe_id>")
+def recipe(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("recipe.html", recipe=recipe)
+
+
+# add recipe
+@app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    if request.method == "POST":
+        recipe = {
+            "category_name": request.form.get("category_name"),
+            "recipe_image": request.form.get("recipe_image"),
+            "recipe_name": request.form.get("recipe_name"),
+            "ingredience_list": request.form.get("ingredience_list"),
+            "method": request.form.get("method"),
+            "preparation_time": request.form.get("preparation_time"),
+            "difficulty": request.form.get("difficulty"),
+            "created_by": session["user"]
+        }
+        mongo.db.recipes.insert_one(recipe)
+        flash("Recipe Successfully Added")
+        return redirect(url_for("get_recipes"))
+
     categories = mongo.db.categories.find()
     return render_template("add_recipe.html", categories=categories)
 
