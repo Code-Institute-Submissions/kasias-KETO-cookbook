@@ -22,5 +22,9 @@ nav ul a{
     padding-bottom:0;
 }
 
+.fa-bars:before{
+    color:brown;
+}
+
 
 
