@@ -1,35 +1,30 @@
 {% extends "base.html" %} {% block content %}
 
 <h3 class="center-align text-shadow">All Recipes</h3>
-  
-  <div class="row">
-  {% for recipe in recipes %}
-    <div class="col s12 m4">
-      <div class="card large">
-        <div class="card-image "  >
-          <img
-            src="{{ recipe.recipe_image }}"
-            alt="{{ recipe.recipe_name }}"
-            
-          />
-          <span class="card-title"
-            ><strong>{{ recipe.recipe_name }}</strong></span
-          >
-        </div>
-        <div class="card-content">
-          <p>Created by: {{ recipe.created_by }}</p>
-        </div>
-        <div class="card-action col s12">
-                <a href="{{url_for('recipe', recipe_id=recipe._id)}}" class="btn-small green">Make it</a>
-          {% if session.user|lower == recipe.created_by|lower %}
-                <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn-small red">Edit Recipe</a>
-          {% endif %}
-        </div>
-      </div>
-    </div>
-     {% endfor %}
-  </div>
- 
 
+<div class="row">
+    {% for recipe in recipes %}
+    <div class="col s12 m4">
+        <div class="card large">
+            <div class="card-image">
+                <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_name }}" />
+                <span class="card-title"><strong>{{ recipe.recipe_name }}</strong></span>
+            </div>
+            <div class="card-content">
+                <p>Created by: {{ recipe.created_by }}</p>
+            </div>
+            <div class="card-action col s12">
+                <a href="{{url_for('recipe', recipe_id=recipe._id)}}" class="btn-small blue">Make it</a>
+                {% if session.user|lower == recipe.created_by|lower %}
+                <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" id="edit" class="btn-small green">Edit Recipe</a>
+                <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" id="delete" class="btn-small red" >Delete</a>
+                
+
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 
 {% endblock %}

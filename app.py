@@ -171,6 +171,13 @@ def edit_recipe(recipe_id):
     categories = mongo.db.categories.find()
     return render_template("edit_recipe.html",recipe=recipe, categories=categories)
 
+# delete recipe
+@app.route("/delete_recipe/<recipe_id>")
+def delete_recipe(recipe_id):
+    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+    flash("Recipe successfully removed")
+    return redirect(url_for("get_recipes"))
+
 
 
 if __name__ == "__main__":
