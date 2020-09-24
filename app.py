@@ -27,11 +27,13 @@ def about():
 
 # -----SHOP-----#
 
+
 @app.route("/shop")
 def shop():
     return render_template("shop.html")
 
 # ------PROFILE-----#
+
 
 # register account
 @app.route("/register", methods=["GET", "POST"])
@@ -147,11 +149,25 @@ def add_recipe():
     return render_template("add_recipe.html", categories=categories)
 
 
-# add recipe
+# edit recipe
 @app.route("/edit_recipe/<recipe_id>)", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "recipe_image": request.form.get("recipe_image"),
+            "recipe_name": request.form.get("recipe_name"),
+            "ingredience_list": request.form.get("ingredience_list"),
+            "method": request.form.get("method"),
+            "preparation_time": request.form.get("preparation_time"),
+            "difficulty": request.form.get("difficulty"),
+            "created_by": session["user"]
+        }
+        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
+        flash("Recipe Successfully Updated")
 
+
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find()
     return render_template("edit_recipe.html",recipe=recipe, categories=categories)
 
