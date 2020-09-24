@@ -27,19 +27,21 @@
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="{{ url_for('about') }}">About</a></li>
-                        <li><a href="{{ url_for('get_recipes') }}">All Recipes</a></li>
-                        <li><a href="{{ url_for('shop') }}">Shop</a></li>
+                        
                         {% if session.user %}
                         <li>
                             <a href="{{ url_for('profile', username=session['user']) }}">Profile</a>
                         </li>
+                        {% endif %}
+                        <li><a href="{{ url_for('get_recipes') }}">All Recipes</a></li>
+                        {% if session.user %}
                         <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
-                        <li><a href="#">Manage Recipes</a></li>
                         <li><a href="{{ url_for('logout') }}">Logout</a></li>
                         {% else %}
                         <li><a href="{{ url_for('login') }}">Login</a></li>
                         <li><a href="{{ url_for('register') }}">Register</a></li>
                         {% endif %}
+                        <li><a href="{{ url_for('shop') }}">Shop</a></li>
                     </ul>
                 </div>
             </nav>
@@ -49,19 +51,21 @@
                     <img class="materialboxed" width="85" src="https://res.cloudinary.com/dugnokxox/image/upload/v1600814910/Backgrounds/logo_type_in53b8.png" />
                 </li>
                 <li><a href="{{ url_for('about') }}">About</a></li>
-                <li><a href="{{ url_for('get_recipes') }}">All Recipes</a></li>
-                <li><a href="{{ url_for('shop') }}">Shop</a></li>
-                {% if session.user %}
-                <li>
-                    <a href="{{ url_for('profile', username=session['user']) }}">Profile</a>
-                </li>
-                <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
-                <li><a href="#">Manage Recipes</a></li>
-                <li><a href="{{ url_for('logout') }}">Logout</a></li>
-                {% else %}
-                <li><a href="{{ url_for('login') }}">Login</a></li>
-                <li><a href="{{ url_for('register') }}">Register</a></li>
-                {% endif %}
+                        
+                        {% if session.user %}
+                        <li>
+                            <a href="{{ url_for('profile', username=session['user']) }}">Profile</a>
+                        </li>
+                        {% endif %}
+                        <li><a href="{{ url_for('get_recipes') }}">All Recipes</a></li>
+                        {% if session.user %}
+                        <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
+                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                        {% else %}
+                        <li><a href="{{ url_for('login') }}">Login</a></li>
+                        <li><a href="{{ url_for('register') }}">Register</a></li>
+                        {% endif %}
+                        <li><a href="{{ url_for('shop') }}">Shop</a></li>
             </ul>
         </header>
         <section>
