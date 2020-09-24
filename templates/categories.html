@@ -3,27 +3,25 @@
 <h3 class="center-align text-shadow">Manage Categories</h3>
 
 <div class="row">
-<div class="col s12 center-align">
-    <a href="{{ url_for('add_category') }}" class="btn-large">Add Category</a>
-</div>
+    <div class="col s12 center-align">
+        <a href="{{ url_for('add_category') }}" class="btn-large">Add Category</a>
+    </div>
 </div>
 
 <div class="row">
     {% for category in categories %}
     <div class="col s12 m4">
-      <div class="card grey text-shadow center-align" >
-        <div class="card-content white-text">
-          <span class="card-title">{{ category.category_name }}</span>
-
+        <div class="card grey text-shadow center-align">
+            <div class="card-content white-text">
+                <span class="card-title">{{ category.category_name }}</span>
+            </div>
+            <div class="card-action">
+                <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn green">Edit</a>
+                <a href="{{ url_for('delete_category', category_id=category._id) }}" id="delete-this" class="btn red">Delete</a>
+            </div>
         </div>
-        <div class="card-action">
-          <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn green">Edit</a>
-          <a href="{{ url_for('delete_category', category_id=category._id) }}" id="delete-cat" class="btn red">Delete</a>
-          
-        </div>
-      </div>
     </div>
     {% endfor %}
-  </div>
+</div>
 
 {% endblock %}
