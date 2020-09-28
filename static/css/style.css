@@ -1,29 +1,57 @@
+/*default class for adding shadows to text*/
 .text-shadow{
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.212)
 }
 
+/*flash messages styling*/
 .flashes h4{
     line-height: 2;
 }
 
+/*navbar background*/
 .tabs{ 
     background-image: url("https://res.cloudinary.com/dugnokxox/image/upload/v1600814676/Backgrounds/Vector_Floral_vintage_rustic_seamless_pattern._Background_can_be_used_for_wallpaper_fills_web_page_surface_textures_cbwphv.jpg");
 }
-
+/*body background color*/
 body{
     background-color: rgba(156, 205, 218, 0.815);
 }
-
+/*font style in the navbar*/
 nav ul a{
     font-family: 'Poppins', sans-serif;
     color:brown;
     font-size: 22px;
     padding-bottom:0;
 }
-
+/*burger bars class overwrite*/
 .fa-bars:before{
     color:brown;
 }
+/* About - Titles styling */
+
+h2.header{
+    text-align: center;
+}
+
+
+/*About - Testimonials styling*/
+
+.testimonial{
+    height:80px;
+    width:160px;
+    border-radius:4px;
+    border:1px solid rgb(117, 174, 212);
+    position:absolute;
+    z-index: 99999;
+}
+
+@media only screen and (max-device-width : 480px) {
+    .testimonial {
+        position: relative;
+    }
+}
+
+
 
 
 
