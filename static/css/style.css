@@ -15,9 +15,7 @@
 } */
 /*body background color*/
 body{
-background: rgba(248, 244, 2, 0.582);  /* fallback for old browsers */
-background: -webkit-linear-gradient(to top, rgba(228, 229, 230, 0.582), rgba(248, 244, 2, 0.582));  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to top, rgba(228, 229, 230, 0.568),  rgba(248, 244, 2, 0.582)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: rgba(235, 234, 232, 0.925);
 
 }
 /*font style in the navbar*/
@@ -75,6 +73,8 @@ h2.header{
      text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.212);
      
 }
+
+/* Recipe card styling*/
 
 
 
