@@ -1,3 +1,12 @@
+/* Disabling selection */
+
+body {
+  -webkit-user-select: none;
+     -moz-user-select: -moz-none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
 /*default class for adding shadows to text*/
 .text-shadow{
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.212)
@@ -20,7 +29,7 @@ background: rgba(235, 234, 232, 0.925);
 }
 /*font style in the navbar*/
 nav ul a{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color:rgb(124, 120, 120);
     font-size: 22px;
     padding-bottom:0;
@@ -32,7 +41,13 @@ nav ul a{
 /*Mobile side nav width*/
 
 ul.sidenav{
-    width:150px;
+    width:200px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+img.salmon{
+    margin-left: 20px;
+    top:10px;
 }
 
 /*About - adding shadows to images*/
@@ -43,9 +58,9 @@ div.parallax-container{
 }
 
 /* About - Titles styling */
-h2.header{
+h2{
     text-align: center;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -65,6 +80,48 @@ h2.header{
     }
 }
 
+/* Adding button over a testimonialee image */
+
+.text>h4{
+        margin-top:0;
+        margin-bottom:0;
+    }
+    
+
+    .box{
+        position: relative;
+        
+    }
+    .box .text{
+        position: absolute;
+        z-index: 999;
+        margin: 0 auto;
+        left: 0;
+        right: 0;        
+        text-align: center;
+        top: 80%; /* Adjust this value to move the positioned div up and down */
+        background: rgba(0, 0, 0, 0.8);
+        font-family: 'Montserrat',sans-serif;
+        color: #fff;
+        width: 40%; /* Set the width of the positioned div */
+    }
+
+
+/*All Recipes - buttons styling*/
+
+.btn-flat{
+    border-radius:4px;
+    border:1px solid rgb(124, 120, 120);
+    width: 85px;
+    text-align: center;
+    color: rgb(76, 86, 105);
+    font-family: 'Montserrat', sans-serif;
+    background-color:  rgba(124, 120, 120, 0.466);
+}
+
+
+
+
 
 /*Footer*/
 
@@ -76,7 +133,42 @@ h2.header{
 
 /* Recipe card styling*/
 
+.card-image{
+    height: 400px; /* Your height here */
+    overflow: hidden;
+}
 
+.bg-image {
+
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  
+  /* Full height */
+  height: 100%; 
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+  background-color: rgba(0, 0, 0, 0.76); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+    
+  top: 0;
+  left: 0;
+  
+  
+  width: 80%;
+  
+  text-align: right;
+  
+}
 
 
 

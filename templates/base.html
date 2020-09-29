@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300&display=swap" rel="stylesheet">
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
@@ -11,6 +11,7 @@
             crossorigin="anonymous"
         />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css" />
+        
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" />
         {% block styles %} {% endblock %}
         <title>Kasia's KETO Cookbook</title>
@@ -51,9 +52,9 @@
                 </div>
             </nav>
             <!--mobile side navbar-->
-            <ul class="sidenav" style="display: grid; width: 150px;" id="mobile-demo">
+            <ul class="sidenav"  id="mobile-demo">
                 <li>
-                    <img class="materialboxed" width="160px" style="top:30px" src="https://res.cloudinary.com/dugnokxox/image/upload/v1601398907/Logo/salmon_of_wisdom_tr_bwxbu3.png" />
+                    <img class="materialboxed salmon" width="160px" src="https://res.cloudinary.com/dugnokxox/image/upload/v1601398907/Logo/salmon_of_wisdom_tr_bwxbu3.png" />
                 </li>
                 <li><a href="{{ url_for('about') }}">About Keto</a></li>
                         
