@@ -19,8 +19,8 @@
         <header>
             <!--top navbar-->
 
-            <div style="height: 150px; width:100%; text-align: center">
-                <a href="{{ url_for('get_recipes') }}" class="brand-logo"> <img class="responsive-img text-center" width="250" height="150" 
+            <div style="height: 150px; text-align: center;">
+                <a href="{{ url_for('get_recipes') }}" class="brand-logo"> <img class="responsive-img" width="40%" height="40%" 
                 src="https://res.cloudinary.com/dugnokxox/image/upload/v1601366248/Logo/Simple_logo_yx4rpy.png" /></a>
             </div>
             <nav class="tabs text-shadow transparent" style="height: 64px;">
@@ -50,9 +50,9 @@
                 </div>
             </nav>
             <!--mobile side navbar-->
-            <ul class="sidenav" id="mobile-demo">
+            <ul class="sidenav" style="display: grid; width: 150px;" id="mobile-demo">
                 <li>
-                    <img class="materialboxed" width="85" src="https://res.cloudinary.com/dugnokxox/image/upload/v1600814910/Backgrounds/logo_type_in53b8.png" />
+                    <img class="materialboxed" width="160px" style="top:30px" src="https://res.cloudinary.com/dugnokxox/image/upload/v1601366248/Logo/Simple_logo_yx4rpy.png" />
                 </li>
                 <li><a href="{{ url_for('about') }}">About Keto</a></li>
                         
@@ -100,7 +100,7 @@
                 
                 <div class="col s12 text-center">
                  
-                    <ul>
+                    <ul class="footer-ul">
                         <li><a class="grey-text text-darken-3 lighten-3" href="#!"><i class="fab fa-facebook-f fa-2x"></i></a></li>
                         <li><a class="grey-text text-darken-3 lighten-3" href="#!"><i class="fab fa-instagram fa-2x"></i></a></li>
                         <li><a class="grey-text text-darken-3 lighten-3" href="#!"><i class="fab fa-twitter fa-2x"></i></a></li>
