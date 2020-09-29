@@ -9,27 +9,37 @@
 }
 
 /*navbar background*/
-.tabs{ 
+/* .tabs{ 
     background-image: url("https://res.cloudinary.com/dugnokxox/image/upload/v1600814676/Backgrounds/Vector_Floral_vintage_rustic_seamless_pattern._Background_can_be_used_for_wallpaper_fills_web_page_surface_textures_cbwphv.jpg");
-}
+    
+} */
 /*body background color*/
 body{
-    background-color: rgba(156, 205, 218, 0.815);
+background: rgba(248, 244, 2, 0.582);  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, rgba(228, 229, 230, 0.582), rgba(248, 244, 2, 0.582));  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, rgba(228, 229, 230, 0.568),  rgba(248, 244, 2, 0.582)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
+
+
+
+
 }
 /*font style in the navbar*/
 nav ul a{
     font-family: 'Poppins', sans-serif;
-    color:brown;
+    color:rgb(124, 120, 120);
     font-size: 22px;
     padding-bottom:0;
 }
 /*burger bars class overwrite*/
 .fa-bars:before{
-    color:brown;
+    color:rgb(255, 255, 255);
 }
 /*About - adding shadows to images*/
 
-img.responsive-img,
+img.image-shadow,
 div.parallax-container{
     box-shadow: 8px 9px 8px rgba(0, 0, 0, 0.2)
 }
