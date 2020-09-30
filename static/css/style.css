@@ -1,85 +1,87 @@
 /* Disabling selection */
 
 body {
-  -webkit-user-select: none;
-     -moz-user-select: -moz-none;
-      -ms-user-select: none;
-          user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 /*default class for adding shadows to text*/
-.text-shadow{
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.212)
+.text-shadow {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.212);
 }
 
-main.container{
-    margin-top:60px;
+main.container {
+    margin-top: 60px;
 }
 
 /*flash messages styling*/
-.flashes h4{
+.flashes h4 {
     line-height: 2;
 }
 
 /*navbar background*/
-.tabs{ 
-background: #ECE9E6;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.733), rgba(90, 61, 99, 0.12));  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, rgba(255, 255, 255, 0.733), rgba(90, 61, 99, 0.12)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.tabs {
+    display: flex;
+  align-items: center;
+  justify-content: center;
+
+    background: #ece9e6; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.733), rgba(90, 61, 99, 0.12)); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.733), rgba(90, 61, 99, 0.12)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 /*body background color*/
-body{
-background: rgba(235, 234, 232, 0.925);
-
+body {
+    background: rgba(235, 234, 232, 0.925);
 }
 /*font style in the navbar*/
-nav ul a{
-    font-family: 'Montserrat', sans-serif;
-    color:rgb(124, 120, 120);
+nav ul a {
+    font-family: "Montserrat", sans-serif;
+    color: rgb(124, 120, 120);
     font-size: 22px;
-    padding-bottom:0;
+    padding-bottom: 0;
 }
 /*burger bars class overwrite*/
-.fa-bars:before{
-    color:rgb(255, 255, 255);
+.fa-bars:before {
+    color: rgb(255, 255, 255);
 }
 /*Mobile side nav width*/
 
-ul.sidenav{
-    width:200px;
-    font-family: 'Montserrat', sans-serif;
+ul.sidenav {
+    width: 200px;
+    font-family: "Montserrat", sans-serif;
 }
 
-img.salmon{
+img.salmon {
     margin-left: 20px;
-    top:10px;
+    top: 10px;
 }
 
 /*About - adding shadows to images*/
 
 img.image-shadow,
-div.parallax-container{
-    box-shadow: 8px 9px 8px rgba(0, 0, 0, 0.2)
+div.parallax-container {
+    box-shadow: 8px 9px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* About - Titles styling */
-h2{
+h2 {
     text-align: center;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 
-
 /*About - Testimonials styling*/
-.testimonial{
-    height:80px;
-    width:160px;
-    border-radius:4px;
-    border:1px solid rgb(117, 174, 212);
-    position:absolute;
+.testimonial {
+    height: 80px;
+    width: 160px;
+    border-radius: 4px;
+    border: 1px solid rgb(117, 174, 212);
+    position: absolute;
     z-index: 99999;
 }
 /*media query to remove the z-index*/
-@media only screen and (max-device-width : 480px) {
+@media only screen and (max-device-width: 480px) {
     .testimonial {
         position: relative;
     }
@@ -87,120 +89,110 @@ h2{
 
 /* Adding nametag over a testimonialee image */
 
-.text>h5{
-        margin-top:0;
-        margin-bottom:0;
-    }
-    
+.text > h5 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
 
-    .box{
-        position: relative;
-        
-    }
-    .box .text{
-        position: absolute;
-        z-index: 999;
-        margin: 0 auto;
-        left: 0;
-        right: 0;        
-        text-align: center;
-        top: 87%; /* Adjust this value to move the positioned div up and down */
-        background: #ECE9E6;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.938), rgba(236, 233, 230, 0.300));  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.938), rgba(236, 233, 230, 0.300)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.box {
+    position: relative;
+}
+.box .text {
+    position: absolute;
+    z-index: 999;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: 87%; /* Adjust this value to move the positioned div up and down */
+    background: #ece9e6; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.938), rgba(236, 233, 230, 0.3)); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.938), rgba(236, 233, 230, 0.3)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-        border-radius:40%;
-        font-family: 'Montserrat',sans-serif;
-        color: rgb(35, 29, 37);
-        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.212);
-        width: 44%; /* Set the width of the positioned div */
-        
-    
-    }
-
-
-
+    border-radius: 40%;
+    font-family: "Montserrat", sans-serif;
+    color: rgb(35, 29, 37);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.212);
+    width: 44%; /* Set the width of the positioned div */
+}
 
 /*All Recipes */
 /* Making card panel more minimalistic*/
-.card-panel.search{
-background: #ECE9E6;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom, #FFFFFF, rgba(236, 233, 230, 0.170));  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, #FFFFFF, rgba(236, 233, 230, 0.170)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
--webkit-box-shadow: none;
-box-shadow:none;
-border-radius: 5px;
+.card-panel.search {
+    background: #ece9e6; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #ffffff, rgba(236, 233, 230, 0.17)); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #ffffff, rgba(236, 233, 230, 0.17)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 5px;
 }
 
-
-
-
-.btn-flat{
-    border-radius:4px;
-    border:1px solid rgb(124, 120, 120);
+.btn-flat {
+    border-radius: 4px;
+    border: 1px solid rgb(124, 120, 120);
     width: 85px;
     text-align: center;
     color: rgb(76, 86, 105);
-    font-family: 'Montserrat', sans-serif;
-    background-color:  rgba(124, 120, 120, 0.466);
+    font-family: "Montserrat", sans-serif;
+    background-color: rgba(124, 120, 120, 0.466);
 }
-
-
-
-
-
-
 
 /* Recipe card styling*/
 
-.card-image{
+.card-image {
     height: 400px; /* Your height here */
     overflow: hidden;
 }
 
 .bg-image.responsive-img {
+    /* Add the blur effect */
+    filter: blur(1px);
+    -webkit-filter: blur(1px);
 
-  /* Add the blur effect */
-  filter: blur(1px);
-  -webkit-filter: blur(1px);
-  
-  /* Full height */
-  height: 100%; 
- 
-  
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* Position text in the middle of the page/image */
 .bg-text {
-  background-color: rgba(0, 0, 0, 0.76); /* Fallback color */
-  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-  color: white;
-  font-weight: bold;   
-  top: 0;
-  left: 0;  
-  width: 80%;  
-  text-align: right;  
+    background-color: rgba(0, 0, 0, 0.76); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    top: 0;
+    left: 0;
+    width: 80%;
+    text-align: right;
 }
 
-.col.s12.m6.recipe{
-background: #ECE9E6;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.68), rgba(236, 233, 230, 0.1));  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, rgba(255, 255, 255, 0.68), rgba(236, 233, 230, 0.1)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+.col.s12.m6.recipe {
+    background: #ece9e6; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.68), rgba(236, 233, 230, 0.1)); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.68), rgba(236, 233, 230, 0.1)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-
 
 /*Footer*/
 
-.page-footer{
-     font-family: 'Poppins', sans-serif;
-     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.212);
-     
+.page-footer {
+    font-family: "Montserrat", sans-serif;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.212);
+    
 }
 
+.btn-grad{
+    background: #ece9e6; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.68), rgba(236, 233, 230, 0.1)); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.68), rgba(236, 233, 230, 0.1)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color:#5d4e68;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.212);
+    margin-top:12px;
+}
 
-
+.btn-group{
+    width: 170px;
+}

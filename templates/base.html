@@ -12,6 +12,7 @@
         />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css" />
         
+        
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" />
         {% block styles %} {% endblock %}
         <title>Kasia's KETO Cookbook</title>
@@ -21,13 +22,13 @@
             <!--top navbar-->
 
             <div style=" text-align: center;">
-                <a href="{{ url_for('get_recipes') }}" class="brand-logo"> <img class="responsive-img" 
+                <a href="{{ url_for('about') }}" class="brand-logo"> <img class="responsive-img" 
                 src="https://res.cloudinary.com/dugnokxox/image/upload/v1601398907/Logo/salmon_of_wisdom_tr_bwxbu3.png" /></a>
             </div>
             <nav class="tabs text-shadow transparent" style="height: 64px;">
                 <div class="nav-wrapper">
             
-                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger " style="margin-top:13px;"><img width="36" src="https://res.cloudinary.com/dugnokxox/image/upload/v1601467758/Logo/salmon_clipart__vyx2yu.png" alt="salmon" /></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="{{ url_for('about') }}">About Keto</a></li>
                         
@@ -99,24 +100,47 @@
     <footer class="page-footer transparent">
         <div class="container ">
             <div class="row">
+                <div style=" text-align: center;" class="col s12 text-center" >
+                <a href="{{ url_for('about') }}" class="brand-logo; "> <img class="responsive-img" style="height: 100px;width: 100px;" 
+                src="https://res.cloudinary.com/dugnokxox/image/upload/v1601467758/Logo/salmon_clipart__vyx2yu.png" /></a>
+            </div>
                 
-                <div class="col s12 text-center">
-                 
-                    <ul class="footer-ul">
-                        <li><a class="grey-text text-darken-3 lighten-3" href="#!"><i class="fab fa-facebook-f fa-2x"></i></a></li>
-                        <li><a class="grey-text text-darken-3 lighten-3" href="#!"><i class="fab fa-instagram fa-2x"></i></a></li>
-                        <li><a class="grey-text text-darken-3 lighten-3" href="#!"><i class="fab fa-twitter fa-2x"></i></a></li>
-                        <li><a class="grey-text text-darken-3 lighten-3" href="#!"><i class="fab fa-youtube fa-2x"></i></a></li>
-                    </ul>
-                </div>
             </div>
         </div>
         <div class="footer-copyright grey-text text-darken-3 lighten-3">
             <div class="container">
-                © 2020 Kasia Bogucka
-                
-                
+                © 2020 Kasia Bogucka    
             </div>
+            <!-- <div class="col s12 text-center" style=" text-align: center;">
+                 
+                    <ul class="footer-ul" >
+                        <li><a class="grey-text text-darken-3 lighten-3 social" href="#!"><i class="fab fa-facebook-f fa-2x"></i></a></li>
+                        <li><a class="grey-text text-darken-3 lighten-3 social" href="#!"><i class="fab fa-instagram fa-2x"></i></a></li>
+                        <li><a class="grey-text text-darken-3 lighten-3 social" href="#!"><i class="fab fa-twitter fa-2x"></i></a></li>
+                        <li><a class="grey-text text-darken-3 lighten-3 social" href="#!"><i class="fab fa-youtube fa-2x"></i></a></li>
+                    </ul>
+                </div> -->
+
+<div class="row">
+			<div class="col text-center">
+				<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+					
+					<a href="https://www.instagram.com/beeing_about/" target="_blank">
+						<button type="button" class="btn btn-grad"><i class="fab fa-instagram"></i>
+						</button>
+					</a>
+					<a href="http://www.youtube.com/c/BeeZeeBeeLivingTheDream" target="_blank">
+						<button type="button" class="btn btn-grad"><i class="fab fa-youtube-square"></i>
+						</button>
+					</a>
+                    <a href="https://github.com/bezebee/Beeing-About" target="_blank">
+						<button type="button" class="btn btn-grad"><i class="fab fa-github"></i>
+						</button>
+					</a>
+				</div>
+			</div>
+		</div>
+
         </div>
     </footer>
 </html>
