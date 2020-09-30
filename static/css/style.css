@@ -80,9 +80,9 @@ h2{
     }
 }
 
-/* Adding button over a testimonialee image */
+/* Adding nametag over a testimonialee image */
 
-.text>h4{
+.text>h5{
         margin-top:0;
         margin-bottom:0;
     }
@@ -99,15 +99,36 @@ h2{
         left: 0;
         right: 0;        
         text-align: center;
-        top: 80%; /* Adjust this value to move the positioned div up and down */
-        background: rgba(0, 0, 0, 0.8);
+        top: 87%; /* Adjust this value to move the positioned div up and down */
+        background: #ECE9E6;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.938), rgba(236, 233, 230, 0.300));  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.938), rgba(236, 233, 230, 0.300)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        border-radius:40%;
         font-family: 'Montserrat',sans-serif;
-        color: #fff;
-        width: 40%; /* Set the width of the positioned div */
+        color: rgb(35, 29, 37);
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.212);
+        width: 44%; /* Set the width of the positioned div */
+        
+    
     }
 
 
-/*All Recipes - buttons styling*/
+
+
+/*All Recipes */
+/* Making card panel more minimalistic*/
+.card-panel.search{
+background: #ECE9E6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #FFFFFF, rgba(236, 233, 230, 0.170));  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #FFFFFF, rgba(236, 233, 230, 0.170)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+-webkit-box-shadow: none;
+box-shadow:none;
+border-radius: 5px;
+}
+
+
+
 
 .btn-flat{
     border-radius:4px;
