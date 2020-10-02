@@ -49,7 +49,8 @@ def register():
 
         register = {
             "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
+            "password": generate_password_hash(request.form.get("password")),
+            "on_keto_since": request.form.get("on_keto_since"),
         }
         mongo.db.users.insert_one(register)
 
@@ -94,28 +95,15 @@ def login():
 def profile(username):
     # grab the session user's username from database
     username = mongo.db.users.find_one({"username": session["user"]})["username"]
+    on_keto_since = mongo.db.users.find_one({"on_keto_since": session["user"]})
 
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template("profile.html", username=username, on_keto_since=on_keto_since)
 
     return redirect(url_for("login"))
 
 
-@app.route("/details/<username>", methods = ["GET","POST"])
-def details(username):
-
-
-
-    if request.method == "POST":
-        details = {
-            "username" : request.form.get("username"),
-            "on_keto_since" : request.form.get("on_keto_since"),
-            "personal_success" : request.form.get("personal_success"),
-            "username_image" : request.form.get("username_image")
-        }
-    
-    return redirect(url_for("details.html"))
 
 
 # logout
