@@ -25,7 +25,8 @@
         <div class="card large">
             <div class="card-image">
                 <img class="bg-image responsive-img" src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_name }}" />
-                <span class="card-title bg-text"><strong>{{ recipe.recipe_name }}</strong></span>
+                <span class="card-title bg-text"><strong>{{ recipe.recipe_name }}</strong><br>
+                <p class="small-text"><em>Created by: {{ recipe.created_by }}</em></p></span>
             </div>
             <div class="card-content minimalist">
                 <p>Ingrediences: {{ recipe.keywords }}</p>
