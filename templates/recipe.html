@@ -7,15 +7,15 @@
     </div>
     <div class="col s12 m6 recipe" >
         
-        <div class="name maroon">{{ recipe.recipe_name }}</div>
+        <div class="name maroon text-shadow">{{ recipe.recipe_name }}</div>
         <br />
         <div class="ingrediences maroon">What you will need: {{ recipe.ingredience_list }}</div>
         <br />
         <div class="method maroon">How to make it: {{ recipe.method }}</div>
         <br />
-        <div class="prep-time maroon">Preparation time: {{ recipe.preparation_time }}</div>
-        <div class="difficulty maroon">Difficulty: {{ recipe.difficulty }}</div>
-        <div class="created-by maroon">Created by: {{ recipe.created_by }}</div>
+        <div class="prep-time maroon">Preparation time: {{ recipe.preparation_time }}</div><br>
+        <div class="difficulty maroon">Difficulty: {{ recipe.difficulty }}</div><br>
+        <div class="created-by maroon"><em>Created by: {{ recipe.created_by }}</em></div>
     </div>
 </div>
 
