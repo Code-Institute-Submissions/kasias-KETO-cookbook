@@ -1,120 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300&display=swap" rel="stylesheet">
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-            integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-            crossorigin="anonymous"
-        />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css" />
-        
-        
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" />
-        {% block styles %} {% endblock %}
-        <title>Kasia's KETO Cookbook</title>
-    </head>
-    <body>
-        <header>
-            <!--top navbar-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+      type="text/css"
+    />
 
-            <div style=" text-align: center;">
-                <a href="{{ url_for('about') }}" class="brand-logo"> <img class="responsive-img" 
-                src="https://res.cloudinary.com/dugnokxox/image/upload/v1601398907/Logo/salmon_of_wisdom_tr_bwxbu3.png" /></a>
-            </div>
-            <nav class="tabs text-shadow transparent" style="height: 64px;">
-                <div class="nav-wrapper">
-            
-                    <a href="#" data-target="mobile-demo" class="sidenav-trigger " style="margin-top:13px;"><img width="36" src="https://res.cloudinary.com/dugnokxox/image/upload/v1601467758/Logo/salmon_clipart__vyx2yu.png" alt="salmon" /></a>
-                    <ul class="right hide-on-med-and-down">
-                        <li><a href="{{ url_for('about') }}">About Keto</a></li>
-                        
-                        {% if session.user %}
-                        <li>
-                            <a href="{{ url_for('profile', username=session['user']) }}">Profile</a>
-                        </li>
-                       
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+      type="text/css"
+    />
+    {% block styles %} {% endblock %}
+    <title>Kasia's KETO Cookbook</title>
+  </head>
+  <body>
+    <header>
+      <!--top navbar-->
 
-                        {% endif %}
-                        <li><a href="{{ url_for('get_recipes') }}">All Recipes</a></li>
-                        {% if session.user %}
-                        <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
-                        {% if session.user|lower == "administrator"|lower  %}
-                        <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
-                        {% endif %}
-                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
-                        {% else %}
-                        <li><a href="{{ url_for('login') }}">Login</a></li>
-                        <li><a href="{{ url_for('register') }}">Register</a></li>
-                        {% endif %}
-                        <li><a href="{{ url_for('shop') }}">Shop</a></li>
-                    </ul>
-                </div>
-            </nav>
-            <!--mobile side navbar-->
-            <ul class="sidenav"  id="mobile-demo">
-                <li>
-                    <img class="materialboxed salmon" width="160px" src="https://res.cloudinary.com/dugnokxox/image/upload/v1601398907/Logo/salmon_of_wisdom_tr_bwxbu3.png" />
-                </li>
-                <li><a href="{{ url_for('about') }}">About Keto</a></li>
-                        
-                        {% if session.user %}
-                        <li>
-                            <a href="{{ url_for('profile', username=session['user']) }}">Profile</a>
-                        </li>
-                        
-                        {% endif %}
-                        <li><a href="{{ url_for('get_recipes') }}">All Recipes</a></li>
-                        {% if session.user %}
-                        <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
-                        {% if session.user|lower == "administrator"|lower  %}
-                            <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
-                        {% endif %}
-                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
-                        {% else %}
-                        <li><a href="{{ url_for('login') }}">Login</a></li>
-                        <li><a href="{{ url_for('register') }}">Register</a></li>
-                        {% endif %}
-                        <li><a href="{{ url_for('shop') }}">Shop</a></li>
-            </ul>
-        </header>
-        
+      <div style="text-align: center;">
+        <a href="{{ url_for('about') }}" class="brand-logo">
+          <img
+            class="responsive-img"
+            src="https://res.cloudinary.com/dugnokxox/image/upload/v1601398907/Logo/salmon_of_wisdom_tr_bwxbu3.png"
+        /></a>
+      </div>
+      <nav class="tabs text-shadow transparent" style="height: 64px;">
+        <div class="nav-wrapper">
+          <a
+            href="#"
+            data-target="mobile-demo"
+            class="sidenav-trigger"
+            style="margin-top: 13px;"
+            ><img
+              width="36"
+              src="https://res.cloudinary.com/dugnokxox/image/upload/v1601467758/Logo/salmon_clipart__vyx2yu.png"
+              alt="salmon"
+          /></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="{{ url_for('about') }}">About Keto</a></li>
 
+            {% if session.user %}
+            <li>
+              <a href="{{ url_for('profile', username=session['user']) }}"
+                >Profile</a
+              >
+            </li>
 
-        <section>
-            <!-- flash messages -->
-            {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
-            <div class="row flashes">
-                <h4 class="orange darken-2 center-align">{{ message }}</h4>
-            </div>
-            {% endfor %} {% endif %} {% endwith %}
-        </section>
-        <main class="container" >
-            {% block content %} {% endblock %}
-        </main>
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-        {% block scripts %} {% endblock %}
-    </body>
-    <footer class="page-footer transparent">
-        <div class="container ">
-            <div class="row">
-                <div style=" text-align: center;" class="col s12 text-center" >
-                <a href="{{ url_for('about') }}" class="brand-logo; "> <img class="responsive-img" style="height: 100px;width: 100px;" 
-                src="https://res.cloudinary.com/dugnokxox/image/upload/v1601467758/Logo/salmon_clipart__vyx2yu.png" /></a>
-            </div>
-                
-            </div>
+            {% endif %}
+            <li><a href="{{ url_for('get_recipes') }}">All Recipes</a></li>
+            {% if session.user %}
+            <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
+            {% if session.user|lower == "administrator"|lower %}
+            <li>
+              <a href="{{ url_for('get_categories') }}">Manage Categories</a>
+            </li>
+            {% endif %}
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% else %}
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+            {% endif %}
+            <li><a href="{{ url_for('shop') }}">Shop</a></li>
+          </ul>
         </div>
-        <div class="footer-copyright grey-text text-darken-3 lighten-3">
-            <div class="container">
-                © 2020 Kasia Bogucka    
-            </div>
-            <!-- <div class="col s12 text-center" style=" text-align: center;">
+      </nav>
+      <!--mobile side navbar-->
+      <ul class="sidenav" id="mobile-demo">
+        <li>
+          <img
+            class="materialboxed salmon"
+            width="160px"
+            src="https://res.cloudinary.com/dugnokxox/image/upload/v1601398907/Logo/salmon_of_wisdom_tr_bwxbu3.png"
+          />
+        </li>
+        <li><a href="{{ url_for('about') }}">About Keto</a></li>
+
+        {% if session.user %}
+        <li>
+          <a href="{{ url_for('profile', username=session['user']) }}"
+            >Profile</a
+          >
+        </li>
+
+        {% endif %}
+        <li><a href="{{ url_for('get_recipes') }}">All Recipes</a></li>
+        {% if session.user %}
+        <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
+        {% if session.user|lower == "administrator"|lower %}
+        <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
+        {% endif %}
+        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        {% else %}
+        <li><a href="{{ url_for('login') }}">Login</a></li>
+        <li><a href="{{ url_for('register') }}">Register</a></li>
+        {% endif %}
+        <li><a href="{{ url_for('shop') }}">Shop</a></li>
+      </ul>
+    </header>
+
+    <section>
+      <!-- flash messages -->
+      {% with messages = get_flashed_messages() %} {% if messages %} {% for
+      message in messages %}
+      <div class="row flashes">
+      <div class="col s6 offset-s3 center-align ">
+        <h4 class="center-align flash-messages text-shadow">{{ message }}</h4>
+        </div>
+      </div>
+
+      {% endfor %} {% endif %} {% endwith %}
+    </section>
+    <main class="container">
+      {% block content %} {% endblock %}
+    </main>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    {% block scripts %} {% endblock %}
+  </body>
+  <footer class="page-footer transparent">
+    <div class="container">
+      <div class="row">
+        <div style="text-align: center;" class="col s12 text-center">
+          <a href="{{ url_for('about') }}" class="brand-logo;">
+            <img
+              class="responsive-img"
+              style="height: 100px; width: 100px;"
+              src="https://res.cloudinary.com/dugnokxox/image/upload/v1601467758/Logo/salmon_clipart__vyx2yu.png"
+          /></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright grey-text text-darken-3 lighten-3">
+      <div class="container">
+        © 2020 Kasia Bogucka
+      </div>
+      <!-- <div class="col s12 text-center" style=" text-align: center;">
                  
                     <ul class="footer-ul" >
                         <li><a class="grey-text text-darken-3 lighten-3 social" href="#!"><i class="fab fa-facebook-f fa-2x"></i></a></li>
@@ -124,26 +163,34 @@
                     </ul>
                 </div> -->
 
-<div class="row">
-			<div class="col text-center">
-				<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-					
-					<a href="https://www.instagram.com/beeing_about/" target="_blank">
-						<button type="button" class="btn btn-grad"><i class="fab fa-instagram"></i>
-						</button>
-					</a>
-					<a href="http://www.youtube.com/c/BeeZeeBeeLivingTheDream" target="_blank">
-						<button type="button" class="btn btn-grad"><i class="fab fa-youtube-square"></i>
-						</button>
-					</a>
-                    <a href="https://github.com/bezebee/Beeing-About" target="_blank">
-						<button type="button" class="btn btn-grad"><i class="fab fa-github"></i>
-						</button>
-					</a>
-				</div>
-			</div>
-		</div>
-
+      <div class="row">
+        <div class="col text-center">
+          <div
+            class="btn-group btn-group-sm"
+            role="group"
+            aria-label="Basic example"
+          >
+            <a href="https://www.instagram.com/beeing_about/" target="_blank">
+              <button type="button" class="btn btn-grad">
+                <i class="fab fa-instagram"></i>
+              </button>
+            </a>
+            <a
+              href="http://www.youtube.com/c/BeeZeeBeeLivingTheDream"
+              target="_blank"
+            >
+              <button type="button" class="btn btn-grad">
+                <i class="fab fa-youtube-square"></i>
+              </button>
+            </a>
+            <a href="https://github.com/bezebee" target="_blank">
+              <button type="button" class="btn btn-grad">
+                <i class="fab fa-github"></i>
+              </button>
+            </a>
+          </div>
         </div>
-    </footer>
+      </div>
+    </div>
+  </footer>
 </html>

@@ -94,12 +94,12 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username from database
-    username = mongo.db.users.find_one({"username": session["user"]})["username"]
-    on_keto_since = mongo.db.users.find_one({"on_keto_since": session["user"]})
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
 
 
     if session["user"]:
-        return render_template("profile.html", username=username, on_keto_since=on_keto_since)
+        return render_template("profile.html", username=username)
 
     return redirect(url_for("login"))
 

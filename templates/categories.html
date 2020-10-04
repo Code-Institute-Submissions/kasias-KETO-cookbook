@@ -10,20 +10,21 @@
 
 <div class="row">
     {% for category in categories %}
-    <div class="col s12 m4">
+    <div class="col s12 ">
         <div class="card grey text-shadow center-align">
             <div class="card-content white-text">
                 <span class="card-title">{{ category.category_name }}</span>
             </div>
-            <div class="card-action">
-                <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn green">Edit</a>
-                <a href="{{ url_for('delete_category', category_id=category._id) }}" id="delete-this" class="btn red">Delete</a>
+            <div class="card-action s12">
+                <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn-small green">Edit</a>
+                <a href="{{ url_for('delete_category', category_id=category._id) }}" id="delete-this" class="btn-small red">Delete</a>
                 
                 </div>
             </div>
         </div>
-    </div>
+    
     {% endfor %}
-</div>
+    </div>
+
 
 {% endblock %}
