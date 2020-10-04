@@ -25,18 +25,21 @@
         <div class="card large">
             <div class="card-image">
                 <img class="bg-image responsive-img" src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_name }}" />
-                <span class="card-title bg-text text-shadow"><strong>{{ recipe.recipe_name }}</strong></span>
+                <span class="card-title bg-text text-shadow">{{ recipe.recipe_name }}<br>
+                <p class="small-text"><em>Created by: {{ recipe.created_by }}</em></p></span>
+                
             </div>
             <div class="card-content minimalist">
                 <p>Ingrediences: {{ recipe.keywords }}</p>
                 <br />
             </div>
             <div class="card-action col s12 minimalist" style="border-top-width: 0px;">
-                <p><em>Created by: {{ recipe.created_by }}</em></p>
-                <a href="{{url_for('recipe', recipe_id=recipe._id)}}" class="btn neutral">Make it</a>
+               
+                <div class="row center-align">
+                <a href="{{url_for('recipe', recipe_id=recipe._id)}}" class="btn neutral m12">Make it</a>
                 {% if session.user|lower == recipe.created_by|lower %}
-                <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" id="edit" class="btn green neutral">Edit Recipe</a>
-                <a href="#delete-this" class="btn neutral red modal-trigger">Delete</a>
+                <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" id="edit" class="btn green neutral m12">Edit it</a>
+                <a href="#delete-this" class="btn neutral red modal-trigger m12">Delete it</a></div>
 
                 <div id="delete-this" class="modal">
                     <div class="modal-question-wrapper">
