@@ -75,7 +75,8 @@ def login():
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome, {}".format(request.form.get("username")))
-                    return redirect(url_for("profile", username=session["user"]))
+                    return redirect(url_for(
+                        "profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -93,15 +94,19 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username from database
-    username = mongo.db.users.find_one({"username": session["user"]})["username"]
-    on_keto_since = mongo.db.users.find_one({"username": session["user"]})["on_keto_since"]
-    personal_success = mongo.db.users.find_one({"username": session["user"]})["personal_success"]
-    username_image = mongo.db.users.find_one({"username": session["user"]})["username_image"]
-
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    on_keto_since = mongo.db.users.find_one(
+        {"username": session["user"]})["on_keto_since"]
+    personal_success = mongo.db.users.find_one(
+        {"username": session["user"]})["personal_success"]
+    username_image = mongo.db.users.find_one(
+        {"username": session["user"]})["username_image"]
 
     if session["user"]:
         return render_template(
-            "profile.html", username=username, on_keto_since=on_keto_since, personal_success=personal_success, username_image=username_image)
+            "profile.html", username=username, on_keto_since=on_keto_since,
+            personal_success=personal_success, username_image=username_image)
 
     return redirect(url_for("login"))
 
@@ -199,7 +204,7 @@ def get_categories():
     return render_template("categories.html", categories=categories)
 
 
-@app.route("/add_category", methods=["GET","POST"])
+@app.route("/add_category", methods=["GET", "POST"])
 def add_category():
     if request.method == "POST":
         category = {
@@ -211,7 +216,7 @@ def add_category():
     return render_template("add_category.html")
 
 
-@app.route("/edit_category/<category_id>", methods = ["GET","POST"])
+@app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     if request.method == "POST":
         submit = {
@@ -230,7 +235,6 @@ def delete_category(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Category Successfully Deleted")
     return redirect(url_for("get_categories"))
-
 
 
 if __name__ == "__main__":
