@@ -24,7 +24,7 @@ main.container {
 
 /*flash messages styling*/
 
-h4.flash-messages {
+h6.flash-messages {
 	background: #ece9e6;
 	/* fallback for old browsers */
 	background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.733), rgba(145, 114, 155, 0.623));
@@ -188,13 +188,23 @@ h3 {
 	color: #4a4250;
 	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
 	margin-top: 12px;
-    width:80px;
+    width:65px;
     font-size: 12px;
     text-align: center;
     padding:0;
 }
 .neutral:hover{
     background-color: rgba(145, 114, 155, 0.623);
+}
+
+div.card-action.minimalist{
+    padding:13px;
+    align-items: center;
+    
+}
+
+.small-span{
+    font-size: 15px;
 }
 
 
@@ -219,7 +229,7 @@ h3 {
 }
 
 
-/* Position text in the middle of the page/image */
+/* Position text in recipe card in the middle of the page/image */
 
 .bg-text {
 	background-color: rgba(0, 0, 0, 0.76);

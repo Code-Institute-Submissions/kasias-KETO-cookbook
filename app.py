@@ -75,8 +75,7 @@ def login():
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome, {}".format(request.form.get("username")))
-                    return redirect(url_for(
-                        "profile", username=session["user"]))
+                    return redirect(url_for("profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -94,16 +93,17 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username from database
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+    username = mongo.db.users.find_one({"username": session["user"]})["username"]
+    on_keto_since = mongo.db.users.find_one({"username": session["user"]})["on_keto_since"]
+    personal_success = mongo.db.users.find_one({"username": session["user"]})["personal_success"]
+    username_image = mongo.db.users.find_one({"username": session["user"]})["username_image"]
 
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template(
+            "profile.html", username=username, on_keto_since=on_keto_since, personal_success=personal_success, username_image=username_image)
 
     return redirect(url_for("login"))
-
-
 
 
 # logout
@@ -116,6 +116,7 @@ def logout():
 
 
 # ------RECIPES------ #
+
 
 # all recipes
 @app.route("/get_recipes")
@@ -130,7 +131,6 @@ def search():
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     return render_template("recipes.html", recipes=recipes)
-
 
 
 # single recipe
@@ -148,7 +148,7 @@ def add_recipe():
             "category_name": request.form.get("category_name"),
             "recipe_image": request.form.get("recipe_image"),
             "recipe_name": request.form.get("recipe_name"),
-            "ingredience_list": request.form.get("ingredience_list"),
+            "ingredients_list": request.form.get("ingredients_list"),
             "method": request.form.get("method"),
             "preparation_time": request.form.get("preparation_time"),
             "difficulty": request.form.get("difficulty"),
@@ -170,7 +170,7 @@ def edit_recipe(recipe_id):
             "category_name": request.form.get("category_name"),
             "recipe_image": request.form.get("recipe_image"),
             "recipe_name": request.form.get("recipe_name"),
-            "ingredience_list": request.form.get("ingredience_list"),
+            "ingredients_list": request.form.get("ingredients_list"),
             "method": request.form.get("method"),
             "preparation_time": request.form.get("preparation_time"),
             "difficulty": request.form.get("difficulty"),
@@ -179,10 +179,10 @@ def edit_recipe(recipe_id):
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe Successfully Updated")
 
-
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find()
-    return render_template("edit_recipe.html",recipe=recipe, categories=categories)
+    return render_template(
+        "edit_recipe.html", recipe=recipe, categories=categories)
 
 
 # delete recipe
@@ -199,7 +199,7 @@ def get_categories():
     return render_template("categories.html", categories=categories)
 
 
-@app.route("/add_category", methods = ["GET","POST"])
+@app.route("/add_category", methods=["GET","POST"])
 def add_category():
     if request.method == "POST":
         category = {

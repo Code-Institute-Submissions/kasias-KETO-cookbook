@@ -25,17 +25,21 @@
         <div class="card large">
             <div class="card-image">
                 <img class="bg-image responsive-img" src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_name }}" />
-                <span class="card-title bg-text text-shadow"><strong>{{ recipe.recipe_name }}</strong></span>
+                <span class="card-title bg-text text-shadow"><strong>{{ recipe.recipe_name }}</strong><br>
+                <p class="small-span"><em>Created by: {{ recipe.created_by }}</em></p>
+                </span>
+               
+                
             </div>
             <div class="card-content minimalist">
-                <p>Ingrediences: {{ recipe.keywords }}</p>
+                <p>Ingredients: {{ recipe.keywords }}</p>
                 <br />
             </div>
-            <div class="card-action col s12 minimalist" style="border-top-width: 0px;">
-                <p><em>Created by: {{ recipe.created_by }}</em></p>
-                <a href="{{url_for('recipe', recipe_id=recipe._id)}}" class="btn neutral">Make it</a>
+            <div class="card-action col s12 minimalist center-align" style="border-top-width: 0px;">
+                
+                <a href="{{url_for('recipe', recipe_id=recipe._id)}}" class="btn neutral">Cook</a>
                 {% if session.user|lower == recipe.created_by|lower %}
-                <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" id="edit" class="btn green neutral">Edit Recipe</a>
+                <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" id="edit" class="btn green neutral">Edit</a>
                 <a href="#delete-this" class="btn neutral red modal-trigger">Delete</a>
 
                 <div id="delete-this" class="modal">
