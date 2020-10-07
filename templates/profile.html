@@ -8,23 +8,23 @@
 				<img
       class="responsive-img image-shadow box-shadow "
       style="border-radius: 50%; width: 300px;"
-      src="{{ username_image }}"/></div>
+      src="{{ user.username_image }}"/></div>
 
 				<div class="col s12">
 					<h3 class="center-align text-shadow">
-						{{ username }}
+						{{ user.username }}
 					</h3>
 				</div>
 
 				<div class="col s12">
 					<p class="center-align text-shadow profile-desc">
-						On keto since {{ on_keto_since }}
+						On keto since {{ user.on_keto_since }}
 					</p>
 				</div>
 
 				<div class="col s12">
 					<p class="center-align text-shadow profile-desc">
-						Personal Keto Success: {{ personal_success }}
+						Personal Keto Success: {{ user.personal_success }}
 					</p>
 				</div>
 			</div>
@@ -35,9 +35,9 @@
                 src="https://res.cloudinary.com/dugnokxox/image/upload/v1601484987/Backgrounds/pexels-karolina-grabowska-4199098_stqefx.jpg">
             </div>
             <div class="text center-align  about-profile">
-            <div class="col s6 profile"><h3 class="center-align text-shadow" >About {{ username }}</h3>
+            <div class="col s6 profile"><h3 class="center-align text-shadow" >About {{ user.username }}</h3>
             <p class=" text-shadow profile-desc">
-						{{ about }}
+						{{ user.about }}
 					</p></div>
             </div>
 		</div>

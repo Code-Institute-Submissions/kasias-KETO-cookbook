@@ -94,22 +94,29 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username from database
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-    on_keto_since = mongo.db.users.find_one(
-        {"username": session["user"]})["on_keto_since"]
-    personal_success = mongo.db.users.find_one(
-        {"username": session["user"]})["personal_success"]
-    username_image = mongo.db.users.find_one(
-        {"username": session["user"]})["username_image"]
-    about = mongo.db.users.find_one(
-        {"username": session["user"]})["about"]
+    user = mongo.db.users.find_one({"username": username.lower()})
+    # on_keto_since = user["on_keto_since"]
+    # personal_success = user["personal_success"]
+    # username_image = user["username_image"]
+    # about = user["about"]
+    # username = mongo.db.users.find_one(
+    #     {"username": session["user"]})["username"]
+    # on_keto_since = mongo.db.users.find_one(
+    #     {"username": session["user"]})["on_keto_since"]
+    # personal_success = mongo.db.users.find_one(
+    #     {"username": session["user"]})["personal_success"]
+    # username_image = mongo.db.users.find_one(
+    #     {"username": session["user"]})["username_image"]
+    # about = mongo.db.users.find_one(
+    #     {"username": session["user"]})["about"]
 
-    if session["user"]:
-        return render_template(
-            "profile.html", username=username, on_keto_since=on_keto_since,
-            personal_success=personal_success,
-            username_image=username_image, about=about)
+    # if session["user"]:
+    if "user" in session:
+        return render_template("profile.html", user=user)
+        # return render_template(
+            # "profile.html", username=username, on_keto_since=on_keto_since,
+            # personal_success=personal_success,
+            # username_image=username_image, about=about)
 
     return redirect(url_for("login"))
 
