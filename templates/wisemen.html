@@ -1,0 +1,48 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="row">
+    {% for user in users %}
+
+<div class="col s12 m4">
+        <div class="card large">
+            <div class="card-image">
+                <img class=" responsive-img" src="{{ users.username_image }}" alt="{{ username }}" />
+                <span class="card-title bg-text text-shadow"><strong>{{ users.username }}</strong><br>
+                <p class="small-span"><em>Wiseman since {{ on_keto_since }}</em></p>
+                </span>
+               
+                
+            </div>
+            <div class="card-content minimalist">
+                <p>About {{ users.username }} : {{ users.about }}</p>
+                <br />
+            </div>
+            <div class="card-action col s12 minimalist center-align" style="border-top-width: 0px;">
+                
+                <a href="#" class="btn neutral">Profile</a>
+                {% if session.user|lower %}
+                <a href="#" id="edit" class="btn green neutral">Edit</a>
+                <a href="#delete-this" class="btn neutral red modal-trigger">Delete</a>
+
+                <div id="delete-this" class="modal">
+                    <div class="modal-question-wrapper">
+                        <div class="modal-question">
+                            <p>Are you absolutely and definitely sure you want to leave the Wisemen Zone? Even Salmon of Wisdom will not be able to reverse it</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#" class="btn-small neutral red modal-close">Delete</a>
+                            <a class="btn-small neutral blue modal-close">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    
+    {% endfor %}
+</div>
+
+{% endblock %}

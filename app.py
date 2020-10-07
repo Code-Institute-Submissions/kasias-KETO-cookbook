@@ -114,6 +114,13 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+# all users
+@app.route("/wisemen")
+def wisemen():
+    users = list(mongo.db.users.find())
+    return render_template("wisemen.html", users=users)
+
+
 # logout
 @app.route("/logout")
 def logout():
