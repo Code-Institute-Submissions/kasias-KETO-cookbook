@@ -6,20 +6,20 @@
 <div class="col s12 m4">
         <div class="card large">
             <div class="card-image">
-                <img class=" responsive-img" src="{{ users.username_image }}" alt="{{ username }}" />
-                <span class="card-title bg-text text-shadow"><strong>{{ users.username }}</strong><br>
-                <p class="small-span"><em>Wiseman since {{ on_keto_since }}</em></p>
+                <img class=" responsive-img" src="{{ user.username_image }}" alt="{{ username }}" />
+                <span class="card-title bg-text text-shadow"><strong>{{ user.username }}</strong><br>
+                <p class="small-span"><em>Been Wise since {{ user.on_keto_since }}</em></p>
                 </span>
                
                 
             </div>
             <div class="card-content minimalist">
-                <p>About {{ users.username }} : {{ users.about }}</p>
+                <p>About {{ user.username }} : {{ user.about }}</p>
                 <br />
             </div>
             <div class="card-action col s12 minimalist center-align" style="border-top-width: 0px;">
                 
-                <a href="#" class="btn neutral">Profile</a>
+                <a href="{{url_for('profile', username=user.username)}}" class="btn neutral">Profile</a>
                 {% if session.user|lower %}
                 <a href="#" id="edit" class="btn green neutral">Edit</a>
                 <a href="#delete-this" class="btn neutral red modal-trigger">Delete</a>
