@@ -102,11 +102,14 @@ def profile(username):
         {"username": session["user"]})["personal_success"]
     username_image = mongo.db.users.find_one(
         {"username": session["user"]})["username_image"]
+    about = mongo.db.users.find_one(
+        {"username": session["user"]})["about"]
 
     if session["user"]:
         return render_template(
             "profile.html", username=username, on_keto_since=on_keto_since,
-            personal_success=personal_success, username_image=username_image)
+            personal_success=personal_success,
+            username_image=username_image, about=about)
 
     return redirect(url_for("login"))
 

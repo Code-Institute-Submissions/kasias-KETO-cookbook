@@ -1,32 +1,45 @@
 {% extends "base.html" %} {% block content %}
 
-<div class="row">
-  <div class="col s12 center-align box">
-    <img
-      class="responsive-img image-shadow modal-trigger box-shadow"
-      style="border-radius: 50%;"
-      src="{{ username_image }}"
-    />
 
-  </div>
-</div>
 
-  <div class="col s12">
-    <h3 class="center-align text-shadow">
-      {{ username }}
-    </h3>
-  </div>
-  <div class="col s12">
-    <h3 class="center-align text-shadow">
-      On keto since: {{ on_keto_since }}
-    </h3>
-  </div>
+	<div class="section transparent">
+		<div class="row">
+			<div class="col s12 center-align  box">
+				<img
+      class="responsive-img image-shadow box-shadow "
+      style="border-radius: 50%; width: 300px;"
+      src="{{ username_image }}"/></div>
 
-  <div class="col s4">
-    <h3 class="center-align text-shadow">
-      Personal Success: {{ personal_success }}
-    </h3>
-  </div>
-</div>
+				<div class="col s12">
+					<h3 class="center-align text-shadow">
+						{{ username }}
+					</h3>
+				</div>
 
-{% endblock %}
+				<div class="col s12">
+					<p class="center-align text-shadow profile-desc">
+						On keto since {{ on_keto_since }}
+					</p>
+				</div>
+
+				<div class="col s12">
+					<p class="center-align text-shadow profile-desc">
+						Personal Keto Success: {{ personal_success }}
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="parallax-container">
+			<div class="parallax">
+				<img class="responsive-img image-shadow" style="object-fit: cover; min-width: 100%;" 
+                src="https://res.cloudinary.com/dugnokxox/image/upload/v1600814446/Backgrounds/background_yw9bgo.jpg">
+            </div>
+            <div class="text center-align  about-profile">
+            <div class="col s6 profile"><h3 class="center-align text-shadow" >About {{ username }}</h3>
+            <p class=" text-shadow profile-desc">
+						{{ about }}
+					</p></div>
+            </div>
+		</div>
+
+			{% endblock %}
