@@ -1,6 +1,6 @@
 import os
 from flask import (
-    Flask, flash, render_template, 
+    Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -95,42 +95,50 @@ def login():
 def profile(username):
     # grab the session user's username from database
     user = mongo.db.users.find_one({"username": username.lower()})
-    # on_keto_since = user["on_keto_since"]
-    # personal_success = user["personal_success"]
-    # username_image = user["username_image"]
-    # about = user["about"]
-    # username = mongo.db.users.find_one(
-    #     {"username": session["user"]})["username"]
-    # on_keto_since = mongo.db.users.find_one(
-    #     {"username": session["user"]})["on_keto_since"]
-    # personal_success = mongo.db.users.find_one(
-    #     {"username": session["user"]})["personal_success"]
-    # username_image = mongo.db.users.find_one(
-    #     {"username": session["user"]})["username_image"]
-    # about = mongo.db.users.find_one(
-    #     {"username": session["user"]})["about"]
 
-    # if session["user"]:
     if "user" in session:
         return render_template("profile.html", user=user)
-        # return render_template(
-            # "profile.html", username=username, on_keto_since=on_keto_since,
-            # personal_success=personal_success,
-            # username_image=username_image, about=about)
 
     return redirect(url_for("login"))
+
+
+# edit profile
+@app.route("/edit_profile/<username>", methods=["GET", "POST"])
+def edit_profile(username):
+    if request.method == "POST":
+        submit = {
+            "on_keto_since": request.form.get("on_keto_since"),
+            "personal_success": request.form.get("personal_success"),
+            "username_image": request.form.get("username_image"),
+            "about": request.form.get("about"),
+        }
+        mongo.db.users.update({"username": username.lower()}, submit)
+        flash("Profile updated")
+
+    user = mongo.db.users.find_one({"username": username.lower()})
+    return render_template("edit_profile.html", user=user)
+
+
+# delete profile
+@app.route("/delete_profile/<username>")
+def delete_profile(username):
+    mongo.db.users.remove({"username": username.lower()})
+    flash("Profile deleted")
+    session.pop("user")
+
+    return redirect(url_for("register"))
 
 
 # all users
 @app.route("/wisemen")
 def wisemen():
     users = list(mongo.db.users.find())
-    
 
     if "user" in session:
         return render_template("wisemen.html", users=users)
-    
+
     return redirect(url_for("login"))
+
 
 # logout
 @app.route("/logout")
@@ -225,7 +233,7 @@ def get_categories():
 
     if "user" in session:
         return render_template("categories.html", categories=categories)
-    
+
     return redirect(url_for("login"))
 
 
@@ -239,7 +247,7 @@ def add_category():
         flash("New Category Added")
     if "user" in session:
         return render_template("add_category.html")
-    
+
     return redirect(url_for("login"))
 
 
@@ -256,7 +264,7 @@ def edit_category(category_id):
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
     if "user" in session:
         return render_template("edit_category.html", category=category)
-    
+
     return redirect(url_for("login"))
 
 

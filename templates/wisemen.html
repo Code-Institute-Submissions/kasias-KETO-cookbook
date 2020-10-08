@@ -20,8 +20,8 @@
             <div class="card-action col s12 minimalist center-align" style="border-top-width: 0px;">
                 
                 <a href="{{url_for('profile', username=user.username)}}" class="btn neutral">Profile</a>
-                {% if session.user|lower %}
-                <a href="#" id="edit" class="btn green neutral">Edit</a>
+                {% if session.user|lower == user.username|lower %}
+                <a href="{{url_for('edit_profile', username=user.username)}}" id="edit" class="btn green neutral">Edit</a>
                 <a href="#delete-this" class="btn neutral red modal-trigger">Delete</a>
 
                 <div id="delete-this" class="modal">
@@ -30,7 +30,7 @@
                             <p>Are you absolutely and definitely sure you want to leave the Wisemen Zone? Even Salmon of Wisdom will not be able to reverse it</p>
                         </div>
                         <div class="modal-footer">
-                            <a href="#" class="btn-small neutral red modal-close">Delete</a>
+                            <a href="{{url_for('delete_profile', username=user.username)}}" class="btn-small neutral red modal-close">Delete</a>
                             <a class="btn-small neutral blue modal-close">Cancel</a>
                         </div>
                     </div>
