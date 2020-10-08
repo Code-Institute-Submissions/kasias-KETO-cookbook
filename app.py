@@ -125,7 +125,10 @@ def profile(username):
 @app.route("/wisemen")
 def wisemen():
     users = list(mongo.db.users.find())
-    return render_template("wisemen.html", users=users)
+    if "user" in session:
+        return render_template("wisemen.html", user=user)
+
+    return redirect(url_for("login"))
 
 
 # logout
