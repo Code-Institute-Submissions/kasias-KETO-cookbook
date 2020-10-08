@@ -125,11 +125,12 @@ def profile(username):
 @app.route("/wisemen")
 def wisemen():
     users = list(mongo.db.users.find())
+    
+
     if "user" in session:
-        return render_template("wisemen.html", user=user)
-
+        return render_template("wisemen.html", users=users)
+    
     return redirect(url_for("login"))
-
 
 # logout
 @app.route("/logout")
@@ -221,7 +222,11 @@ def delete_recipe(recipe_id):
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.categories.find())
-    return render_template("categories.html", categories=categories)
+
+    if "user" in session:
+        return render_template("categories.html", categories=categories)
+    
+    return redirect(url_for("login"))
 
 
 @app.route("/add_category", methods=["GET", "POST"])
@@ -232,8 +237,10 @@ def add_category():
         }
         mongo.db.categories.insert_one(category)
         flash("New Category Added")
-
-    return render_template("add_category.html")
+    if "user" in session:
+        return render_template("add_category.html")
+    
+    return redirect(url_for("login"))
 
 
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
@@ -247,7 +254,10 @@ def edit_category(category_id):
         return redirect(url_for("get_categories"))
 
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
-    return render_template("edit_category.html", category=category)
+    if "user" in session:
+        return render_template("edit_category.html", category=category)
+    
+    return redirect(url_for("login"))
 
 
 @app.route("/delete_category/<category_id>")
