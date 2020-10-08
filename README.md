@@ -2,7 +2,7 @@
 
 
 
-# [Salmon of Wisdom, ](https://keto-cookbook.herokuapp.com/)
+# [Salmon of Wisdom, the keto cookbook](https://keto-cookbook.herokuapp.com/)
 
 In the ever evolving world of different diets, the Food Pyramid as we know it no longer applies for most people. Many diets would at this stage have eliminated certain contents of the pyramid, in Keto's case that pyramid has been literally turned up-side-down. This website was developed to assist those who are embarking on their lifestyle change as well as those who are looking for some inspiration to their existing journey.
 
