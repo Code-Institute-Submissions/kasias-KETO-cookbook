@@ -1,7 +1,8 @@
 ![](images/screens.png)
 
 
-# Kasia's KETO Cookbook
+
+# [Kasia's KETO Cookbook](https://keto-cookbook.herokuapp.com/)
 
 In the ever evolving world of different diets, the Food Pyramid as we know it no longer applies for most people. Many diets would at this stage have eliminated certain contents of the pyramid, in Keto's case that pyramid has been literally turned up-side-down. This website was developed to assist those who are embarking on their lifestyle change as well as those who are looking for some inspiration to their existing journey.
 
@@ -84,42 +85,49 @@ Pick your location based on the closest free version (or paid version) to your a
 For this project the location selected was Europe
 
 Once your app has been created, then move to the ‘deploy’ tab. 
-You can connect to GitHub through one of the tabs. I, however, have used the CLI. 
-You can link to an existing repository by using the following command in your IDE:
-$ heroku git:remote -a "enter-your-heroku-app-name"
+Choose connect via Gitpod and find your repository.
 
-Then, head over to the ‘settings’ tab and click on the ‘reveal config vars’ button. Configure the following:
+Go to Settings tab and click on the Reveal Config Vars button. 
+Configure the following:
 
 ``` 
-Key: value
 IP: 0.0.0.0
-PORT: 8080
+PORT: 5000
 MONGO_URI: "link to your MongoDB"
+MONGODB_NAME: "name of your database"
+SECRET_KEY: "your secret key"
 
 ```
-
+Go to Deploy tab and Enable Automatic Deployments to Gitpod.
 
 With the Heroku settings in place, you can head back to your IDE. The below will need to be set up:
 
 1.	A ‘Procfile’ which will tell Heroku what kind of application it is and how it should be run.
 2.	A ‘requirements.txt’ which will tell Heroku which dependencies it needs to install in order for the app to run. The command for ‘procfile’ is:
-echo web: python run.py > Procfile
+
+```
+$ echo web: python run.py > Procfile
+```
 
 The command for requirements is:
 ```
 pip3 freeze --local > requirements.txt
 ```
+This needs to me re-run if any other dependencies are added mid-project, otherwise the application might not be deployed to Heroku correctly.
+As the repository is now connected to push all changes simultanously to Heroku and Gitpod, you may use the terminal to add, commit and push as usual:
 
-Please note that you need to re-run the requirements command if you add any dependencies mid-project. Otherwise, Heroku will not deploy the app correctly.
-With those set up, you can now push your project to Heroku directly from your IDE.
 ```
-$ heroku login -i
+git add .
 ```
 
-Enter your username and password. Push your commits to Heroku using this command:
 ```
-$ git push -u Heroku master
+git commit -m "Connected app to Heroku"
 ```
+
+```
+git push
+```
+
 
 # To run the app locally
 
