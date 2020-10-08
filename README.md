@@ -43,8 +43,6 @@ The theme of this page is cooking, and there are various types of users this pag
 
 ## Wireframes
 
-![](images/desktop_view.png)
-![](images/mobile_view.png)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Features
