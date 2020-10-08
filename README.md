@@ -1,6 +1,9 @@
+![](images/screens.png)
+
+
 # Kasia's KETO Cookbook
 
-In the ever evolving world of different diets, the Food Pyramid as we know it no longer applies for most people. Many diets would at this stage have eliminated certain contents of the pyramid, in Keto's case that pyramid has been literally turned up-side-down. **enter animation for reference** This website was developed to assist those who are embarking on their lifestyle change as well as those who are looking for some inspiration to their existing journey.
+In the ever evolving world of different diets, the Food Pyramid as we know it no longer applies for most people. Many diets would at this stage have eliminated certain contents of the pyramid, in Keto's case that pyramid has been literally turned up-side-down. This website was developed to assist those who are embarking on their lifestyle change as well as those who are looking for some inspiration to their existing journey.
 
  
 ## UX
@@ -27,7 +30,7 @@ The theme of this page is cooking, and there are various types of users this pag
 *Logged in User*
 - As a registered user I appreciate that the page delivers a functionality of providing me with ideas for my daily menu
 - As a registered user I can log onto my account and add some recipes I already own or know
-- As a registered user I can see more information available that non registered user
+- As a registered user I can interact with other members of the site
 
 *Advertiser*
 - As an advertiser I appreciate that my products are displayed in a way that would invite a potential customer and make it easy to reach my products
@@ -52,7 +55,7 @@ This page will provide some inspiration for the user, be it registered or not re
 This page is created for the potential advertiser or affiliate. The products are presented in a way that makes them linked to the diet, the display follows a suit of __Starter Keto-Kit__ and it will appeal to both registered and unregistered user. The links under the products bring user to the relevant advertiser's ecommerce site, so no need for them to register with the cookbook website.
 
 *Recipes*
-This page is visible to both types of user, be it registered or not registered. The aim is just to pass on the information and invite user to explore this diet. *There might be a searchbox*
+This page is visible to both types of user, be it registered or not registered. The aim is just to pass on the information and invite user to explore this diet. A searchbox will return results of a seach 
 *Register*
 Once decided they want to have access to more information, the unregistered user may register here
 *Profile*
@@ -71,14 +74,14 @@ After signing up and logging in, user has access to more information and may als
 ## Testing
 
 
-## Deployment
+### Deployment
 
-# To run the app on Heroku.
+#### To run the app on Heroku.
 
 Create a Heroku account. 
 Click to start a new app. 
 Pick your location based on the closest free version (or paid version) to your actual location. 
-For this project it was Europe. Choose an appropriate name for the app and click to create.
+For this project the location selected was Europe
 
 Once your app has been created, then move to the ‘deploy’ tab. 
 You can connect to GitHub through one of the tabs. I, however, have used the CLI. 
