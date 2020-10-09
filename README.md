@@ -93,7 +93,8 @@ The theme of this page is cooking, and there are various types of users this pag
  
 ![](wireframes/members.jpg)
 </details>
-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 ### :clipboard: Features
 
 In this section, you should go over the different parts of your project, and describe each in a sentence or so.
