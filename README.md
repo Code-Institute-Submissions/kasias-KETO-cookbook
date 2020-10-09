@@ -6,8 +6,9 @@
 
 In the ever evolving world of different diets, the Food Pyramid as we know it no longer applies for most people. Many diets would at this stage have eliminated certain contents of the pyramid, in Keto's case that pyramid has been literally turned up-side-down. This website was developed to assist those who are embarking on their lifestyle change as well as those who are looking for some inspiration to their existing journey.
 
- 
-## UX
+
+
+## :art: UX
  
 The theme of this page is cooking, and there are various types of users this page may appeal to:
 
@@ -41,7 +42,7 @@ The theme of this page is cooking, and there are various types of users this pag
 - As the owner of the website I want encorage user to register and visit my site as often as possible, so I ensure the content varies and addresses as wide user group as possible
 
 
-### Wireframes
+## :hammer_and_wrench: Wireframes
 <details><summary>Base Template</summary>
  
 ![](wireframes/base.jpg)
@@ -93,7 +94,7 @@ The theme of this page is cooking, and there are various types of users this pag
 ![](wireframes/members.jpg)
 </details>
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-### Features
+### :clipboard: Features
 
 In this section, you should go over the different parts of your project, and describe each in a sentence or so.
 *Home*
@@ -108,20 +109,20 @@ Once decided they want to have access to more information, the unregistered user
 *Profile*
 After signing up and logging in, user has access to more information and may also add some of his own favourite recipes
  
-### Existing Features
+### :white_check_mark: Existing Features
 
 
-### Features Left to Implement
+### :negative_squared_cross_mark: Features Left to Implement
 
 
-## Technologies Used
+## :floppy_disk: Technologies Used
 
 
 
-## Testing
+## :toolbox: Testing
 
 
-### Deployment
+### :checkered_flag: Deployment
 
 #### To run the app on Heroku.
 
@@ -191,7 +192,7 @@ o	To set up MongoDB Atlas please see the documentation MongoDB Atlas
 # Option 2 is to clone the repository.
 
 
-## Credits
+## :heavy_dollar_sign: Credits
 
 ### Content
 
