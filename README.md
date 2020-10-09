@@ -1,4 +1,4 @@
-![](images/screens.png)
+![](wireframes/screens.png)
 
 
 
@@ -19,33 +19,51 @@ The theme of this page is cooking, and there are various types of users this pag
 
 *User type 3: Advertisers looking to tap into the wide group of users. As one of the website pages is shop, there is an opportunity of affiliation or paid sponsorship
 
-# User Stories
+### User Stories
 
-*Guest User*
+#### *Guest User*
 - As a guest user of this website I might not want to sign up for anything immediately, I want to browse - I expect this site to have some content available for me
 - As a guest user I appreciate that the website is intuitive to navigate, I am visiting it first time
 - As a guest user I might not go past the Home page, so I expect some overall information there about the page, to catch my attention
 - As a guest user I appreciate the colours should be easy on the eye, with food as a subject matter, I appreciate the colorfullness
 - As a guest user, without signing up, I expect some educational value to the website, so the content of Home page is very important to me
 
-*Logged in User*
+#### *Logged in User*
 - As a registered user I appreciate that the page delivers a functionality of providing me with ideas for my daily menu
 - As a registered user I can log onto my account and add some recipes I already own or know
 - As a registered user I can interact with other members of the site
 
-*Advertiser*
+#### *Advertiser*
 - As an advertiser I appreciate that my products are displayed in a way that would invite a potential customer and make it easy to reach my products
 - As an advertiser I expect this page to be easy to navigate, as this will increase chances for the customer to get to my web-shop
 
-*Owner*
+#### *Owner*
 - As the owner of the website I want encorage user to register and visit my site as often as possible, so I ensure the content varies and addresses as wide user group as possible
 
 
-## Wireframes
-
-
+### Wireframes
+#### Base Template
+![](wireframes/base.jpg)
+#### Registered User View Template
+![](wireframes/reg_base.jpg)
+#### About Keto
+![](wireframes/about.jpg)
+#### All Recipes
+![](wireframes/all_recipes.jpg)
+#### Recipe
+![](wireframes/recipe.jpg)
+#### Register
+![](wireframes/register.jpg)
+#### Login
+![](wireframes/login.jpg)
+#### Profile
+![](wireframes/profile.jpg)
+#### Add Recipe
+![](wireframes/add_recipe.jpg)
+#### Members Zone
+![](wireframes/members.jpg)
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-## Features
+### Features
 
 In this section, you should go over the different parts of your project, and describe each in a sentence or so.
 *Home*
