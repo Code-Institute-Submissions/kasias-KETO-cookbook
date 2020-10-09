@@ -105,37 +105,94 @@ The theme of this page is cooking, and there are various types of users this pag
 
 ### :white_check_mark: Existing Features
 
-#### Visible to all users
+<ins>Visible to all users</ins>
 
 ##### About Keto
+This section is introducing the user to what the page is all about, and it's the Keto diet. The About section is answering to the assumption that not everyone visiting this page will know what Keto is, and if they do, they might need more information about it. The About section delivers this information
 ##### All Recipes
+This is the main highlight of the page, it contains the selection of recipes, which combine both recipes added by the users as well as those by the administrators.
+###### Recipe
+From All Recipes the user will navigate their way to the Recipe by clicking on the "Cook" button.
+###### Share Recipe
+On the Recipe card there is an option to choose some networks that this recipe can be shared to. There are few defaults like Facebook, Email or WhatsApp but the user can also click on the plus sign to choose other channels.
 ##### Login
+The option to Login is visible to all users, however, only those registered can access it.
 ##### Register
+The option of registering is visible to all users, however, only usernames that do not yet exist in the database can be registered via this route.
 ##### Shop
+TBC
 
-#### Accessible only by registered users
+<ins>Accessible only by registered user</ins>
 
 ##### Profile
+This is the page that will welcome a registered user who has just logged onto the site. The layout is very simplistic, a profile photograph with username and the achievement underneath it. This is followed by About section, which allows this registered user tell few words about themselves. 
 ##### Edit Profile
+While on the main Wise Zone page, the session user can access profiles of others, plus additional options for their own profile. One of those options is to edit the profile. This gives the session user the opportunity to amend anything in their profile. Since this is a dieting page, the objectives or achievements are subject to amendments.
 ##### Delete Profile
+The other option accessible to the session user is the deletion of the profile. This would be possible once the user decides themselves that they no longer wish to be part of this website. Upon clicking the delete button a modal pops up to inform of the final nature of this action. Once the session user clicks "OK", the profile is removed from database, session cookie removed from the browser and the user is redirected to the Register page.
 ##### Wise Zone
-##### Add Recipe
-##### Edit Recipe
+This page contains a selection of registered users. Anyone can check out their profiles and see what objectives others are headed towards or achievements reached. From here any user can check out others profiles, the session user can access more options related to their own profile, as addressed in detail above.
+##### Add Recipe and Edit Recipe
+These are available to the users, for they might want to either add their own favourite creations or note down recipes found in other sources. 
 ##### Delete Recipe
+The third button on the recipe cover card is the Delete button. While the creator of that recipe can freely delete it from the database, the modal will pop up first to ensure the user knows this is final and cannot be reversed.
 
-#### Accessible only by Administrator
+<ins>Accessible only by Administrator<ins>
 
 ##### Manage Categories
-
+At this time there are three main Categories, however, the page assumes that the Administrator might want to expand on it in the future. Therefore there are three options available here:
+- Add Category
+- Edit Category
+- Delete Category
 
 ### :negative_squared_cross_mark: Features Left to Implement
-
+Some future features may include:
+- Diary of daily/weekly achievements for the registered users
+- Functionality to share videos of own cooking tutorials
+- Functionality to contact other members
 
 ## :floppy_disk: Technologies Used<hr>
+#### HTML
+#### CSS
+#### JQuery
+#### Python
+#### Jinjia Templates
+#### Github
+#### Git
+#### PyMongo
+#### Pip
+#### MongoDB
+#### Google Fonts
+#### Font Awesome
+#### HTML Formatter
+***Visual Media tools***
+#### Photoshop - to edit the cover photo of the responsive view
+#### Goodnotes - to create Wireframes
+#### Procreate - to create the main Salmon of Wisdom logo
 
 
 
 ## :toolbox: Testing<hr>
+
+### *Guest User*
+#### As a guest user of this website I want to just browse - I expect this site to have some content available for me
+#### As a guest user I want to know what the website is about when I am visiting first time
+#### As a guest user I want to be able to access, search and share recipes
+#### As a guest user I want to be able to register and log in easily
+#### As a guest user I want to be able to check out Social Networks of this website
+#### As a guest user I want to be able to visit some recommended by this website shops
+
+### *Logged in User*
+#### As a registered user I want to be able to get a confirmation every time I log in
+#### As a registered user I want to be able to add recipes
+#### As a registered user I want to be able to search recipes
+#### As a registered user I want to be able to delete recipes I have added
+#### As a registered user I want to be able to store my information in a dedicated profile
+#### As a registered user I want to be able to upload my profile picture
+#### As a registered user I want to be able to be able to share my success within my profile
+#### As a registered user I want to be able to see other users profiles and check out their achievements
+#### As a registered user I want to be able to edit my profile when any of my details change
+#### As a registered user I want to be able to delete my profile when I am no longer interested in being part of this group
 
 
 ## :checkered_flag: Deployment<hr>
