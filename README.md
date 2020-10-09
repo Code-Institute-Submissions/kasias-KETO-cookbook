@@ -177,29 +177,22 @@ git push
 ```
 
 
-# To run the app locally
-
-To run this project locally, you need an IDE installed on your computer. I used Gitpod
-
-•	This project uses MongoDB as a database, and therefore you will need either a MongoDB Atlas account or have MongoDB running locally on your machine. 
-o	To set up MongoDB Atlas please see the documentation MongoDB Atlas
-•	PIP – to install packages such as pyMongo
-•	Python3 – the project uses Python3 for the backend language – specially Python 3.8
-•	Git – for easy version control
+### To run the app locally
 
 
-# Option 1 is to download a zip file.
 
-# Option 2 is to clone the repository.
+#### Option 1 is to download a zip file.
 
-
-## :heavy_dollar_sign: Credits
-
-### Content
+#### Option 2 is to clone the repository.
 
 
-### Media
+### :heavy_dollar_sign: Credits
+
+#### Content
 
 
-### Acknowledgements
+#### Media
+
+
+#### Acknowledgements
 
