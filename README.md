@@ -2,13 +2,13 @@
 
 
 
-# [Salmon of Wisdom, the keto cookbook](https://keto-cookbook.herokuapp.com/)
+# [Salmon of Wisdom, the keto cookbook](https://keto-cookbook.herokuapp.com/)<hr>
 
 In the ever evolving world of different diets, the Food Pyramid as we know it no longer applies for most people. Many diets would at this stage have eliminated certain contents of the pyramid, in Keto's case that pyramid has been literally turned up-side-down. This website was developed to assist those who are embarking on their lifestyle change as well as those who are looking for some inspiration to their existing journey.
 
 
 
-## :art: UX
+## :art: UX<hr>
  
 The theme of this page is cooking, and there are various types of users this page may appeal to:
 
@@ -18,31 +18,37 @@ The theme of this page is cooking, and there are various types of users this pag
 *User type 2: Those already practicing the KETO lifestyle and diet, but looking for inspiration for daily menus*
 
 
-*User type 3: Advertisers looking to tap into the wide group of users. As one of the website pages is shop, there is an opportunity of affiliation or paid sponsorship
+*User type 3: Advertisers looking to tap into the wide group of users. As one of the website pages is shop, there is an opportunity of affiliation or paid sponsorship*
 
 ### User Stories
 
 #### *Guest User*
-- As a guest user of this website I might not want to sign up for anything immediately, I want to browse - I expect this site to have some content available for me
-- As a guest user I appreciate that the website is intuitive to navigate, I am visiting it first time
-- As a guest user I might not go past the Home page, so I expect some overall information there about the page, to catch my attention
-- As a guest user I appreciate the colours should be easy on the eye, with food as a subject matter, I appreciate the colorfullness
-- As a guest user, without signing up, I expect some educational value to the website, so the content of Home page is very important to me
+- As a guest user of this website I want to just browse - I expect this site to have some content available for me
+- As a guest user I want to know what the website is about when I am visiting first time
+- As a guest user I want to be able to access, search and share recipes
+- As a guest user I want to be able to register and log in easily
+- As a guest user I want to be able to check out Social Networks of this website
+- As a guest user I want to be able to visit some recommended by this website shops
 
 #### *Logged in User*
-- As a registered user I appreciate that the page delivers a functionality of providing me with ideas for my daily menu
-- As a registered user I can log onto my account and add some recipes I already own or know
-- As a registered user I can interact with other members of the site
+- As a registered user I want to be able to get a confirmation every time I log in
+- As a registered user I want to be able to add recipes
+- As a registered user I want to be able to search recipes
+- As a registered user I want to be able to delete recipes I have added
+- As a registered user I want to be able to store my information in a dedicated profile
+- As a registered user I want to be able to upload my profile picture
+- As a registered user I want to be able to be able to share my success within my profile
+- As a registered user I want to be able to see other users profiles and check out their achievements
+- As a registered user I want to be able to edit my profile when any of my details change
+- As a registered user I want to be able to delete my profile when I am no longer interested in being part of this group
 
 #### *Advertiser*
 - As an advertiser I appreciate that my products are displayed in a way that would invite a potential customer and make it easy to reach my products
 - As an advertiser I expect this page to be easy to navigate, as this will increase chances for the customer to get to my web-shop
 
-#### *Owner*
-- As the owner of the website I want encorage user to register and visit my site as often as possible, so I ensure the content varies and addresses as wide user group as possible
 
 
-## :hammer_and_wrench: Wireframes
+## :hammer_and_wrench: Wireframes<hr>
 <details><summary>Base Template</summary>
  
 ![](wireframes/base.jpg)
@@ -95,35 +101,44 @@ The theme of this page is cooking, and there are various types of users this pag
 </details>
 
 
-### :clipboard: Features
+## :clipboard: Features<hr>
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
-*Home*
-This page will provide some inspiration for the user, be it registered or not registered. The aim is to give as much info about the diet as possible, if follows order of __What, How, Why__. Ideally a potential user will immediately know what this page has to offer and continue on exploring it. Categories are readily available on this page, so the user does not need to go looking for the next step.
-*Shop*
-This page is created for the potential advertiser or affiliate. The products are presented in a way that makes them linked to the diet, the display follows a suit of __Starter Keto-Kit__ and it will appeal to both registered and unregistered user. The links under the products bring user to the relevant advertiser's ecommerce site, so no need for them to register with the cookbook website.
-
-*Recipes*
-This page is visible to both types of user, be it registered or not registered. The aim is just to pass on the information and invite user to explore this diet. A searchbox will return results of a seach 
-*Register*
-Once decided they want to have access to more information, the unregistered user may register here
-*Profile*
-After signing up and logging in, user has access to more information and may also add some of his own favourite recipes
- 
 ### :white_check_mark: Existing Features
+
+#### Visible to all users
+
+##### About Keto
+##### All Recipes
+##### Login
+##### Register
+##### Shop
+
+#### Accessible only by registered users
+
+##### Profile
+##### Edit Profile
+##### Delete Profile
+##### Wise Zone
+##### Add Recipe
+##### Edit Recipe
+##### Delete Recipe
+
+#### Accessible only by Administrator
+
+##### Manage Categories
 
 
 ### :negative_squared_cross_mark: Features Left to Implement
 
 
-## :floppy_disk: Technologies Used
+## :floppy_disk: Technologies Used<hr>
 
 
 
-## :toolbox: Testing
+## :toolbox: Testing<hr>
 
 
-### :checkered_flag: Deployment
+## :checkered_flag: Deployment<hr>
 
 #### To run the app on Heroku.
 
@@ -186,7 +201,7 @@ git push
 #### Option 2 is to clone the repository.
 
 
-### :heavy_dollar_sign: Credits
+## :heavy_dollar_sign: Credits<hr>
 
 #### Content
 
