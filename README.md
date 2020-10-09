@@ -42,26 +42,56 @@ The theme of this page is cooking, and there are various types of users this pag
 
 
 ### Wireframes
-#### Base Template
+<details><summary>Base Template</summary>
+ 
 ![](wireframes/base.jpg)
-#### Registered User View Template
+</details>
+<br>
+<details><summary>Registered User View Template</summary>
+ 
 ![](wireframes/reg_base.jpg)
-#### About Keto
+</details>
+<br>
+<details><summary>About Keto</summary>
+ 
 ![](wireframes/about.jpg)
-#### All Recipes
+</details>
+<br>
+<details><summary>All Recipes</summary>
+ 
 ![](wireframes/all_recipes.jpg)
-#### Recipe
+</details>
+<br>
+<details><summary>Recipe</summary>
+ 
 ![](wireframes/recipe.jpg)
-#### Register
+</details>
+<br>
+<details><summary>Register</summary>
+  
 ![](wireframes/register.jpg)
-#### Login
+
+</details>
+<br>
+<details><summary>Login</summary>
+ 
 ![](wireframes/login.jpg)
-#### Profile
+</details>
+<br>
+<details><summary>Profile</summary>
+ 
 ![](wireframes/profile.jpg)
-#### Add Recipe
+</details>
+<br>
+<details><summary>Add Recipe</summary>
+ 
 ![](wireframes/add_recipe.jpg)
-#### Members Zone
+</details>
+<br>
+<details><summary>Members Zone</summary>
+ 
 ![](wireframes/members.jpg)
+</details>
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Features
 
