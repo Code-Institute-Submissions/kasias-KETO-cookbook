@@ -4,17 +4,15 @@
     {% for user in users %}
 
 <div class="col s12 m4">
-        <div class="card large">
+        <div class="card large transparent">
             <div class="card-image">
-                <img class=" responsive-img" src="{{ user.username_image }}" alt="{{ username }}" />
-                <span class="card-title bg-text text-shadow wiseman"><strong>{{ user.username }}</strong><br>
-                <p class="small-span"><em>Been Wise since {{ user.on_keto_since }}</em></p>
-                </span>
-               
-                
+                <img class=" responsive-img" src="{{ user.username_image }}" alt="{{ username }}" /> 
+        
             </div>
             <div class="card-content minimalist">
-                <p>Personal keto achievement {{ user.username }} : {{ user.personal_success }}</p>
+                
+                <h4 class=" text-shadow wiseman">{{ user.username }}</h4><br>
+                <p class="small-span"><em>Been Wise since {{ user.on_keto_since }}</em></p>
                 <br />
             </div>
             <div class="card-action col s12 minimalist center-align" style="border-top-width: 0px;">
