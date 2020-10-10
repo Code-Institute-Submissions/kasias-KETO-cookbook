@@ -8,7 +8,7 @@ In the ever evolving world of different diets, the Food Pyramid as we know it no
 
 
 
-## :art: UX<hr>
+## UX<hr>
  
 The theme of this page is cooking, and there are various types of users this page may appeal to:
 
@@ -20,9 +20,9 @@ The theme of this page is cooking, and there are various types of users this pag
 
 *User type 3: Advertisers looking to tap into the wide group of users. As one of the website pages is shop, there is an opportunity of affiliation or paid sponsorship*
 
-### User Stories
+### :scroll: User Stories
 
-#### *Guest User*
+<ins> *Guest User* </ins>
 - As a guest user of this website I want to just browse - I expect this site to have some content available for me
 - As a guest user I want to know what the website is about when I am visiting first time
 - As a guest user I want to be able to access, search and share recipes
@@ -30,7 +30,7 @@ The theme of this page is cooking, and there are various types of users this pag
 - As a guest user I want to be able to check out Social Networks of this website
 - As a guest user I want to be able to visit some recommended by this website shops
 
-#### *Logged in User*
+<ins> *Logged in User* </ins>
 - As a registered user I want to be able to get a confirmation every time I log in
 - As a registered user I want to be able to add recipes
 - As a registered user I want to be able to search recipes
@@ -42,13 +42,18 @@ The theme of this page is cooking, and there are various types of users this pag
 - As a registered user I want to be able to edit my profile when any of my details change
 - As a registered user I want to be able to delete my profile when I am no longer interested in being part of this group
 
-#### *Advertiser*
+<ins> *Advertiser* </ins>
 - As an advertiser I appreciate that my products are displayed in a way that would invite a potential customer and make it easy to reach my products
 - As an advertiser I expect this page to be easy to navigate, as this will increase chances for the customer to get to my web-shop
 
+### Design
+#### :framed_picture: Framework
+####  :rainbow: Color Scheme
+#### :bowtie: Icons
+#### :abc: Typography
 
 
-## :hammer_and_wrench: Wireframes<hr>
+## Wireframes<hr>
 <details><summary>Base Template</summary>
  
 ![](wireframes/base.jpg)
@@ -101,7 +106,7 @@ The theme of this page is cooking, and there are various types of users this pag
 </details>
 
 
-## :clipboard: Features<hr>
+## Features<hr>
 
 ### :white_check_mark: Existing Features
 
@@ -152,27 +157,58 @@ Some future features may include:
 - Functionality to contact other members
 
 ## :floppy_disk: Technologies Used<hr>
-#### HTML
-#### CSS
-#### JQuery
-#### Python
-#### Jinjia Templates
-#### Github
-#### Git
-#### PyMongo
-#### Pip
-#### MongoDB
-#### Google Fonts
-#### Font Awesome
-#### HTML Formatter
-***Visual Media tools***
-#### Photoshop - to edit the cover photo of the responsive view
-#### Goodnotes - to create Wireframes
-#### Procreate - to create the main Salmon of Wisdom logo
 
+- Gitpod - Used as my primary IDE for coding
+- Github - Remote storing of my code online
+- Photoshop - to edit the cover photo of the responsive view
+- Goodnotes - to create Wireframes
+- Procreate - to create the main Salmon of Wisdom logo
+- Pixlr.com - used to edit the user images
 
+- HTML - base for markup text
+- CSS - base for cascading styles
+- jQuery - used as the JS functionality
+- Materialize - used as the overall design framework
+
+- Flask - used as a microframework
+- Jinja - for templating with Flask
+- Werkzeug - for password hashing, authentication and authorisation
+
+- Heroku - used for app hosting
+- Python - back end programming language
+- MongoDB Atlas - cloud database
+- PyMongo - Python API for MongoDB
 
 ## :toolbox: Testing<hr>
+
+<ins>Profile</ins><br>
+**Registering an Account**<br>
+**Editing an Account**<br>
+**Deleting an Account**<br>
+
+**Registering**<br>
+**Logging in**<br>
+
+<ins>Recipe</ins><br>
+**Creating a Recipe**<br>
+**Editing a Recipe**<br>
+**Deleting a Recipe**<br>
+
+<ins>Defensive Design</ins><br>
+**Wrong username entered when logging in**<br>
+**Wrong password entered when logging in**<br>
+**Duplicate username registration attempt**<br>
+
+<ins>Testing if a random user with correct link can access any of the pages visible to registered user only</ins><br>
+**As non-logged on user attempt to access "/add_category"** Login<br>
+**As non-logged on user attempt to access "/add_recipe"**//NEEDS TO BE PROTECTED!!<br>
+**As non-logged on user attempt to access "/get_categories"** Login<br>
+**As non-logged on user attempt to access "/edit_category"** Login<br>
+**As non-logged on user attempt to access "/edit_profile/username"** Register<br>
+**As non-logged on user attempt to access "/edit_recipe"** //NEEDS TO BE PROTECTED!!<br>
+**As non-logged on user attempt to access "/profile"** Login<br>
+**As non-logged on user attempt to access "/wisemen"** Login<br>
+
 
 ### *Guest User*
 #### As a guest user of this website I want to just browse - I expect this site to have some content available for me
