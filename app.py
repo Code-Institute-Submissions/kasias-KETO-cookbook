@@ -51,6 +51,9 @@ def register():
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
             "on_keto_since": request.form.get("on_keto_since"),
+            "personal_success": request.form.get("personal_success"),
+            "username_image": request.form.get("username_image"),
+            "about": request.form.get("about"),
         }
         mongo.db.users.insert_one(register)
 
@@ -105,6 +108,7 @@ def profile(username):
 # edit profile
 @app.route("/edit_profile/<username>", methods=["GET", "POST"])
 def edit_profile(username):
+    user = mongo.db.users.find_one({"username": username.lower()})
     if request.method == "POST":
         submit = {
             "on_keto_since": request.form.get("on_keto_since"),
@@ -115,7 +119,6 @@ def edit_profile(username):
         mongo.db.users.update({"username": username.lower()}, submit)
         flash("Profile updated")
 
-    user = mongo.db.users.find_one({"username": username.lower()})
     return render_template("edit_profile.html", user=user)
 
 

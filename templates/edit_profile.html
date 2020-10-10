@@ -1,49 +1,15 @@
 {% extends "base.html" %} {% block content %}
 
-<h3 class="center-align text-shadow">Register</h3>
+<h3 class="center-align text-shadow">Edit Your Profile, {{ user.username }}</h3>
 <div class="row">
   <form
     class="col s12 m8 offset-m2"
     method="POST"
-    action="{{ url_for('register') }}"
+    action="{{ url_for('edit_profile', username=user.username|lower) }}"
   >
     <div class="card-panel transparent">
-      <!-- username -->
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="fas fa-user prefix"></i>
-          <input
-            id="username"
-            placeholder="5-15 characters"
-            name="username"
-            type="text"
-            minlength="5"
-            maxlength="15"
-            pattern="^[a-zA-Z0-9]{5,15}$"
-            class="validate"
-            required
-          />
-          <label for="username">Username</label>
-        </div>
-      </div>
-      <!-- password -->
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="fas fa-fingerprint prefix"></i>
-          <input
-            id="password"
-            placeholder="5-15 characters"
-            name="password"
-            type="password"
-            minlength="5"
-            maxlength="15"
-            pattern="^[a-zA-Z0-9]{5,15}$"
-            class="validate"
-            required
-          />
-          <label for="password">Password</label>
-        </div>
-      </div>
+
+
 
       <div class="row">
         <div class="input-field col s12">
@@ -115,19 +81,13 @@
       <!-- register -->
       <div class="row">
         <button type="submit" class="col s12 btn-large neutral text-shadow">
-          Register <i class="fas fa-sign-in-alt"></i>
+          Save Changes <i class="fas fa-save"></i>
         </button>
       </div>
     </div>
   </form>
 </div>
 
-<div class="row">
-  <div class="col s12">
-    <p class="center-align">
-      Already registered? <a href="{{ url_for('login') }}">Login Here</a>
-    </p>
-  </div>
-</div>
+
 
 {% endblock %}
