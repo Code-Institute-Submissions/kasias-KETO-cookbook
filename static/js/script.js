@@ -5,7 +5,7 @@ $(document).ready(function(){
     $('.modal').modal();
     $('.collapsible').collapsible();
     $('.datepicker').datepicker({
-        format: "dd mmmm, yyyy",
+        format: "dd/mm/yy",
         yearRange: 3,
         showClearBtn: true,
         i18n: {

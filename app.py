@@ -98,7 +98,7 @@ def login():
 def profile(username):
     # grab the session user's username from database
     user = mongo.db.users.find_one({"username": username.lower()})
-    milestones = mongo.db.milestones.find({"username": username.lower()})
+    milestones = mongo.db.milestones.find({"created_by": username.lower()})
     recipes = list(mongo.db.recipes.find({"username": username.lower()}))
 
     if "user" in session:
@@ -138,13 +138,25 @@ def delete_profile(username):
 # milestones
 @app.route("/milestones")
 def milestones():
-    milestones = mongo.db.milestones.find()
+    milestones = list(mongo.db.milestones.find())
     return render_template("milestones.html", milestones=milestones)
 
 
 # add milestone
-@app.route("/add_milestone")
+@app.route("/add_milestone", methods=["GET", "POST"])
 def add_milestone():
+
+    if request.method == "POST":
+        milestone = {
+            "milestone_name": request.form.get("milestone_name"),
+            "milestone_date": request.form.get("milestone_date"),
+            "milestone_description": request.form.get("milestone_description"),
+            "created_by": session["user"]
+        }
+        mongo.db.milestones.insert_one(milestone)
+        flash("Milestone Successfully added")
+        return redirect(url_for("profile", username=session["user"]))
+
     return render_template("add_milestone.html")
 
 

@@ -29,7 +29,6 @@
 </div>
 
 <h5 class="center-align text-shadow">My Milestones</h5>
-<a href="{{ url_for('add_milestone') }}" class="waves-effect waves-light btn-large neutral"><i class="fas fa-award"></i> Add new</a>
 
 <ul class="collapsible">
     {% for milestone in milestones %}
@@ -42,6 +41,10 @@
 
     {% endfor %}
 </ul>
+
+<div class="col s12 center-align">
+<a href="{{ url_for('add_milestone') }}" class="waves-effect waves-light btn-large neutral "><i class="fas fa-award"></i> Add new</a>
+</div>
 
 
 {% endblock %}
