@@ -279,11 +279,21 @@ link for testing: ***http://keto-cookbook.herokuapp.com/delete_category/5f6a00ea
 - renders About page if user in session but user is not "Administrator"
 - renders Login page if user is not in session<br><br>
 
-**As non-logged on user attempt to access "/edit_profile/username"** Register<br>
-**As non-logged on user attempt to access "/profile"** Login<br>
+**As non-logged on user attempt to access "/edit_profile/username"** <br>
+- renders About page if user in session but user is not "Administrator"
+- renders Login page if user is not in session<br><br>
+**As non-logged on user attempt to access "/profile/username"** Login<br>
+- renders About page if user in session but user is not "Administrator"
+- renders Login page if user is not in session<br><br>
 **As non-logged on user attempt to access "/wisemen"** Login<br>
+- renders About page if user in session but user is not "Administrator"
+- renders Login page if user is not in session<br><br>
 **As non-logged on user attempt to access "/add_recipe"**//NEEDS TO BE PROTECTED!!<br>
+- renders About page if user in session but user is not "Administrator"
+- renders Login page if user is not in session<br><br>
 **As non-logged on user attempt to access "/edit_recipe"** //NEEDS TO BE PROTECTED!!<br>
+- renders About page if user in session but user is not "Administrator"
+- renders Login page if user is not in session<br><br>
 
 
 ### *Guest User*
@@ -344,38 +354,38 @@ link for testing: ***http://keto-cookbook.herokuapp.com/delete_category/5f6a00ea
 - The following are the collections in that Database:
 ***categories***
 ```
-_id:ObjectId
-category_name:String
+_id:<ObjectId>
+category_name:<string>
 ```
 ***milestones***
 ```
-_id:ObjectId
-milestone_name:String
-milestone_date:String
-milestone_description:String
-created_by:String
+_id:<ObjectId>
+milestone_name:<string>
+milestone_date:<string>
+milestone_description:<string>
+created_by:<string>
 ```
 ***recipes***
 ```
-_id:ObjectId
-category_name:String
-recipe_name:String
-recipe_image:String
-ingredients_list:String
-method:String
-preparation_time:String
-difficulty:String
-created_by:String
-keywords:String
+_id:<ObjectId>
+category_name:<string>
+recipe_name:<string>
+recipe_image:<string>
+ingredients_list:<string>
+method:<string>
+preparation_time:<string>
+difficulty:<string>
+created_by:<string>
+keywords:<string>
 ```
 ***users***
 ```
-username:String
-password:String
-on_keto_since:String
-personal_success:String
-username_image:String
-about:String
+username:<string>
+password:<string>
+on_keto_since:<string>
+personal_success:<string>
+username_image:<string>
+about:<string>
 ```
 - You should now be able to run this application locally by typing `flask run`
 - The website will be available at `http://127.0.0.1:5000`
