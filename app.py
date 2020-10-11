@@ -268,9 +268,14 @@ def get_categories():
     categories = list(mongo.db.categories.find())
 
     if "user" in session:
-        return render_template("categories.html", categories=categories)
+        user = session["user"].lower()
+        if user == "administrator":
+            return render_template("categories.html", categories=categories)
+        else:
+            return redirect(url_for("about"))
 
-    return redirect(url_for("about"))
+    else:
+        return redirect(url_for("login"))
 
 
 # add_category
