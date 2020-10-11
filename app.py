@@ -114,6 +114,8 @@ def edit_profile(username):
     user = mongo.db.users.find_one({"username": username.lower()})
     if request.method == "POST":
         submit = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password")),
             "on_keto_since": request.form.get("on_keto_since"),
             "personal_success": request.form.get("personal_success"),
             "username_image": request.form.get("username_image"),
@@ -260,6 +262,7 @@ def delete_recipe(recipe_id):
     return redirect(url_for("get_recipes"))
 
 
+# get_category
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.categories.find())
@@ -270,6 +273,7 @@ def get_categories():
     return redirect(url_for("about"))
 
 
+# add_category
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
     if request.method == "POST":

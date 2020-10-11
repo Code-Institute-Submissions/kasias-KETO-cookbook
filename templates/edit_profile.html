@@ -2,92 +2,61 @@
 
 <h3 class="center-align text-shadow">Edit Your Profile, {{ user.username }}</h3>
 <div class="row">
-  <form
-    class="col s12 m8 offset-m2"
-    method="POST"
-    action="{{ url_for('edit_profile', username=user.username|lower) }}"
-  >
-    <div class="card-panel transparent">
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_profile', username=user.username|lower) }}">
+        <div class="card-panel transparent">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-user prefix"></i>
+                    <input value="{{user.username}}" id="username" placeholder="5-15 characters" name="username" type="text" minlength="5" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required />
+                    <label for="username">Username</label>
+                </div>
+            </div>
+            <!-- password -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-fingerprint prefix"></i>
+                    <input value="{{user.password}}" id="password" placeholder="5-15 characters" name="password" type="password" minlength="5" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required />
+                    <label for="password">Password</label>
+                </div>
+            </div>
 
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-calendar-alt prefix"></i>
+                    <input value="{{user.on_keto_since}}" id="on_keto_since" placeholder="eg. June 2020" name="on_keto_since" type="text" minlength="5" class="validate" required />
+                    <label for="on_keto_since">On Keto Since</label>
+                </div>
+            </div>
 
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="far fa-grin-stars prefix"></i>
+                    <input value="{{user.personal_success}}" id="personal_success" placeholder="eg. keto achievement" name="personal_success" type="text" minlength="5" class="validate" required />
+                    <label for="personal_success">Personal Success</label>
+                </div>
+            </div>
 
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="fas fa-calendar-alt prefix"></i>
-          <input
-            id="on_keto_since"
-            placeholder="eg. June 2020"
-            name="on_keto_since"
-            type="text"
-            minlength="5"
-            maxlength="15"
-            class="validate"
-            required
-          />
-          <label for="on_keto_since">On Keto Since</label>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-portrait prefix"></i>
+                    <input value="{{user.username_image}}" id="username_image" placeholder="Paste url here" name="username_image" type="text" minlength="5" class="validate" required />
+                    <label for="username_image">Profile Photo</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-id-card prefix"></i>
+                    <input value="{{user.about}}" id="about" placeholder="Paste url here" name="about" type="text" minlength="5" class="validate" required />
+                    <label for="about">About You</label>
+                </div>
+            </div>
+            <!-- register -->
+            <div class="row">
+                <button type="submit" class="col s12 btn-large neutral text-shadow">Save Changes <i class="fas fa-save"></i></button>
+            </div>
         </div>
-      </div>
-
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="far fa-grin-stars prefix"></i>
-          <input
-            id="personal_success"
-            placeholder="eg. keto achievement"
-            name="personal_success"
-            type="text"
-            minlength="5"
-            maxlength="30"
-            class="validate"
-            required
-          />
-          <label for="personal_success">Personal Success</label>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="fas fa-portrait prefix"></i>
-          <input
-            id="username_image"
-            placeholder="Paste url here"
-            name="username_image"
-            type="text"
-            minlength="5"
-            maxlength="200"
-            class="validate"
-            required
-          />
-          <label for="username_image">Profile Photo</label>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="fas fa-image prefix"></i>
-          <input
-            id="about"
-            placeholder="Paste url here"
-            name="about"
-            type="text"
-            minlength="5"
-            maxlength="200"
-            class="validate"
-            required
-          />
-          <label for="about">About You</label>
-        </div>
-      </div>
-      <!-- register -->
-      <div class="row">
-        <button type="submit" class="col s12 btn-large neutral text-shadow">
-          Save Changes <i class="fas fa-save"></i>
-        </button>
-      </div>
-    </div>
-  </form>
+    </form>
 </div>
-
-
 
 {% endblock %}
