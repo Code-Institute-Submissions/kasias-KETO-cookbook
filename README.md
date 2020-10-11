@@ -254,11 +254,11 @@ Some future features may include:
 
 :warning:<ins>User Access</ins><hr>
 **Wrong username entered when logging in**<br>
-- Returns flash "Incorrect Username and/or Password" to ensure that the non-registered user does not guess one or the other if the incorrect entry is provided.
+- Returns flash "Incorrect Username and/or Password" to ensure that the non-registered user does not guess one or the other if the incorrect entry is provided.<br>
 **Wrong password entered when logging in**<br>
-- Returns flash "Incorrect Username and/or Password" to ensure that the non-registered user does not guess one or the other if the incorrect entry is provided.
+- Returns flash "Incorrect Username and/or Password" to ensure that the non-registered user does not guess one or the other if the incorrect entry is provided.<br>
 **Duplicate username registration attempt**<br>
-- Returns flash "Username already exists"
+- Returns flash "Username already exists"<br>
 
 
 :warning:<ins>Testing if a random user with correct link can access any of the pages visible to registered user only</ins><hr>
