@@ -49,7 +49,7 @@ The theme of this page is cooking, and there are various types of users this pag
 ####  :rainbow: Color Scheme
 I opted for a very calm, minimalistic color scheme. Various shades of purple and gray, to ensure the page is not too busy
 #### :bowtie: Icons
-On this project I have used Font Awesome icons. As well as that, I have created icon of my own to 
+On this project I have used Font Awesome icons. As well as that, I have created icon of my own to illustrate the Instructions (Method) of cooking on both, Add Recipe and Edit Recipe form.
 #### :abc: Typography
 The logo was created with a caligraphy font and some addition of Montserrat. The latter is used througout the website for the headings and other main titles. The text is styled with Poppins font.
 
@@ -218,38 +218,70 @@ Some future features may include:
 
 <ins>Recipe</ins><br>
 **Creating a Recipe**<br>
+[**C** in CRUD (Creating)]
 - Click on the Add Recipe option in the navbar
 - Does the Add Recipe form render?
 - Try submitting empty form, does the system come back with an error?
 - Fill out all of the required details, click Add Recipe
 - Does it render the All Recipes page?
 - Does the flash message confirm adding of the recipe?
+
+**Viewing a Recipe**<br>
+[**R** in CRUD (Reading/Viewing)]
 - Scroll down to where that recipe is and click on Cook
 - Does the Recipe page render correctly?
 - Does the image uploaded as url render correctly?
 - Click on the Share button underneath the Created By, does the modal with social networks pop up?
 - Cancel out of the modal, does it work?
+
 **Editing a Recipe**<br>
+[**U** in CRUD (Updating)]
 - Search for recipe created by Session User
 - Click on the Edit button
-- Does the Edit Recipe form 
+- Does the Edit Recipe form renders correctly?
+- Change anything about the recipe and click on save
+- Does the information entered updates correctly on the Recipe card?
 
 **Deleting a Recipe**<br>
+[**D** in CRUD (Deleting)]
+- Scroll down to the recipe created by the Session User
+- Click on the Delete button
+- Does the modal pop up to inform of the finality of this action?
+- Click on Cancel, does the modal cancel the action?
+- Go back to modal and click on delete, does it delete the recipe?
 
-<ins>Defensive Design</ins><br>
+:warning:<ins>Defensive Design</ins><br>:warning:
 **Wrong username entered when logging in**<br>
+- Returns flash "Incorrect Username and/or Password" to ensure that the non-registered user does not guess one or the other if the incorrect entry is provided.
 **Wrong password entered when logging in**<br>
+- Returns flash "Incorrect Username and/or Password" to ensure that the non-registered user does not guess one or the other if the incorrect entry is provided.
 **Duplicate username registration attempt**<br>
+- Returns flash "Username already exists"
 
-<ins>Testing if a random user with correct link can access any of the pages visible to registered user only</ins><br>
-**As non-logged on user attempt to access "/add_category"** Login<br>
-**As non-logged on user attempt to access "/add_recipe"**//NEEDS TO BE PROTECTED!!<br>
-**As non-logged on user attempt to access "/get_categories"** Login<br>
-**As non-logged on user attempt to access "/edit_category"** Login<br>
+
+:warning:<ins>Testing if a random user with correct link can access any of the pages visible to registered user only</ins><br>:warning:
+**Attempt to access "/add_category" by non Administrator** <br> <br>
+http://keto-cookbook.herokuapp.com/add_category
+- renders About page if user in session but user is not "Administrator"
+- renders Login page if user is not in session
+**Attempt to access "/get_categories" by non Administrator** <br> <br>
+http://keto-cookbook.herokuapp.com/get_categories 
+- renders About page if user in session but user is not "Administrator"
+- renders Login page if user is not in session
+**Attempt to access "/edit_category/category_id" by non Administrator** <br>
+http://keto-cookbook.herokuapp.com/edit_category/5f6a00eadda48a7a60562ada (category_id as example)
+- renders About page if user in session but user is not "Administrator"
+- renders Login page if user is not in session
+**Attempt to access "/delete_category/category_id" by non Administrator** <br>
+http://keto-cookbook.herokuapp.com/delete_category/5f6a00eadda48a7a60562ada (category_id as example)
+- renders About page if user in session but user is not "Administrator"
+- renders Login page if user is not in session
+
 **As non-logged on user attempt to access "/edit_profile/username"** Register<br>
-**As non-logged on user attempt to access "/edit_recipe"** //NEEDS TO BE PROTECTED!!<br>
 **As non-logged on user attempt to access "/profile"** Login<br>
 **As non-logged on user attempt to access "/wisemen"** Login<br>
+**As non-logged on user attempt to access "/add_recipe"**//NEEDS TO BE PROTECTED!!<br>
+**As non-logged on user attempt to access "/edit_recipe"** //NEEDS TO BE PROTECTED!!<br>
 
 
 ### *Guest User*
