@@ -18,8 +18,6 @@ The theme of this page is cooking, and there are various types of users this pag
 *User type 2: Those already practicing the KETO lifestyle and diet, but looking for inspiration for daily menus*
 
 
-*User type 3: Advertisers looking to tap into the wide group of users. As one of the website pages is shop, there is an opportunity of affiliation or paid sponsorship*
-
 ### :scroll: User Stories
 
 <ins> *Guest User* </ins>
@@ -39,19 +37,21 @@ The theme of this page is cooking, and there are various types of users this pag
 - As a registered user I want to be able to upload my profile picture
 - As a registered user I want to be able to be able to share my success within my profile
 - As a registered user I want to be able to see other users profiles and check out their achievements
-- As a registered user I want to be able to edit my profile when any of my details change
+- As a registered user I want to be able to add my own milestones to motivate myself and others
 - As a registered user I want to be able to delete my profile when I am no longer interested in being part of this group
 
-<ins> *Advertiser* </ins>
-- As an advertiser I appreciate that my products are displayed in a way that would invite a potential customer and make it easy to reach my products
-- As an advertiser I expect this page to be easy to navigate, as this will increase chances for the customer to get to my web-shop
 
 ### Design
 #### :framed_picture: Framework
+- Materialize
+- jQuery
+- Flask
 ####  :rainbow: Color Scheme
+I opted for a very calm, minimalistic color scheme. Various shades of purple and gray, to ensure the page is not too busy
 #### :bowtie: Icons
+On this project I have used Font Awesome icons. As well as that, I have created icon of my own to 
 #### :abc: Typography
-
+The logo was created with a caligraphy font and some addition of Montserrat. The latter is used througout the website for the headings and other main titles. The text is styled with Poppins font.
 
 ## Wireframes<hr>
 <details><summary>Base Template</summary>
@@ -124,20 +124,20 @@ On the Recipe card there is an option to choose some networks that this recipe c
 The option to Login is visible to all users, however, only those registered can access it.
 ##### Register
 The option of registering is visible to all users, however, only usernames that do not yet exist in the database can be registered via this route.
-##### Shop
-TBC
 
 <ins>Accessible only by registered user</ins>
 
 ##### Profile
 This is the page that will welcome a registered user who has just logged onto the site. The layout is very simplistic, a profile photograph with username and the achievement underneath it. This is followed by About section, which allows this registered user tell few words about themselves. 
+#### Add Milestone
+A diary-like feature, which lets the user to record their progress directly from their profile. These milestones are to motivate them and others that might visit their profile. The milestones are public and visible to all users.
 ##### Edit Profile
 While on the main Wise Zone page, the session user can access profiles of others, plus additional options for their own profile. One of those options is to edit the profile. This gives the session user the opportunity to amend anything in their profile. Since this is a dieting page, the objectives or achievements are subject to amendments.
 ##### Delete Profile
 The other option accessible to the session user is the deletion of the profile. This would be possible once the user decides themselves that they no longer wish to be part of this website. Upon clicking the delete button a modal pops up to inform of the final nature of this action. Once the session user clicks "OK", the profile is removed from database, session cookie removed from the browser and the user is redirected to the Register page.
 ##### Wise Zone
 This page contains a selection of registered users. Anyone can check out their profiles and see what objectives others are headed towards or achievements reached. From here any user can check out others profiles, the session user can access more options related to their own profile, as addressed in detail above.
-##### Add Recipe and Edit Recipe
+##### Add Recipe and Edit Recipe (needs to be implemented!)
 These are available to the users, for they might want to either add their own favourite creations or note down recipes found in other sources. 
 ##### Delete Recipe
 The third button on the recipe cover card is the Delete button. While the creator of that recipe can freely delete it from the database, the modal will pop up first to ensure the user knows this is final and cannot be reversed.
@@ -152,7 +152,7 @@ At this time there are three main Categories, however, the page assumes that the
 
 ### :negative_squared_cross_mark: Features Left to Implement
 Some future features may include:
-- Diary of daily/weekly achievements for the registered users
+- Setting the Diary entries to Private
 - Functionality to share videos of own cooking tutorials
 - Functionality to contact other members
 
@@ -182,16 +182,58 @@ Some future features may include:
 ## :toolbox: Testing<hr>
 
 <ins>Profile</ins><br>
-**Registering an Account**<br>
-**Editing an Account**<br>
-**Deleting an Account**<br>
 
-**Registering**<br>
 **Logging in**<br>
+- if Registered, click on the Login button on the navbar
+- Is the Login form rendered?
+- Submit an empty form, does the system come back with an error to fill in the fields?
+- Fill in less than five characters and submit, does the system come back with a message to match the requested format?
+- Fill in the username and password and submit, does it render the correct profile?
+- Are all details provided at Registration displayed?
+- Does Milestone dropdown render correctly?
+
+**Registering an Account**<br>
+- Click on Register link in the navbar
+- Does it render the Registration form?
+- Fill out all details
+- Click on the Register button
+- Does it bring to the Profile page?
+- Does the Flash message confirm registration succeeded?
+- Are all details entered onto the form render correctly?
+
+
+**Editing an Account**<br>
+- Feature still to be implemented
+
+
+
+**Deleting an Account**<br>
+- Go to the Wise Zone section, scroll down to the Session User
+- Click on the Delete button
+- Does the modal pop up to inform of finality of this action?
+- Does the flash message pop up to confirm deletion?
+- Is the template rendered that for Registering form
+- Has the profile been deleted?
+
 
 <ins>Recipe</ins><br>
 **Creating a Recipe**<br>
+- Click on the Add Recipe option in the navbar
+- Does the Add Recipe form render?
+- Try submitting empty form, does the system come back with an error?
+- Fill out all of the required details, click Add Recipe
+- Does it render the All Recipes page?
+- Does the flash message confirm adding of the recipe?
+- Scroll down to where that recipe is and click on Cook
+- Does the Recipe page render correctly?
+- Does the image uploaded as url render correctly?
+- Click on the Share button underneath the Created By, does the modal with social networks pop up?
+- Cancel out of the modal, does it work?
 **Editing a Recipe**<br>
+- Search for recipe created by Session User
+- Click on the Edit button
+- Does the Edit Recipe form 
+
 **Deleting a Recipe**<br>
 
 <ins>Defensive Design</ins><br>
