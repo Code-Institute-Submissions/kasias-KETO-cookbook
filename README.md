@@ -260,22 +260,25 @@ Some future features may include:
 
 
 :warning:<ins>Testing if a random user with correct link can access any of the pages visible to registered user only</ins><hr>
-**Attempt to access "/add_category" by non Administrator**<br> 
-***http://keto-cookbook.herokuapp.com/add_category***<br><br>
+**Attempt to access "/add_category" by non Administrator** <br>
+link for testing: ***http://keto-cookbook.herokuapp.com/add_category***<br> 
 - renders About page if user in session but user is not "Administrator"
-- renders Login page if user is not in session
-**Attempt to access "/get_categories" by non Administrator**<br>
-***http://keto-cookbook.herokuapp.com/get_categories***<br><br>
+- renders Login page if user is not in session<br><br>
+
+**Attempt to access "/get_categories" by non Administrator** <br>
+link for testing: ***http://keto-cookbook.herokuapp.com/get_categories***<br>
 - renders About page if user in session but user is not "Administrator"
-- renders Login page if user is not in session
-**Attempt to access "/edit_category/category_id" by non Administrator**<br>
-***http://keto-cookbook.herokuapp.com/edit_category/5f6a00eadda48a7a60562ada (category_id as example)***<br><br>
+- renders Login page if user is not in session<br><br>
+
+**Attempt to access "/edit_category/category_id" by non Administrator** 
+link for testing: ***http://keto-cookbook.herokuapp.com/edit_category/5f6a00eadda48a7a60562ada (category_id as example)***<br>
 - renders About page if user in session but user is not "Administrator"
-- renders Login page if user is not in session
-**Attempt to access "/delete_category/category_id" by non Administrator**<br>
-***http://keto-cookbook.herokuapp.com/delete_category/5f6a00eadda48a7a60562ada (category_id as example)***<br><br>
+- renders Login page if user is not in session<br><br>
+
+**Attempt to access "/delete_category/category_id" by non Administrator** 
+link for testing: ***http://keto-cookbook.herokuapp.com/delete_category/5f6a00eadda48a7a60562ada (category_id as example)***<br>
 - renders About page if user in session but user is not "Administrator"
-- renders Login page if user is not in session
+- renders Login page if user is not in session<br><br>
 
 **As non-logged on user attempt to access "/edit_profile/username"** Register<br>
 **As non-logged on user attempt to access "/profile"** Login<br>
