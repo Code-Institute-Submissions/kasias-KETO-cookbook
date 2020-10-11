@@ -295,10 +295,10 @@ def edit_category(category_id):
         return redirect(url_for("get_categories"))
 
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
-    if "user" in session:
+    if "administrator" in session:
         return render_template("edit_category.html", category=category)
 
-    return redirect(url_for("login"))
+    return redirect(url_for("about"))
 
 
 @app.route("/delete_category/<category_id>")
