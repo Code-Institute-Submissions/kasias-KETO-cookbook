@@ -264,7 +264,7 @@ def delete_recipe(recipe_id):
 def get_categories():
     categories = list(mongo.db.categories.find())
 
-    if "administrator" in session:
+    if "user" in session:
         return render_template("categories.html", categories=categories)
 
     return redirect(url_for("about"))
@@ -278,7 +278,7 @@ def add_category():
         }
         mongo.db.categories.insert_one(category)
         flash("New Category Added")
-    if "administrator" in session:
+    if "user" in session:
         return render_template("add_category.html")
 
     return redirect(url_for("about"))
@@ -295,7 +295,7 @@ def edit_category(category_id):
         return redirect(url_for("get_categories"))
 
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
-    if "administrator" in session:
+    if "user" in session:
         return render_template("edit_category.html", category=category)
 
     return redirect(url_for("about"))
