@@ -252,13 +252,13 @@ Some future features may include:
 
 ## Defensive Design<hr>
 
-:warning:<ins>User Access</ins>
-**Wrong username entered when logging in**-returns flash "Incorrect Username and/or Password" to ensure that the non-registered user does not guess one or the other if the incorrect entry is provided.
-**Wrong password entered when logging in**-returns flash "Incorrect Username and/or Password" to ensure that the non-registered user does not guess one or the other if the incorrect entry is provided.
-**Duplicate username registration attempt**-returns flash "Username already exists"
+- **Wrong password entered when logging in** returns flash "Incorrect Username and/or Password" to ensure that the non-registered user does not guess one or the other if the incorrect entry is provided.<br>
+
+- **Duplicate username registration attempt** returns flash "Username already exists<br>
+
+- **Wrong username entered when logging in** returns flash "Incorrect Username and/or Password" to ensure that the non-registered user does not guess one or the other if the incorrect entry is provided.<br><br>
 
 
-:warning:<ins>Testing if a random user with correct link can access any of the pages visible to registered user only</ins>
 **Attempt to access "/add_category" by non Administrator** <br>
 link for testing: ***http://keto-cookbook.herokuapp.com/add_category***<br> 
 - renders About page if user in session but user is not "Administrator"
