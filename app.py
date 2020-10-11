@@ -157,7 +157,7 @@ def add_milestone():
         }
         mongo.db.milestones.insert_one(milestone)
         flash("Milestone Successfully added")
-        return redirect(url_for("profile",username=session["user"]))
+        return redirect(url_for("profile", username=session["user"]))
 
     return render_template("add_milestone.html")
 
@@ -283,9 +283,13 @@ def add_category():
         mongo.db.categories.insert_one(category)
         flash("New Category Added")
     if "user" in session:
-        return render_template("add_category.html")
-
-    return redirect(url_for("about"))
+        user = session["user"].lower()
+        if user == "administrator":
+            return render_template("add_category.html")
+        else:
+            return redirect(url_for("about"))
+    else:
+        return redirect(url_for("login"))
 
 
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
@@ -300,16 +304,28 @@ def edit_category(category_id):
 
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
     if "user" in session:
-        return render_template("edit_category.html", category=category)
-
-    return redirect(url_for("about"))
+        user = session["user"].lower()
+        if user == "administrator":
+            return render_template("edit_category.html", category=category)
+        else:
+            return redirect(url_for("about"))
+    else:
+        return redirect(url_for("login"))
 
 
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
-    mongo.db.categories.remove({"_id": ObjectId(category_id)})
-    flash("Category Successfully Deleted")
-    return redirect(url_for("get_categories"))
+
+    if "user" in session:
+        user = session["user"].lower()
+        if user == "administrator":
+            mongo.db.categories.remove({"_id": ObjectId(category_id)})
+            flash("Category Successfully Deleted")
+            return redirect(url_for("get_categories"))
+        else:
+            return redirect(url_for("about"))
+    else:
+        return redirect(url_for("login"))
 
 
 if __name__ == "__main__":
