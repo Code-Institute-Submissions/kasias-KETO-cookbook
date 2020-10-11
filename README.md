@@ -250,7 +250,7 @@ Some future features may include:
 - Click on Cancel, does the modal cancel the action?
 - Go back to modal and click on delete, does it delete the recipe?
 
-:warning:<ins>Defensive Design</ins><br>:warning:
+:warning:<ins>Defensive Design</ins><hr>
 **Wrong username entered when logging in**<br>
 - Returns flash "Incorrect Username and/or Password" to ensure that the non-registered user does not guess one or the other if the incorrect entry is provided.
 **Wrong password entered when logging in**<br>
@@ -259,21 +259,21 @@ Some future features may include:
 - Returns flash "Username already exists"
 
 
-:warning:<ins>Testing if a random user with correct link can access any of the pages visible to registered user only</ins><br>:warning:
-**Attempt to access "/add_category" by non Administrator** <br> <br>
-http://keto-cookbook.herokuapp.com/add_category
+:warning:<ins>Testing if a random user with correct link can access any of the pages visible to registered user only</ins><hr>
+**Attempt to access "/add_category" by non Administrator**<br> 
+***http://keto-cookbook.herokuapp.com/add_category***<br><br>
 - renders About page if user in session but user is not "Administrator"
 - renders Login page if user is not in session
-**Attempt to access "/get_categories" by non Administrator** <br> <br>
-http://keto-cookbook.herokuapp.com/get_categories 
+**Attempt to access "/get_categories" by non Administrator**<br>
+***http://keto-cookbook.herokuapp.com/get_categories***<br><br>
 - renders About page if user in session but user is not "Administrator"
 - renders Login page if user is not in session
-**Attempt to access "/edit_category/category_id" by non Administrator** <br>
-http://keto-cookbook.herokuapp.com/edit_category/5f6a00eadda48a7a60562ada (category_id as example)
+**Attempt to access "/edit_category/category_id" by non Administrator**<br>
+***http://keto-cookbook.herokuapp.com/edit_category/5f6a00eadda48a7a60562ada (category_id as example)***<br><br>
 - renders About page if user in session but user is not "Administrator"
 - renders Login page if user is not in session
-**Attempt to access "/delete_category/category_id" by non Administrator** <br>
-http://keto-cookbook.herokuapp.com/delete_category/5f6a00eadda48a7a60562ada (category_id as example)
+**Attempt to access "/delete_category/category_id" by non Administrator**<br>
+***http://keto-cookbook.herokuapp.com/delete_category/5f6a00eadda48a7a60562ada (category_id as example)***<br><br>
 - renders About page if user in session but user is not "Administrator"
 - renders Login page if user is not in session
 
