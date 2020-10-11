@@ -25,11 +25,18 @@
                 <label for="recipe_name"><i class="fas fa-utensils"></i> Recipe Name</label>
             </div>
         </div>
-        <!-- Ingredience List -->
+        <!-- Ingredients List -->
         <div class="row">
             <div class="input-field col s12">
-                <input name="ingredience_list" id="ingredience_list" minlength="5" maxlength="100" type="text" value="{{ recipe.ingredience_list }}" class="validate" required />
-                <label for="ingredience_list"><i class="fas fa-shopping-cart"></i> Ingredience List</label>
+                <input name="ingredients_list" id="ingredients_list" minlength="5" maxlength="100" type="text" value="{{ recipe.ingredients_list }}" class="validate" required />
+                <label for="ingredients_list"><i class="fas fa-shopping-cart"></i> Ingredients List</label>
+            </div>
+        </div>
+         <!-- Keywords -->
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="keywords" id="keywords" minlength="5" maxlength="100" type="text" value="{{ recipe.keywords }}" class="validate" required />
+                <label for="keywords"><i class="fas fa-shopping-cart"></i> Keywords</label>
             </div>
         </div>
         <!-- Method -->

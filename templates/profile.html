@@ -32,19 +32,27 @@
   </div>
 </div>
 
-<div class="profile-border">
-  <h5 class="center-align text-shadow">My Milestones</h5>
+<h5 class="center-align text-shadow">My Milestones</h5>
+<a class="waves-effect waves-light btn-large neutral"><i class="fas fa-award"></i> Add new</a>
 
-  <div class="row">
-    <div class="col s12 center-align">
-      <a
-        href="{{url_for('add_milestone')}}"
-        style="width: 150px;"
-        class="btn-flat neutral blue"
-        >Go!</a
-      >
-    </div>
-  </div>
-</div>
+<ul class="collapsible">
+    {% for milestone in milestones %}
+    <li>
+      <div class="collapsible-header">
+      <strong> {{ milestone.milestone_date }}</strong>: {{ milestone.milestone_name }}
+          
+      </div>
+      <div class="collapsible-body">
+      <em> {{ milestone.milestone_description }} </em>
+      
+      </div>
+    </li>
+    
+    {% endfor %}
+  </ul>
+
+
+
+  
 
 {% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block content %}
+
+ <h5 class="center-align text-shadow">My Milestones</h5>
+
+<ul class="collapsible">
+    {% for milestone in milestones %}
+    <li>
+      <div class="collapsible-header">
+      <strong> {{ milestone.milestone_date }}</strong>: {{ milestone.milestone_name }}
+          
+      </div>
+      <div class="collapsible-body">
+      <em> {{ milestone.milestone_description }} </em>
+      
+      </div>
+    </li>
+    
+    {% endfor %}
+  </ul>
+
+            
+
+        
+{% endblock %}

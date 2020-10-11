@@ -98,9 +98,12 @@ def login():
 def profile(username):
     # grab the session user's username from database
     user = mongo.db.users.find_one({"username": username.lower()})
+    milestones = mongo.db.milestones.find()
+    recipes = list(mongo.db.recipes.find())
 
     if "user" in session:
-        return render_template("profile.html", user=user)
+        return render_template(
+            "profile.html", user=user, milestones=milestones, recipes=recipes)
 
     return redirect(url_for("login"))
 
@@ -132,11 +135,17 @@ def delete_profile(username):
     return redirect(url_for("register"))
 
 
+# milestones
+@app.route("/milestones")
+def milestones():
+    milestones = mongo.db.milestones.find()
+    return render_template("milestones.html", milestones=milestones)
+
+
 # add milestone
 @app.route("/add_milestone")
 def add_milestone():
-    milestones = mongo.db.milestones.find()
-    return render_template("add_milestone.html", milestones=milestones)
+    return render_template("add_milestone.html")
 
 
 # all users
@@ -196,6 +205,7 @@ def add_recipe():
             "method": request.form.get("method"),
             "preparation_time": request.form.get("preparation_time"),
             "difficulty": request.form.get("difficulty"),
+            "keywords": request.form.get("keywords"),
             "created_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
@@ -218,6 +228,7 @@ def edit_recipe(recipe_id):
             "method": request.form.get("method"),
             "preparation_time": request.form.get("preparation_time"),
             "difficulty": request.form.get("difficulty"),
+            "keywords": request.form.get("keywords"),
             "created_by": session["user"]
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
