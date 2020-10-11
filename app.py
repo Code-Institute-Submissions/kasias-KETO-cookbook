@@ -155,7 +155,7 @@ def add_milestone():
         }
         mongo.db.milestones.insert_one(milestone)
         flash("Milestone Successfully added")
-        return redirect(url_for("profile", username=session["user"]))
+        return redirect(url_for("profile",username=session["user"]))
 
     return render_template("add_milestone.html")
 
@@ -264,10 +264,10 @@ def delete_recipe(recipe_id):
 def get_categories():
     categories = list(mongo.db.categories.find())
 
-    if "user" in session:
+    if "administrator" in session:
         return render_template("categories.html", categories=categories)
 
-    return redirect(url_for("login"))
+    return redirect(url_for("about"))
 
 
 @app.route("/add_category", methods=["GET", "POST"])
