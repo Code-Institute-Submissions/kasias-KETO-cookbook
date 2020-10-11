@@ -278,10 +278,10 @@ def add_category():
         }
         mongo.db.categories.insert_one(category)
         flash("New Category Added")
-    if "user" in session:
+    if "administrator" in session:
         return render_template("add_category.html")
 
-    return redirect(url_for("login"))
+    return redirect(url_for("about"))
 
 
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
