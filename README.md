@@ -250,7 +250,9 @@ Some future features may include:
 - Click on Cancel, does the modal cancel the action?
 - Go back to modal and click on delete, does it delete the recipe?
 
-:warning:<ins>Defensive Design</ins><hr>
+## Defensive Design
+
+:warning:<ins>User Access</ins><hr>
 **Wrong username entered when logging in**<br>
 - Returns flash "Incorrect Username and/or Password" to ensure that the non-registered user does not guess one or the other if the incorrect entry is provided.
 **Wrong password entered when logging in**<br>
@@ -289,23 +291,35 @@ link for testing: ***http://keto-cookbook.herokuapp.com/delete_category/5f6a00ea
 
 ### *Guest User*
 #### As a guest user of this website I want to just browse - I expect this site to have some content available for me
+- User that is not logged on nor registered, upon accessing the page for the first or each consecutive time, will first and foremost see the About site. On that site user will  access the opportunity of gaining more information about what the page is about and what the Keto lifestyle is.
 #### As a guest user I want to know what the website is about when I am visiting first time
+- The About page is what user will see first and therefore they will know whether this site is of their interest or not
 #### As a guest user I want to be able to access, search and share recipes
+- The All Recipes page is visible to all users, be it registered or not. Once on that page, they can take advantage of viewing and sharing the recipes.
 #### As a guest user I want to be able to register and log in easily
+- Once user decides they want a full access to the website, they can easily navigate to the Register button from the Navbar
 #### As a guest user I want to be able to check out Social Networks of this website
-#### As a guest user I want to be able to visit some recommended by this website shops
+- The footer contains all links to the Social Media
 
 ### *Logged in User*
 #### As a registered user I want to be able to get a confirmation every time I log in
+- A flash message always pops up to confirm the user has successfully logged in
 #### As a registered user I want to be able to add recipes
+- The option of Adding a new Recipe is easily accessible from the Navbar
 #### As a registered user I want to be able to search recipes
+- The searchbar is available on top of the All Recipes page, for the ease of search, keywords are included within each recipe, to ensure the user gets as many results to their search as possible
 #### As a registered user I want to be able to delete recipes I have added
+- The button enabling session user the deleting of their recipe is only visible to the user that created the recipe. This gives user the freedom of removing recipes they no longer wish to have publicised
 #### As a registered user I want to be able to store my information in a dedicated profile
+- Once User registers/logs in, they are being redirected to their own Profile page, which can be customised
 #### As a registered user I want to be able to upload my profile picture
+- One of methods of customisation is that the user can have their profile photo displayed on their profile as well as on the Members Zone page. 
 #### As a registered user I want to be able to be able to share my success within my profile
+- A feature of Adding Milestones enables user to share their little and big successes. These are public, so can serve as a motivating factor to other users, that visit profiles or one another
 #### As a registered user I want to be able to see other users profiles and check out their achievements
-#### As a registered user I want to be able to edit my profile when any of my details change
+- From Wise Zone the session user may check out the profiles of other users. This can server as source of inspiration or motivation
 #### As a registered user I want to be able to delete my profile when I am no longer interested in being part of this group
+- From Wise Zone the session user may choose to delete their own profile. The action of profile deletion is preceded by a modal which ensures that the user realises the finality of that action.
 
 
 ## :checkered_flag: Deployment<hr>
