@@ -172,7 +172,7 @@ Some future features may include:
 
 - Flask - used as a microframework
 - Jinja - for templating with Flask
-- Werkzeug - for password hashing, authentication and authorisation
+- Werkzeug - password hashing, authentication and authorisation
 
 - Heroku - used for app hosting
 - Python - back end programming language
@@ -320,75 +320,96 @@ link for testing: ***http://keto-cookbook.herokuapp.com/delete_category/5f6a00ea
 
 
 ## :checkered_flag: Deployment<hr>
+***Requirements:***
+- Python3 to run your application
+- PIP to install all app requirements
+- IDE of your choice - I used Gitpod
+- A MongoDB Atlas account for database development
 
-#### To run the app on Heroku.
 
-Create a Heroku account. 
-Click to start a new app. 
-Pick your location based on the closest free version (or paid version) to your actual location. 
-For this project the location selected was Europe
+#### Local Deployment
+- Navigate to the Salmon of Wisdom repository: https://github.com/bezebee/kasias-KETO-cookbook
+- Click on the green "Code" button
+- Copy the link: https://github.com/bezebee/kasias-KETO-cookbook.git
+- Using your terminal, type "git clone" followed by that link
+- Operate within a virtual environment as widely recommended. The instructions will vary depending on your operating system, so refer to Python Documentation: https://docs.python.org/3/library/venv.html
 
-Once your app has been created, then move to the ‘deploy’ tab. 
-Choose connect via Gitpod and find your repository.
-
-Go to Settings tab and click on the Reveal Config Vars button. 
-Configure the following:
-
-``` 
-IP: 0.0.0.0
-PORT: 5000
-MONGO_URI: "link to your MongoDB"
-MONGODB_NAME: "name of your database"
-SECRET_KEY: "your secret key"
-
+- Create a file called ".flaskenv" and add the following:
 ```
-Go to Deploy tab and Enable Automatic Deployments to Gitpod.
-
-With the Heroku settings in place, you can head back to your IDE. The below will need to be set up:
-
-1.	A ‘Procfile’ which will tell Heroku what kind of application it is and how it should be run.
-2.	A ‘requirements.txt’ which will tell Heroku which dependencies it needs to install in order for the app to run. The command for ‘procfile’ is:
-
+ FLASK_APP=run.py
+ FLASK_ENV=development
+ ```
+- Install the required modules with the command `pip -r requirements.txt`
+- Set up a free account on MongoDB and create a new Database called **keto_cookbook**
+- The following are the collections in that Database:
+***categories***
 ```
-$ echo web: python run.py > Procfile
+_id:ObjectId
+category_name:String
 ```
-
-The command for requirements is:
+***milestones***
 ```
-pip3 freeze --local > requirements.txt
+_id:ObjectId
+milestone_name:String
+milestone_date:String
+milestone_description:String
+created_by:String
 ```
-This needs to me re-run if any other dependencies are added mid-project, otherwise the application might not be deployed to Heroku correctly.
-As the repository is now connected to push all changes simultanously to Heroku and Gitpod, you may use the terminal to add, commit and push as usual:
-
+***recipes***
 ```
-git add .
+_id:ObjectId
+category_name:String
+recipe_name:String
+recipe_image:String
+ingredients_list:String
+method:String
+preparation_time:String
+difficulty:String
+created_by:String
+keywords:String
 ```
-
+***users***
 ```
-git commit -m "Connected app to Heroku"
+username:String
+password:String
+on_keto_since:String
+personal_success:String
+username_image:String
+about:String
 ```
+- You should now be able to run this application locally by typing `flask run`
+- The website will be available at `http://127.0.0.1:5000`
 
+#### Heroku
+- Create a requirements.txt file by typing `pip3 freeze --local > requirements.txt` into the terminal line
+- Create a Procfile by typing `echo web: python app.py > Procfile`.
+- Add, commit and push these changes to Github
+- Navigate to the Heroku website
+- Create new app and give it a unique name
+- Choose region that is closest to you
+- Go to the Deploy tab and choose Github
+- Seach for the correct repository and connect
+- Go to Heroku Settings and navigate to Config Vars
+- Set the following:<br>
 ```
-git push
+IP = 0.0.0.0 <br>
+MONGO_DBNAME = [Name of MongoDB chosen] <br>
+MONGO_URI = mongodb+srv://:@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority <br>
+PORT = 5000 <br>
+SECRET_KEY = [Secret key chosen]
 ```
-
-
-### To run the app locally
-
-
-
-#### Option 1 is to download a zip file.
-
-#### Option 2 is to clone the repository.
+<br>
+- Go to the Deploy tab and Deploy Branch, ensuring that master branch is selected
 
 
 ## :heavy_dollar_sign: Credits<hr>
 
 #### Content
-
-
-#### Media
-
+https://www.dietdoctor.com/ - All Images and all recipes, as well as some of the images on the About page
+https://www.pexels.com/ - Profile photos and some images on the About page
 
 #### Acknowledgements
+- Tim Nelson - for helpful and timely guidance
+#### Reference
+- The Task Manager Miniproject by Coding Institute used as an excellent source of information on environment, database and templating
 
