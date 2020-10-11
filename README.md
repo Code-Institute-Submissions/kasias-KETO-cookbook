@@ -49,7 +49,7 @@ The theme of this page is cooking, and there are various types of users this pag
 ####  :rainbow: Color Scheme
 I opted for a very calm, minimalistic color scheme. Various shades of purple and gray, to ensure the page is not too busy
 #### :bowtie: Icons
-On this project I have used Font Awesome icons. As well as that, I have created icon of my own to 
+On this project I have used Font Awesome icons. As well as that, I have created icon of my own to illustrate the Instructions (Method) of cooking on both, Add Recipe and Edit Recipe form.
 #### :abc: Typography
 The logo was created with a caligraphy font and some addition of Montserrat. The latter is used througout the website for the headings and other main titles. The text is styled with Poppins font.
 
@@ -172,7 +172,7 @@ Some future features may include:
 
 - Flask - used as a microframework
 - Jinja - for templating with Flask
-- Werkzeug - for password hashing, authentication and authorisation
+- Werkzeug - password hashing, authentication and authorisation
 
 - Heroku - used for app hosting
 - Python - back end programming language
@@ -218,131 +218,208 @@ Some future features may include:
 
 <ins>Recipe</ins><br>
 **Creating a Recipe**<br>
+[**C** in CRUD (Creating)]
 - Click on the Add Recipe option in the navbar
 - Does the Add Recipe form render?
 - Try submitting empty form, does the system come back with an error?
 - Fill out all of the required details, click Add Recipe
 - Does it render the All Recipes page?
 - Does the flash message confirm adding of the recipe?
+
+**Viewing a Recipe**<br>
+[**R** in CRUD (Reading/Viewing)]
 - Scroll down to where that recipe is and click on Cook
 - Does the Recipe page render correctly?
 - Does the image uploaded as url render correctly?
 - Click on the Share button underneath the Created By, does the modal with social networks pop up?
 - Cancel out of the modal, does it work?
+
 **Editing a Recipe**<br>
+[**U** in CRUD (Updating)]
 - Search for recipe created by Session User
 - Click on the Edit button
-- Does the Edit Recipe form 
+- Does the Edit Recipe form renders correctly?
+- Change anything about the recipe and click on save
+- Does the information entered updates correctly on the Recipe card?
 
 **Deleting a Recipe**<br>
+[**D** in CRUD (Deleting)]
+- Scroll down to the recipe created by the Session User
+- Click on the Delete button
+- Does the modal pop up to inform of the finality of this action?
+- Click on Cancel, does the modal cancel the action?
+- Go back to modal and click on delete, does it delete the recipe?
 
-<ins>Defensive Design</ins><br>
-**Wrong username entered when logging in**<br>
-**Wrong password entered when logging in**<br>
-**Duplicate username registration attempt**<br>
+## Defensive Design<hr>
 
-<ins>Testing if a random user with correct link can access any of the pages visible to registered user only</ins><br>
-**As non-logged on user attempt to access "/add_category"** Login<br>
-**As non-logged on user attempt to access "/add_recipe"**//NEEDS TO BE PROTECTED!!<br>
-**As non-logged on user attempt to access "/get_categories"** Login<br>
-**As non-logged on user attempt to access "/edit_category"** Login<br>
-**As non-logged on user attempt to access "/edit_profile/username"** Register<br>
-**As non-logged on user attempt to access "/edit_recipe"** //NEEDS TO BE PROTECTED!!<br>
-**As non-logged on user attempt to access "/profile"** Login<br>
+- **Wrong password entered when logging in** returns flash "Incorrect Username and/or Password" to ensure that the non-registered user does not guess one or the other if the incorrect entry is provided.<br>
+
+- **Duplicate username registration attempt** returns flash "Username already exists<br>
+
+- **Wrong username entered when logging in** returns flash "Incorrect Username and/or Password" to ensure that the non-registered user does not guess one or the other if the incorrect entry is provided.<br><br>
+
+
+**Attempt to access "/add_category" by non Administrator** <br>
+link for testing: ***http://keto-cookbook.herokuapp.com/add_category***<br> 
+- renders About page if user in session but user is not "Administrator"
+- renders Login page if user is not in session<br><br>
+
+**Attempt to access "/get_categories" by non Administrator** <br>
+link for testing: ***http://keto-cookbook.herokuapp.com/get_categories***<br>
+- renders About page if user in session but user is not "Administrator"
+- renders Login page if user is not in session<br><br>
+
+**Attempt to access "/edit_category/category_id" by non Administrator** 
+link for testing: ***http://keto-cookbook.herokuapp.com/edit_category/5f6a00eadda48a7a60562ada (category_id as example)***<br>
+- renders About page if user in session but user is not "Administrator"
+- renders Login page if user is not in session<br><br>
+
+**Attempt to access "/delete_category/category_id" by non Administrator** 
+link for testing: ***http://keto-cookbook.herokuapp.com/delete_category/5f6a00eadda48a7a60562ada (category_id as example)***<br>
+- renders About page if user in session but user is not "Administrator"
+- renders Login page if user is not in session<br><br>
+
+**As non-logged on user attempt to access "/edit_profile/username"** <br>
+- renders About page if user in session but user is not "Administrator"
+- renders Login page if user is not in session<br><br>
+**As non-logged on user attempt to access "/profile/username"** Login<br>
+- renders About page if user in session but user is not "Administrator"
+- renders Login page if user is not in session<br><br>
 **As non-logged on user attempt to access "/wisemen"** Login<br>
+- renders About page if user in session but user is not "Administrator"
+- renders Login page if user is not in session<br><br>
+**As non-logged on user attempt to access "/add_recipe"**//NEEDS TO BE PROTECTED!!<br>
+- renders About page if user in session but user is not "Administrator"
+- renders Login page if user is not in session<br><br>
+**As non-logged on user attempt to access "/edit_recipe"** //NEEDS TO BE PROTECTED!!<br>
+- renders About page if user in session but user is not "Administrator"
+- renders Login page if user is not in session<br><br>
 
 
 ### *Guest User*
 #### As a guest user of this website I want to just browse - I expect this site to have some content available for me
+- User that is not logged on nor registered, upon accessing the page for the first or each consecutive time, will first and foremost see the About site. On that site user will  access the opportunity of gaining more information about what the page is about and what the Keto lifestyle is.
 #### As a guest user I want to know what the website is about when I am visiting first time
+- The About page is what user will see first and therefore they will know whether this site is of their interest or not
 #### As a guest user I want to be able to access, search and share recipes
+- The All Recipes page is visible to all users, be it registered or not. Once on that page, they can take advantage of viewing and sharing the recipes.
 #### As a guest user I want to be able to register and log in easily
+- Once user decides they want a full access to the website, they can easily navigate to the Register button from the Navbar
 #### As a guest user I want to be able to check out Social Networks of this website
-#### As a guest user I want to be able to visit some recommended by this website shops
+- The footer contains all links to the Social Media
 
 ### *Logged in User*
 #### As a registered user I want to be able to get a confirmation every time I log in
+- A flash message always pops up to confirm the user has successfully logged in
 #### As a registered user I want to be able to add recipes
+- The option of Adding a new Recipe is easily accessible from the Navbar
 #### As a registered user I want to be able to search recipes
+- The searchbar is available on top of the All Recipes page, for the ease of search, keywords are included within each recipe, to ensure the user gets as many results to their search as possible
 #### As a registered user I want to be able to delete recipes I have added
+- The button enabling session user the deleting of their recipe is only visible to the user that created the recipe. This gives user the freedom of removing recipes they no longer wish to have publicised
 #### As a registered user I want to be able to store my information in a dedicated profile
+- Once User registers/logs in, they are being redirected to their own Profile page, which can be customised
 #### As a registered user I want to be able to upload my profile picture
+- One of methods of customisation is that the user can have their profile photo displayed on their profile as well as on the Members Zone page. 
 #### As a registered user I want to be able to be able to share my success within my profile
+- A feature of Adding Milestones enables user to share their little and big successes. These are public, so can serve as a motivating factor to other users, that visit profiles or one another
 #### As a registered user I want to be able to see other users profiles and check out their achievements
-#### As a registered user I want to be able to edit my profile when any of my details change
+- From Wise Zone the session user may check out the profiles of other users. This can server as source of inspiration or motivation
 #### As a registered user I want to be able to delete my profile when I am no longer interested in being part of this group
+- From Wise Zone the session user may choose to delete their own profile. The action of profile deletion is preceded by a modal which ensures that the user realises the finality of that action.
 
 
 ## :checkered_flag: Deployment<hr>
+***Requirements:***
+- Python3 to run your application
+- PIP to install all app requirements
+- IDE of your choice - I used Gitpod
+- A MongoDB Atlas account for database development
 
-#### To run the app on Heroku.
 
-Create a Heroku account. 
-Click to start a new app. 
-Pick your location based on the closest free version (or paid version) to your actual location. 
-For this project the location selected was Europe
+#### Local Deployment
+- Navigate to the Salmon of Wisdom repository: https://github.com/bezebee/kasias-KETO-cookbook
+- Click on the green "Code" button
+- Copy the link: https://github.com/bezebee/kasias-KETO-cookbook.git
+- Using your terminal, type "git clone" followed by that link
+- Operate within a virtual environment as widely recommended. The instructions will vary depending on your operating system, so refer to Python Documentation: https://docs.python.org/3/library/venv.html
 
-Once your app has been created, then move to the ‘deploy’ tab. 
-Choose connect via Gitpod and find your repository.
-
-Go to Settings tab and click on the Reveal Config Vars button. 
-Configure the following:
-
-``` 
-IP: 0.0.0.0
-PORT: 5000
-MONGO_URI: "link to your MongoDB"
-MONGODB_NAME: "name of your database"
-SECRET_KEY: "your secret key"
-
+- Create a file called ".flaskenv" and add the following:
 ```
-Go to Deploy tab and Enable Automatic Deployments to Gitpod.
-
-With the Heroku settings in place, you can head back to your IDE. The below will need to be set up:
-
-1.	A ‘Procfile’ which will tell Heroku what kind of application it is and how it should be run.
-2.	A ‘requirements.txt’ which will tell Heroku which dependencies it needs to install in order for the app to run. The command for ‘procfile’ is:
-
+ FLASK_APP=run.py
+ FLASK_ENV=development
+ ```
+- Install the required modules with the command `pip -r requirements.txt`
+- Set up a free account on MongoDB and create a new Database called **keto_cookbook**
+- The following are the collections in that Database:
+***categories***
 ```
-$ echo web: python run.py > Procfile
+_id:<ObjectId>
+category_name:<string>
 ```
-
-The command for requirements is:
+***milestones***
 ```
-pip3 freeze --local > requirements.txt
+_id:<ObjectId>
+milestone_name:<string>
+milestone_date:<string>
+milestone_description:<string>
+created_by:<string>
 ```
-This needs to me re-run if any other dependencies are added mid-project, otherwise the application might not be deployed to Heroku correctly.
-As the repository is now connected to push all changes simultanously to Heroku and Gitpod, you may use the terminal to add, commit and push as usual:
-
+***recipes***
 ```
-git add .
+_id:<ObjectId>
+category_name:<string>
+recipe_name:<string>
+recipe_image:<string>
+ingredients_list:<string>
+method:<string>
+preparation_time:<string>
+difficulty:<string>
+created_by:<string>
+keywords:<string>
 ```
-
+***users***
 ```
-git commit -m "Connected app to Heroku"
+username:<string>
+password:<string>
+on_keto_since:<string>
+personal_success:<string>
+username_image:<string>
+about:<string>
 ```
+- You should now be able to run this application locally by typing `flask run`
+- The website will be available at `http://127.0.0.1:5000`
 
+#### Heroku
+- Create a requirements.txt file by typing `pip3 freeze --local > requirements.txt` into the terminal line
+- Create a Procfile by typing `echo web: python app.py > Procfile`.
+- Add, commit and push these changes to Github
+- Navigate to the Heroku website
+- Create new app and give it a unique name
+- Choose region that is closest to you
+- Go to the Deploy tab and choose Github
+- Seach for the correct repository and connect
+- Go to Heroku Settings and navigate to Config Vars
+- Set the following:<br>
 ```
-git push
+IP = 0.0.0.0 <br>
+MONGO_DBNAME = [Name of MongoDB chosen] <br>
+MONGO_URI = mongodb+srv://:@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority <br>
+PORT = 5000 <br>
+SECRET_KEY = [Secret key chosen]
 ```
-
-
-### To run the app locally
-
-
-
-#### Option 1 is to download a zip file.
-
-#### Option 2 is to clone the repository.
+<br>
+- Go to the Deploy tab and Deploy Branch, ensuring that master branch is selected
 
 
 ## :heavy_dollar_sign: Credits<hr>
 
 #### Content
-
-
-#### Media
-
+https://www.dietdoctor.com/ - All Images and all recipes, as well as some of the images on the About page
+https://www.pexels.com/ - Profile photos and some images on the About page
 
 #### Acknowledgements
+- Tim Nelson - for helpful and timely guidance
+#### Reference
+- The Task Manager Miniproject by Coding Institute used as an excellent source of information on environment, database and templating
 
