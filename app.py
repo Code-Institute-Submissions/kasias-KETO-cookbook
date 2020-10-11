@@ -98,8 +98,8 @@ def login():
 def profile(username):
     # grab the session user's username from database
     user = mongo.db.users.find_one({"username": username.lower()})
-    milestones = mongo.db.milestones.find()
-    recipes = list(mongo.db.recipes.find())
+    milestones = mongo.db.milestones.find({"username": username.lower()})
+    recipes = list(mongo.db.recipes.find({"username": username.lower()}))
 
     if "user" in session:
         return render_template(
