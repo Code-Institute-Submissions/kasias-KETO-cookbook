@@ -134,13 +134,6 @@ def delete_profile(username):
     return redirect(url_for("register"))
 
 
-# milestones
-@app.route("/milestones")
-def milestones():
-    milestones = list(mongo.db.milestones.find())
-    return render_template("milestones.html", milestones=milestones)
-
-
 # add milestone
 @app.route("/add_milestone", methods=["GET", "POST"])
 def add_milestone():
