@@ -438,7 +438,7 @@ SECRET_KEY = [Secret key chosen]
 ## Credits<hr>
 
 #### Content
-https://www.dietdoctor.com/ - All Images and all recipes, as well as some of the images on the About page
+https://www.dietdoctor.com/ - All Images and all recipes, as well as some of the images on the About page<br>
 https://www.pexels.com/ - Profile photos and some images on the About page
 
 #### Acknowledgements
