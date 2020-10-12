@@ -281,6 +281,10 @@ div.card-action.minimalist{
 
 /* Profile */
 
+h3.profile-name{
+    padding-top:15px;
+}
+
 .profile-desc{
     margin:8px;
 }
@@ -324,6 +328,10 @@ div.card-action.minimalist{
 font-weight: bold;
 
     
+}
+h5.my-milestone{
+    margin-top:70px;
+ 
 }
 /* Wise Zone*/
 

@@ -223,6 +223,9 @@ def add_recipe():
             "created_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
+        
+
+
         flash("Recipe Successfully Added")
         return redirect(url_for("get_recipes"))
 
@@ -250,19 +253,35 @@ def edit_recipe(recipe_id):
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find()
-    return render_template(
-        "edit_recipe.html", recipe=recipe, categories=categories)
+    if "user" in session:
+        user = session["user"].lower()
+        if user == "administrator":
+            return render_template(
+                "edit_recipe.html", recipe=recipe, categories=categories)
+        else:
+            return redirect(url_for("about"))
+
+    else:
+        return redirect(url_for("login"))
 
 
 # delete recipe
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
-    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
-    flash("Recipe successfully removed")
-    return redirect(url_for("get_recipes"))
+
+    if "user" in session:
+        user = session["user"].lower()
+        if user == "administrator":
+            mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+            flash("Recipe successfully removed")
+            return redirect(url_for("get_recipes"))
+        else:
+            return redirect(url_for("about"))
+    else:
+        return redirect(url_for("login"))
 
 
-# get_category
+# get category
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.categories.find())
@@ -278,7 +297,7 @@ def get_categories():
         return redirect(url_for("login"))
 
 
-# add_category
+# add category
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
     if request.method == "POST":
@@ -297,6 +316,7 @@ def add_category():
         return redirect(url_for("login"))
 
 
+# edit category
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     if request.method == "POST":
@@ -318,6 +338,7 @@ def edit_category(category_id):
         return redirect(url_for("login"))
 
 
+# delete category
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
 
@@ -327,6 +348,7 @@ def delete_category(category_id):
             mongo.db.categories.remove({"_id": ObjectId(category_id)})
             flash("Category Successfully Deleted")
             return redirect(url_for("get_categories"))
+
         else:
             return redirect(url_for("about"))
     else:
