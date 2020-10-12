@@ -166,14 +166,15 @@ At this time there are three main Categories, however, the page assumes that the
 - Edit Category
 - Delete Category
 
-:negative_squared_cross_mark: 
+
 ### Features Left to Implement 
 Some future features may include:
 - Setting the Diary entries to Private
 - Functionality to share videos of own cooking tutorials
 - Functionality to contact other members
 
-:floppy_disk: 
+
+
 ## Technologies Used<hr>
 
 - Gitpod - Used as my primary IDE for coding
