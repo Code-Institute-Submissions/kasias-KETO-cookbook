@@ -32,7 +32,7 @@ The theme of this page is cooking, and there are various types of users this pag
 *User type 2: Those already practicing the KETO lifestyle and diet, but looking for inspiration for daily menus*
 
 
- :scroll: 
+
 ### User Stories
 
 <ins> *Guest User* </ins>
@@ -66,7 +66,7 @@ I opted for a very calm, minimalistic color scheme. Various shades of purple and
 #### :bowtie: Icons
 On this project I have used Font Awesome icons. As well as that, I have created icon of my own to illustrate the Instructions (Method) of cooking on both, Add Recipe and Edit Recipe form.
 #### :abc: Typography
-The logo was created with a caligraphy font and some addition of Montserrat. The latter is used througout the website for the headings and other main titles. The text is styled with Poppins font.
+I designed the main logo using a caligraphy font and some addition of Montserrat. The latter is used througout the website for the headings and other main titles. The text is styled with Poppins font.
 
 ## Wireframes<hr>
 <details><summary>Base Template</summary>
@@ -123,7 +123,7 @@ The logo was created with a caligraphy font and some addition of Montserrat. The
 
 ## Features<hr>
 
-:white_check_mark:
+
 ### Existing Features 
 
 <ins>Visible to all users</ins>
@@ -200,7 +200,7 @@ Some future features may include:
 
 -W3C HTML Validator & W3C CSS Validator
 
-:toolbox: 
+
 ## Testing<hr>
 
 <ins>Profile</ins><br>
@@ -350,7 +350,7 @@ link for testing: ***http://keto-cookbook.herokuapp.com/edit_recipe/5f844c38884d
 #### As a registered user I want to be able to delete my profile when I am no longer interested in being part of this group
 - From Wise Zone the session user may choose to delete their own profile. The action of profile deletion is preceded by a modal which ensures that the user realises the finality of that action.
 
-:checkered_flag: 
+
 ## Deployment<hr>
 ***Requirements:***
 - Python3 to run your application
@@ -433,7 +433,7 @@ SECRET_KEY = [Secret key chosen]
 <br>
 - Go to the Deploy tab and Deploy Branch, ensuring that master branch is selected
 
-:heavy_dollar_sign: 
+
 ## Credits<hr>
 
 #### Content
