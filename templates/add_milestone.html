@@ -4,8 +4,6 @@
 
 <div class="row card-panel gret lighten-5">
     <form class="col s12" method="POST" action="{{ url_for('add_milestone') }}">
-
-
         <div class="row">
             <div class="input-field col s12">
                 <input name="milestone_name" id="milestone_name" minlength="5" type="text" class="validate" required />
@@ -14,7 +12,7 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input name="milestone_description" id="milestone_description" minlength="5"  type="text" class="validate" required />
+                <input name="milestone_description" id="milestone_description" minlength="5" type="text" class="validate" required />
                 <label for="milestone_description"><i class="fas fa-shopping-cart"></i> Milestone Description</label>
             </div>
         </div>
@@ -25,7 +23,6 @@
             </div>
         </div>
         <button type="submit" class="btn-flat neutral-large"><i class="fas fa-award"></i></button>
-        
     </form>
 </div>
 
