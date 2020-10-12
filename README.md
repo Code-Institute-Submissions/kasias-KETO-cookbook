@@ -442,7 +442,7 @@ https://www.dietdoctor.com/ - All Images and all recipes, as well as some of the
 https://www.pexels.com/ - Profile photos and some images on the About page
 
 #### Acknowledgements
-- Tim Nelson - for helpful and timely guidance
+- Tim Nelson - for helpful and timely guidance, thanks to Tim I learned a great deal about good fundamentals of templating. I will be exploring the Python and Flask path, among others, but this one will be with greatest enthusiasm. I am so grateful.
 - Precious Ijege - for mentorship and honest critique
 #### Reference
 - The Task Manager Miniproject by Coding Institute used as an excellent source of information on environment, database and templating
