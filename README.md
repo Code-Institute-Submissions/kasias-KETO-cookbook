@@ -6,6 +6,20 @@
 
 In the ever evolving world of different diets, the Food Pyramid as we know it no longer applies for most people. Many diets would at this stage have eliminated certain contents of the pyramid, in Keto's case that pyramid has been literally turned up-side-down. This website was developed to assist those who are embarking on their lifestyle change as well as those who are looking for some inspiration to their existing journey.
 
+## Table of Contents
+* [UX](#ux)
+  * [User Stories](#user-stories)
+  * [Design](#design)
+  * [Wireframes](#wireframes)
+* [Features](#features)
+  * [Existing Features](#existing-features)
+  * [Features Left to Implement](#features-left-to-implement)
+* [Technologies Used](#technologies-used)
+* [Testing](#testing)
+* [Defensive Design](#defensive-design)
+* [Deployment](#deployment)
+* [Credits and References](#credits)
+
 
 
 ## UX<hr>
@@ -18,7 +32,8 @@ The theme of this page is cooking, and there are various types of users this pag
 *User type 2: Those already practicing the KETO lifestyle and diet, but looking for inspiration for daily menus*
 
 
-### :scroll: User Stories
+ :scroll: 
+### User Stories
 
 <ins> *Guest User* </ins>
 - As a guest user of this website I want to just browse - I expect this site to have some content available for me
@@ -108,7 +123,8 @@ The logo was created with a caligraphy font and some addition of Montserrat. The
 
 ## Features<hr>
 
-### :white_check_mark: Existing Features
+:white_check_mark:
+### Existing Features 
 
 <ins>Visible to all users</ins>
 
@@ -150,13 +166,15 @@ At this time there are three main Categories, however, the page assumes that the
 - Edit Category
 - Delete Category
 
-### :negative_squared_cross_mark: Features Left to Implement
+:negative_squared_cross_mark: 
+### Features Left to Implement 
 Some future features may include:
 - Setting the Diary entries to Private
 - Functionality to share videos of own cooking tutorials
 - Functionality to contact other members
 
-## :floppy_disk: Technologies Used<hr>
+:floppy_disk: 
+## Technologies Used<hr>
 
 - Gitpod - Used as my primary IDE for coding
 - Github - Remote storing of my code online
@@ -182,7 +200,8 @@ Some future features may include:
 
 -W3C HTML Validator & W3C CSS Validator
 
-## :toolbox: Testing<hr>
+:toolbox: 
+## Testing<hr>
 
 <ins>Profile</ins><br>
 
@@ -331,8 +350,8 @@ link for testing: ***http://keto-cookbook.herokuapp.com/edit_recipe/5f844c38884d
 #### As a registered user I want to be able to delete my profile when I am no longer interested in being part of this group
 - From Wise Zone the session user may choose to delete their own profile. The action of profile deletion is preceded by a modal which ensures that the user realises the finality of that action.
 
-
-## :checkered_flag: Deployment<hr>
+:checkered_flag: 
+## Deployment<hr>
 ***Requirements:***
 - Python3 to run your application
 - PIP to install all app requirements
@@ -414,8 +433,8 @@ SECRET_KEY = [Secret key chosen]
 <br>
 - Go to the Deploy tab and Deploy Branch, ensuring that master branch is selected
 
-
-## :heavy_dollar_sign: Credits<hr>
+:heavy_dollar_sign: 
+## Credits<hr>
 
 #### Content
 https://www.dietdoctor.com/ - All Images and all recipes, as well as some of the images on the About page
