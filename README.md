@@ -164,6 +164,7 @@ Some future features may include:
 - Goodnotes - to create Wireframes
 - Procreate - to create the main Salmon of Wisdom logo
 - Pixlr.com - used to edit the user images
+- Cloudinary - used to store my images
 
 - HTML - base for markup text
 - CSS - base for cascading styles
@@ -422,6 +423,7 @@ https://www.pexels.com/ - Profile photos and some images on the About page
 
 #### Acknowledgements
 - Tim Nelson - for helpful and timely guidance
+- Precious Ijege - for mentorship and honest critique
 #### Reference
 - The Task Manager Miniproject by Coding Institute used as an excellent source of information on environment, database and templating
 
