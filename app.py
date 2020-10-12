@@ -25,12 +25,6 @@ mongo = PyMongo(app)
 def about():
     return render_template("about.html")
 
-# -----SHOP-----#
-
-
-@app.route("/shop")
-def shop():
-    return render_template("shop.html")
 
 # ------PROFILE-----#
 
@@ -124,7 +118,10 @@ def edit_profile(username):
         mongo.db.users.update({"username": username.lower()}, submit)
         flash("Profile updated")
 
-    return render_template("edit_profile.html", user=user)
+    if "user" in session:
+        return render_template("edit_profile.html", user=user)
+
+    return redirect(url_for("login"))
 
 
 # delete profile
@@ -158,8 +155,10 @@ def add_milestone():
         mongo.db.milestones.insert_one(milestone)
         flash("Milestone Successfully added")
         return redirect(url_for("profile", username=session["user"]))
+    if "user" in session:
+        return render_template("add_milestone.html")
 
-    return render_template("add_milestone.html")
+    return redirect(url_for("login"))
 
 
 # all users
@@ -223,14 +222,20 @@ def add_recipe():
             "created_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
-        
-
 
         flash("Recipe Successfully Added")
         return redirect(url_for("get_recipes"))
 
     categories = mongo.db.categories.find()
-    return render_template("add_recipe.html", categories=categories)
+    if "user" in session:
+        user = session["user"].lower()
+        if user == session["user"].lower():
+            return render_template("add_recipe.html", categories=categories)
+        else:
+            return redirect(url_for("about"))
+
+    else:
+        return redirect(url_for("login"))
 
 
 # edit recipe
@@ -255,7 +260,7 @@ def edit_recipe(recipe_id):
     categories = mongo.db.categories.find()
     if "user" in session:
         user = session["user"].lower()
-        if user == "administrator":
+        if user == session["user"].lower():
             return render_template(
                 "edit_recipe.html", recipe=recipe, categories=categories)
         else:
