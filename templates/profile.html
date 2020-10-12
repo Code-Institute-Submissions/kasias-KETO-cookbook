@@ -16,14 +16,14 @@
     </div>
 
     <div class="col s12">
-        <p class="center-align text-shadow profile-desc">
-            On keto since {{ user.on_keto_since }}
+        <p class="center-align text-shadow profile-desc on-keto">
+            <em>On keto since {{ user.on_keto_since }}</em>
         </p>
     </div>
 
     <div class="col s12">
-        <p class="center-align text-shadow profile-desc">
-            Personal Keto Success: {{ user.personal_success }}
+        <p class="center-align text-shadow profile-desc personal-success">
+            Personal Keto Success: <br>{{ user.personal_success }}
         </p>
     </div>
 </div>
@@ -43,7 +43,7 @@
 </ul>
 
 <div class="col s12 center-align">
-<a href="{{ url_for('add_milestone') }}" class="waves-effect waves-light btn-large neutral "><i class="fas fa-award"></i> Add new</a>
+<a href="{{ url_for('add_milestone') }}" class=" btn-flat neutral-large "><i class="fas fa-award"></i> Add new</a>
 </div>
 
 
