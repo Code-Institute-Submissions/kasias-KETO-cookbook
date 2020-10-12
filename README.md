@@ -179,6 +179,8 @@ Some future features may include:
 - MongoDB Atlas - cloud database
 - PyMongo - Python API for MongoDB
 
+-W3C HTML Validator & W3C CSS Validator
+
 ## :toolbox: Testing<hr>
 
 <ins>Profile</ins><br>
@@ -261,39 +263,39 @@ Some future features may include:
 
 **Attempt to access "/add_category" by non Administrator** <br>
 link for testing: ***http://keto-cookbook.herokuapp.com/add_category***<br> 
-- renders About page if user in session but user is not "Administrator"
-- renders Login page if user is not in session<br><br>
+:heavy_check_mark: renders About page if user in session but user is not "Administrator"
+:heavy_check_mark: renders Login page if user is not in session<br><br>
 
 **Attempt to access "/get_categories" by non Administrator** <br>
 link for testing: ***http://keto-cookbook.herokuapp.com/get_categories***<br>
-- renders About page if user in session but user is not "Administrator"
-- renders Login page if user is not in session<br><br>
+:heavy_check_mark: renders About page if user in session but user is not "Administrator"
+:heavy_check_mark: renders Login page if user is not in session<br><br>
 
-**Attempt to access "/edit_category/category_id" by non Administrator** 
+**Attempt to access "/edit_category/category_id" by non Administrator**<br>
 link for testing: ***http://keto-cookbook.herokuapp.com/edit_category/5f6a00eadda48a7a60562ada (category_id as example)***<br>
-- renders About page if user in session but user is not "Administrator"
-- renders Login page if user is not in session<br><br>
+:heavy_check_mark: renders About page if user in session but user is not "Administrator"
+:heavy_check_mark: renders Login page if user is not in session<br><br>
 
-**Attempt to access "/delete_category/category_id" by non Administrator** 
+**Attempt to access "/delete_category/category_id" by non Administrator**<br>
 link for testing: ***http://keto-cookbook.herokuapp.com/delete_category/5f6a00eadda48a7a60562ada (category_id as example)***<br>
-- renders About page if user in session but user is not "Administrator"
-- renders Login page if user is not in session<br><br>
+:heavy_check_mark: renders About page if user in session but user is not "Administrator"
+:heavy_check_mark: renders Login page if user is not in session<br><br>
 
 **As non-logged on user attempt to access "/edit_profile/username"** <br>
-- renders About page if user in session but user is not "Administrator"
-- renders Login page if user is not in session<br><br>
+link for testing: ***http://keto-cookbook.herokuapp.com/edit_profile/marie***<br>
+:heavy_check_mark: renders Login page if user is not in session<br><br>
 **As non-logged on user attempt to access "/profile/username"** Login<br>
-- renders About page if user in session but user is not "Administrator"
-- renders Login page if user is not in session<br><br>
+link for testing: ***http://keto-cookbook.herokuapp.com/profile/marie***<br>
+:heavy_check_mark: renders Login page if user is not in session<br><br>
 **As non-logged on user attempt to access "/wisemen"** Login<br>
-- renders About page if user in session but user is not "Administrator"
-- renders Login page if user is not in session<br><br>
-**As non-logged on user attempt to access "/add_recipe"**//NEEDS TO BE PROTECTED!!<br>
-- renders About page if user in session but user is not "Administrator"
-- renders Login page if user is not in session<br><br>
-**As non-logged on user attempt to access "/edit_recipe"** //NEEDS TO BE PROTECTED!!<br>
-- renders About page if user in session but user is not "Administrator"
-- renders Login page if user is not in session<br><br>
+link for testing: ***http://keto-cookbook.herokuapp.com/wisemen***<br>
+:heavy_check_mark: renders Login page if user is not in session<br><br>
+**As non-logged on user attempt to access "/add_recipe"**<br>
+link for testing: ***http://keto-cookbook.herokuapp.com/add_recipe***<br>
+:heavy_check_mark: renders Login page if user is not in session<br><br>
+**As non-logged on user attempt to access "/edit_recipe"**<br>
+link for testing: ***http://keto-cookbook.herokuapp.com/edit_recipe/5f844c38884d26d0d8bd3aac%29***<br>
+:heavy_check_mark:renders Login page if user is not in session<br><br>
 
 
 ### *Guest User*
