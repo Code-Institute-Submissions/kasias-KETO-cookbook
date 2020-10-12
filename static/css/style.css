@@ -16,6 +16,7 @@ body {
     font-family:  "Montserrat", sans-serif;
 }
 
+
 /*some breathing space to the upper part of the parallax*/
 
 main.container {
@@ -231,44 +232,33 @@ div.card-action.minimalist{
 
 .small-span{
     font-size: 15px;
+
 }
 
 
 /* Recipe card styling*/
 
+
 .card-image {
-	height: 400px;
+	height: 600px;
 	/* Your height here */
 	overflow: hidden;
 }
 
-.bg-image.responsive-img {
-	/* Add the blur effect */
-	filter: blur(8px);
-	-webkit-filter: blur(8px);
-	/* Full height */
-	height: 100%;
-	/* Center and scale the image nicely */
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
 
 
 /* Position text in recipe card in the middle of the page/image */
 
-.bg-text {
-	background-color: rgba(0, 0, 0, 0.76);
-	/* Fallback color */
-	background-color: rgba(0, 0, 0, 0.4);
-	/* Black w/opacity/see-through */
-	color: white;
-	font-weight: bold;
+span.bg-text {
+
+	background-color: rgba(96, 79, 119, 0.61);
 	bottom: 0;
 	right: 0;
-	width: 100%;
-	text-align: right;
+    top:0;
+
 }
+
+
 
 .col.s12.m6.recipe {
 	background: #ece9e6;
