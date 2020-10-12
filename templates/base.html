@@ -61,9 +61,7 @@
               >
             </li>
             <li>
-              <a href="{{ url_for('wisemen') }}"
-                >Wise Zone</a
-              >
+              <a href="{{ url_for('wisemen') }}">Wise Zone</a>
             </li>
 
             {% endif %}
@@ -80,7 +78,6 @@
             <li><a href="{{ url_for('login') }}">Login</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>
             {% endif %}
-            
           </ul>
         </div>
       </nav>
@@ -103,10 +100,8 @@
           >
         </li>
         <li>
-              <a href="{{ url_for('wisemen') }}"
-                >Wisemen</a
-              >
-            </li>
+          <a href="{{ url_for('wisemen') }}">Wisemen</a>
+        </li>
 
         {% endif %}
         <li><a href="{{ url_for('get_recipes') }}">All Recipes</a></li>
@@ -120,7 +115,6 @@
         <li><a href="{{ url_for('login') }}">Login</a></li>
         <li><a href="{{ url_for('register') }}">Register</a></li>
         {% endif %}
-        
       </ul>
     </header>
 
@@ -129,8 +123,8 @@
       {% with messages = get_flashed_messages() %} {% if messages %} {% for
       message in messages %}
       <div class="row flashes">
-      <div class="col s6 offset-s3 center-align ">
-        <h6 class="center-align flash-messages text-shadow">{{ message }}</h6>
+        <div class="col s6 offset-s3 center-align">
+          <h6 class="center-align flash-messages text-shadow">{{ message }}</h6>
         </div>
       </div>
 
@@ -149,14 +143,10 @@
     {% block scripts %} {% endblock %}
   </body>
   <footer class="page-footer transparent">
-    <div class="container">
-
-    </div>
     <div class="footer-copyright grey-text text-darken-3 lighten-3">
       <div class="container">
         © 2020 Kasia Bogucka
       </div>
-      
 
       <div class="row">
         <div class="col text-center">
