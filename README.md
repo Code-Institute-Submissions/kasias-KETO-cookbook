@@ -6,6 +6,20 @@
 
 In the ever evolving world of different diets, the Food Pyramid as we know it no longer applies for most people. Many diets would at this stage have eliminated certain contents of the pyramid, in Keto's case that pyramid has been literally turned up-side-down. This website was developed to assist those who are embarking on their lifestyle change as well as those who are looking for some inspiration to their existing journey.
 
+## Table of Contents
+* [UX](#ux)
+  * [User Stories](#user-stories)
+  * [Design](#design)
+  * [Wireframes](#wireframes)
+* [Features](#features)
+  * [Existing Features](#existing-features)
+  * [Features Left to Implement](#features-left-to-implement)
+* [Technologies Used](#technologies-used)
+* [Testing](#testing)
+* [Defensive Design](#defensive-design)
+* [Deployment](#deployment)
+* [Credits and References](#credits)
+
 
 
 ## UX<hr>
@@ -18,7 +32,8 @@ The theme of this page is cooking, and there are various types of users this pag
 *User type 2: Those already practicing the KETO lifestyle and diet, but looking for inspiration for daily menus*
 
 
-### :scroll: User Stories
+
+### User Stories
 
 <ins> *Guest User* </ins>
 - As a guest user of this website I want to just browse - I expect this site to have some content available for me
@@ -51,7 +66,7 @@ I opted for a very calm, minimalistic color scheme. Various shades of purple and
 #### :bowtie: Icons
 On this project I have used Font Awesome icons. As well as that, I have created icon of my own to illustrate the Instructions (Method) of cooking on both, Add Recipe and Edit Recipe form.
 #### :abc: Typography
-The logo was created with a caligraphy font and some addition of Montserrat. The latter is used througout the website for the headings and other main titles. The text is styled with Poppins font.
+I designed the main logo using a caligraphy font and some addition of Montserrat. The latter is used througout the website for the headings and other main titles. The text is styled with Poppins font.
 
 ## Wireframes<hr>
 <details><summary>Base Template</summary>
@@ -108,7 +123,8 @@ The logo was created with a caligraphy font and some addition of Montserrat. The
 
 ## Features<hr>
 
-### :white_check_mark: Existing Features
+
+### Existing Features 
 
 <ins>Visible to all users</ins>
 
@@ -150,13 +166,16 @@ At this time there are three main Categories, however, the page assumes that the
 - Edit Category
 - Delete Category
 
-### :negative_squared_cross_mark: Features Left to Implement
+
+### Features Left to Implement 
 Some future features may include:
 - Setting the Diary entries to Private
 - Functionality to share videos of own cooking tutorials
 - Functionality to contact other members
 
-## :floppy_disk: Technologies Used<hr>
+
+
+## Technologies Used<hr>
 
 - Gitpod - Used as my primary IDE for coding
 - Github - Remote storing of my code online
@@ -164,6 +183,7 @@ Some future features may include:
 - Goodnotes - to create Wireframes
 - Procreate - to create the main Salmon of Wisdom logo
 - Pixlr.com - used to edit the user images
+- Cloudinary - used to store my images
 
 - HTML - base for markup text
 - CSS - base for cascading styles
@@ -179,7 +199,10 @@ Some future features may include:
 - MongoDB Atlas - cloud database
 - PyMongo - Python API for MongoDB
 
-## :toolbox: Testing<hr>
+-W3C HTML Validator & W3C CSS Validator
+
+
+## Testing<hr>
 
 <ins>Profile</ins><br>
 
@@ -261,39 +284,39 @@ Some future features may include:
 
 **Attempt to access "/add_category" by non Administrator** <br>
 link for testing: ***http://keto-cookbook.herokuapp.com/add_category***<br> 
-- renders About page if user in session but user is not "Administrator"
-- renders Login page if user is not in session<br><br>
+:heavy_check_mark: renders About page if user in session but user is not "Administrator"
+:heavy_check_mark: renders Login page if user is not in session<br><br>
 
 **Attempt to access "/get_categories" by non Administrator** <br>
 link for testing: ***http://keto-cookbook.herokuapp.com/get_categories***<br>
-- renders About page if user in session but user is not "Administrator"
-- renders Login page if user is not in session<br><br>
+:heavy_check_mark: renders About page if user in session but user is not "Administrator"
+:heavy_check_mark: renders Login page if user is not in session<br><br>
 
-**Attempt to access "/edit_category/category_id" by non Administrator** 
+**Attempt to access "/edit_category/category_id" by non Administrator**<br>
 link for testing: ***http://keto-cookbook.herokuapp.com/edit_category/5f6a00eadda48a7a60562ada (category_id as example)***<br>
-- renders About page if user in session but user is not "Administrator"
-- renders Login page if user is not in session<br><br>
+:heavy_check_mark: renders About page if user in session but user is not "Administrator"
+:heavy_check_mark: renders Login page if user is not in session<br><br>
 
-**Attempt to access "/delete_category/category_id" by non Administrator** 
+**Attempt to access "/delete_category/category_id" by non Administrator**<br>
 link for testing: ***http://keto-cookbook.herokuapp.com/delete_category/5f6a00eadda48a7a60562ada (category_id as example)***<br>
-- renders About page if user in session but user is not "Administrator"
-- renders Login page if user is not in session<br><br>
+:heavy_check_mark: renders About page if user in session but user is not "Administrator"
+:heavy_check_mark: renders Login page if user is not in session<br><br>
 
 **As non-logged on user attempt to access "/edit_profile/username"** <br>
-- renders About page if user in session but user is not "Administrator"
-- renders Login page if user is not in session<br><br>
+link for testing: ***http://keto-cookbook.herokuapp.com/edit_profile/marie***<br>
+:heavy_check_mark: renders Login page if user is not in session<br><br>
 **As non-logged on user attempt to access "/profile/username"** Login<br>
-- renders About page if user in session but user is not "Administrator"
-- renders Login page if user is not in session<br><br>
+link for testing: ***http://keto-cookbook.herokuapp.com/profile/marie***<br>
+:heavy_check_mark: renders Login page if user is not in session<br><br>
 **As non-logged on user attempt to access "/wisemen"** Login<br>
-- renders About page if user in session but user is not "Administrator"
-- renders Login page if user is not in session<br><br>
-**As non-logged on user attempt to access "/add_recipe"**//NEEDS TO BE PROTECTED!!<br>
-- renders About page if user in session but user is not "Administrator"
-- renders Login page if user is not in session<br><br>
-**As non-logged on user attempt to access "/edit_recipe"** //NEEDS TO BE PROTECTED!!<br>
-- renders About page if user in session but user is not "Administrator"
-- renders Login page if user is not in session<br><br>
+link for testing: ***http://keto-cookbook.herokuapp.com/wisemen***<br>
+:heavy_check_mark: renders Login page if user is not in session<br><br>
+**As non-logged on user attempt to access "/add_recipe"**<br>
+link for testing: ***http://keto-cookbook.herokuapp.com/add_recipe***<br>
+:heavy_check_mark: renders Login page if user is not in session<br><br>
+**As non-logged on user attempt to access "/edit_recipe"**<br>
+link for testing: ***http://keto-cookbook.herokuapp.com/edit_recipe/5f844c38884d26d0d8bd3aac%29***<br>
+:heavy_check_mark:renders Login page if user is not in session<br><br>
 
 
 ### *Guest User*
@@ -329,7 +352,7 @@ link for testing: ***http://keto-cookbook.herokuapp.com/delete_category/5f6a00ea
 - From Wise Zone the session user may choose to delete their own profile. The action of profile deletion is preceded by a modal which ensures that the user realises the finality of that action.
 
 
-## :checkered_flag: Deployment<hr>
+## Deployment<hr>
 ***Requirements:***
 - Python3 to run your application
 - PIP to install all app requirements
@@ -412,14 +435,15 @@ SECRET_KEY = [Secret key chosen]
 - Go to the Deploy tab and Deploy Branch, ensuring that master branch is selected
 
 
-## :heavy_dollar_sign: Credits<hr>
+## Credits<hr>
 
 #### Content
-https://www.dietdoctor.com/ - All Images and all recipes, as well as some of the images on the About page
+https://www.dietdoctor.com/ - All Images and all recipes, as well as some of the images on the About page<br>
 https://www.pexels.com/ - Profile photos and some images on the About page
 
 #### Acknowledgements
 - Tim Nelson - for helpful and timely guidance
+- Precious Ijege - for mentorship and honest critique
 #### Reference
 - The Task Manager Miniproject by Coding Institute used as an excellent source of information on environment, database and templating
 
