@@ -23,28 +23,72 @@
 
     <div class="col s12">
         <p class="center-align text-shadow profile-desc personal-success">
-            Personal Keto Success: <br>{{ user.personal_success }}
+            Personal Keto Success: <br />
+            {{ user.personal_success }}
         </p>
     </div>
 </div>
 
-<h5 class="center-align text-shadow my-milestone">My Milestones</h5>
-
-<ul class="collapsible">
-    {% for milestone in milestones %}
-    <li>
-        <div class="collapsible-header"><strong> {{ milestone.milestone_date }}</strong>: {{ milestone.milestone_name }}</div>
-        <div class="collapsible-body">
-            <em> {{ milestone.milestone_description }} </em>
-        </div>
-    </li>
-
-    {% endfor %}
-</ul>
-
-<div class="col s12 center-align">
-<a href="{{ url_for('add_milestone') }}" class=" btn-flat neutral-large "><i class="fas fa-award"></i> Add new</a>
+{% if session.user|lower == user.username|lower %}
+<div class="row center-align">
+    <a href="{{url_for('edit_profile', username=user.username|lower)}}" id="edit" class="btn green neutral">Edit</a>
+    <a href="#delete-this" class="btn neutral red modal-trigger">Delete</a>
 </div>
 
+<div id="delete-this" class="modal">
+    <div class="modal-question-wrapper">
+        <div class="modal-question">
+            <p>Are you absolutely and definitely sure you want to leave the Wisemen Zone? Even Salmon of Wisdom will not be able to reverse it</p>
+        </div>
+        <div class="modal-footer">
+            <a href="{{url_for('delete_profile', username=user.username)}}" class="btn-small neutral red modal-close">Delete</a>
+            <a class="btn-small neutral blue modal-close">Cancel</a>
+        </div>
+    </div>
+</div>
 
-{% endblock %}
+{% endif %}
+
+<div class="col s12 m12">
+    <h5 class="center-align text-shadow my-milestone">My Milestones</h5>
+
+    <ul class="collapsible">
+        {% for milestone in milestones %}
+        <li>
+            <div class="collapsible-header"><strong> {{ milestone.milestone_date }}</strong>: {{ milestone.milestone_name }}</div>
+            <div class="collapsible-body">
+                <em> {{ milestone.milestone_description }} </em>
+            </div>
+        </li>
+
+        {% endfor %}
+    </ul>
+
+    <div class="col s12 center-align">
+        <a href="{{ url_for('add_milestone') }}" class="btn-flat neutral-large"><i class="fas fa-award"></i> Add new</a>
+    </div>
+</div>
+
+<div class="col s12 m12">
+    <h5 class="center-align text-shadow">
+        My Recipes
+        <ul class="collapsible">
+            {% for recipe in recipes %}
+            <li>
+                <div class="collapsible-header"><h6>{{ recipe.recipe_name }}</h6></div>
+                <div class="collapsible-body">
+                    <div class="col"><em> You will need {{ recipe.keywords }} </em></div>
+                    <div class="col"><a href="{{url_for('recipe', recipe_id=recipe._id)}}" class="btn neutral">Cook</a></div>
+                </div>
+            </li>
+
+            {% endfor %}
+        </ul>
+
+        <div class="col s12 center-align">
+            <a href="{{ url_for('add_recipe') }}" class="btn-flat neutral-large"><img class="chef" width="24" src="https://res.cloudinary.com/dugnokxox/image/upload/v1600807724/Logo/chef_rbminz.png" alt="chef" /> Add new</a>
+        </div>
+
+        {% endblock %}
+    </h5>
+</div>

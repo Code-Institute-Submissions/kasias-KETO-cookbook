@@ -1,373 +1,349 @@
 /* Disabling selection */
 
 body {
-	-webkit-user-select: none;
-	-moz-user-select: -moz-none;
-	-ms-user-select: none;
-	user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
     font-family: "Poppins", sans-serif;
 }
-
 
 /*default class for adding shadows to text*/
 
 .text-shadow {
-	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.212);
-    font-family:  "Montserrat", sans-serif;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.212);
+    font-family: "Montserrat", sans-serif;
 }
-
 
 /*some breathing space to the upper part of the parallax*/
 
 main.container {
-	margin-top: 60px;
+    margin-top: 60px;
 }
 
 /* breathing space for icons*/
 
-.fas{
-    padding-right:5px;
-    padding-left:2px;
+.fas {
+    padding-right: 5px;
+    padding-left: 2px;
 }
 
-.chef{
+.chef {
     padding-right: 7px;
 }
-
 
 /*flash messages styling*/
 
 h6.flash-messages {
-	background: #ece9e6;
-	/* fallback for old browsers */
-	background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.733), rgba(145, 114, 155, 0.623));
-	/* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to bottom, rgba(255, 255, 255, 0.733), rgba(145, 114, 155, 0.623));
-	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	padding: 10px;
-	border-radius: 4px;
+    background: #ece9e6;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.733), rgba(145, 114, 155, 0.623));
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.733), rgba(145, 114, 155, 0.623));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 10px;
+    border-radius: 4px;
 }
-
 
 /*navbar background*/
 
 .tabs {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: #ece9e6;
-	/* fallback for old browsers */
-	background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.733), rgba(90, 61, 99, 0.12));
-	/* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to bottom, rgba(255, 255, 255, 0.733), rgba(90, 61, 99, 0.12));
-	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ece9e6;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.733), rgba(90, 61, 99, 0.12));
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.733), rgba(90, 61, 99, 0.12));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-
 
 /*body background color*/
 
 body {
-	background: rgba(235, 234, 232, 0.925);
+    background: rgba(235, 234, 232, 0.925);
 }
-
 
 /*font style in the navbar*/
 
 nav ul a {
-	font-family: "Montserrat", sans-serif;
-	color: rgb(124, 120, 120);
-	font-size: 22px;
-	padding-bottom: 0;
+    font-family: "Montserrat", sans-serif;
+    color: rgb(124, 120, 120);
+    font-size: 22px;
+    padding-bottom: 0;
 }
-
 
 /*burger bars class overwrite*/
 
 .fa-bars:before {
-	color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
 }
-
 
 /*Mobile side nav width*/
 
 ul.sidenav {
-	width: 200px;
-	font-family: "Montserrat", sans-serif;
+    width: 200px;
+    font-family: "Montserrat", sans-serif;
 }
 
 img.salmon {
-	margin-left: 20px;
-	top: 10px;
-    
+    margin-left: 20px;
+    top: 10px;
 }
-
 
 /*About - adding shadows to images*/
 
 img.image-shadow,
 div.parallax-container {
-	box-shadow: 8px 9px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 8px 9px 8px rgba(0, 0, 0, 0.2);
 }
-
 
 /* About - Titles styling */
 
 h3 {
-	text-align: center;
-
+    text-align: center;
 }
-
 
 /*About - Testimonials styling*/
 
 .testimonial {
-	height: 80px;
-	width: 160px;
-	border-radius: 4px;
-	border: 1px solid rgb(117, 174, 212);
-	position: absolute;
-	z-index: 99999;
+    height: 80px;
+    width: 160px;
+    border-radius: 4px;
+    border: 1px solid rgb(117, 174, 212);
+    position: absolute;
+    z-index: 99999;
 }
-
 
 /*media query to remove the z-index*/
 
 @media only screen and (max-device-width: 480px) {
-	.testimonial {
-		position: relative;
-	}
+    .testimonial {
+        position: relative;
+    }
 }
-
 
 /* Adding nametag over a testimonialee image */
 
-.text>h5 {
-	margin-top: 0;
-	margin-bottom: 0;
+.text > h5 {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
-
-
 /*All Recipes */
-
 
 /* Making card panel more minimalistic*/
 
 .card-panel.search {
-	background: #ece9e6;
-	/* fallback for old browsers */
-	background: -webkit-linear-gradient(to bottom, #ffffff, rgba(236, 233, 230, 0.17));
-	/* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to bottom, #ffffff, rgba(236, 233, 230, 0.17));
-	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	border-radius: 5px;
+    background: #ece9e6;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #ffffff, rgba(236, 233, 230, 0.17));
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #ffffff, rgba(236, 233, 230, 0.17));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 5px;
 }
 
-.neutral{
+.neutral {
     background: #ece9e6;
-	/* fallback for old browsers */
-	background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.68), rgba(145, 114, 155, 0.623));
-	/* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to bottom, rgba(255, 255, 255, 0.68), rgba(145, 114, 155, 0.623));
-	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	color: #4a4250;
-	
-	margin-top: 12px;
-    width:90px;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.68), rgba(145, 114, 155, 0.623));
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.68), rgba(145, 114, 155, 0.623));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #4a4250;
+
+    margin-top: 12px;
+    width: 90px;
     font-size: 12px;
     font-weight: bold;
     text-align: center;
-    padding:0;
+    padding: 0;
 }
 
 /* Media query to reduce size of a button on ipads*/
 
-@media only screen and (max-width: 1024px) and (min-width: 768px){
-	.neutral {
-		width:50px;
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+    .neutral {
+        width: 65px;
         font-size: 9px;
-	}
-    h4.text-shadow.wiseman{
+    }
+    h4.text-shadow.wiseman {
         font-size: 22px;
     }
-    .card-content.minimalist{
+    .card-content.minimalist {
         padding-left: 10px;
-   }
-   p.small-span{
-       font-size:12px;
-   }
+    }
+    p.small-span {
+        font-size: 12px;
+    }
+    p.medium-span {
+        font-size: 16px;
+    }
 }
 
 /* Media query to reduce size of buttons for screens less than 300 */
 
-@media only screen and (max-width: 300px) and (min-width: 250px){
-	a.btn.neutral {
-		width:60px;
+@media only screen and (max-width: 330px) and (min-width: 250px) {
+    a.btn.neutral {
+        width: 60px;
         font-size: 9px;
-	}
-    div.card-content.minimalist{
+    }
+    div.card-content.minimalist {
         padding-left: 10px;
-        padding-right:20px;
-   }
-       h4.text-shadow.wiseman{
+        padding-right: 20px;
+    }
+    h4.text-shadow.wiseman {
         font-size: 26px;
     }
-      p.small-span{
-       font-size:12px;
-   }
+    p.small-span {
+        font-size: 12px;
+    }
+    p.medium-span {
+        font-size: 16px;
+    }
+    label.login {
+        font-size: 10px;
+    }
 }
 
-.neutral:hover{
+.neutral:hover {
     background-color: rgba(145, 114, 155, 0.623);
 }
 
-.neutral-large{
+.neutral-large {
     background: #ece9e6;
-	/* fallback for old browsers */
-	background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.68), rgba(145, 114, 155, 0.623));
-	/* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to bottom, rgba(255, 255, 255, 0.68), rgba(145, 114, 155, 0.623));
-	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	color: #4a4250;
-    width:140px;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.68), rgba(145, 114, 155, 0.623));
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.68), rgba(145, 114, 155, 0.623));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #4a4250;
+    width: 140px;
     font-size: 15px;
     text-align: center;
 }
 
-
-div.card-action.minimalist{
-    padding:13px;
+div.card-action.minimalist {
+    padding: 13px;
     align-items: center;
-    
 }
 
-.small-span{
-    font-size: 15px;
-
+p.small-span {
+    font-size: 10px;
 }
-
+p.medium-span {
+    font-size: 17px;
+}
 
 /* Recipe card styling*/
 
-
 .card-image {
-	height: 600px;
-	/* Your height here */
-	overflow: hidden;
+    height: 600px;
+    /* Your height here */
+    overflow: hidden;
 }
-
-
 
 /* Position text in recipe card in the middle of the page/image */
 
 span.bg-text {
-
-	background-color: rgba(96, 79, 119, 0.61);
-	bottom: 0;
-	right: 0;
-    top:0;
-
+    background-color: rgba(96, 79, 119, 0.61);
+    bottom: 0;
+    right: 0;
+    top: 0;
 }
 
-
-
 .col.s12.m6.recipe {
-	background: #ece9e6;
-	/* fallback for old browsers */
-	background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.68), rgba(236, 233, 230, 0.1));
-	/* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to bottom, rgba(255, 255, 255, 0.68), rgba(236, 233, 230, 0.1));
-	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #ece9e6;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.68), rgba(236, 233, 230, 0.1));
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.68), rgba(236, 233, 230, 0.1));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 /* Profile */
 
-h3.profile-name{
-    padding-top:15px;
+h3.profile-name {
+    padding-top: 15px;
 }
 
-.profile-desc{
-    margin:8px;
+.profile-desc {
+    margin: 8px;
 }
 
-.about-profile{
+.about-profile {
     background: #ece9e6;
-	/* fallback for old browsers */
-	background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.68), rgba(236, 233, 230, 0.1));
-	/* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to bottom, rgba(255, 255, 255, 0.68), rgba(236, 233, 230, 0.1));
-	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.68), rgba(236, 233, 230, 0.1));
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.68), rgba(236, 233, 230, 0.1));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.profile{
-    height:400px;
-    
+.profile {
+    height: 400px;
 }
 
-.profile-border{
+.profile-border {
     background: #ece9e6;
-	/* fallback for old browsers */
-	background: -webkit-linear-gradient(to top, rgba(255, 255, 255, 0.2), rgba(90, 61, 99, 0.12));
-	/* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to top, rgba(255, 255, 255, 0.2), rgba(90, 61, 99, 0.12));
-	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    border-radius:4px;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, rgba(255, 255, 255, 0.2), rgba(90, 61, 99, 0.12));
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.2), rgba(90, 61, 99, 0.12));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 4px;
     box-shadow: 8px 9px 8px rgba(0, 0, 0, 0.2);
     font-display: flex;
-    
 }
-.profile-desc{
+.profile-desc {
     font-size: 20px;
-    
 }
 
-.profile-desc.personal-success{
+.profile-desc.personal-success {
     padding-bottom: 15px;
 }
 
-.profile-desc.on-keto{
-font-weight: bold;
-
-    
+.profile-desc.on-keto {
+    font-weight: bold;
 }
-h5.my-milestone{
-    margin-top:70px;
- 
+h5.my-milestone {
+    margin-top: 70px;
 }
 /* Wise Zone*/
 
-h4.text-shadow.wiseman{
-    margin-top:0;
+h4.text-shadow.wiseman {
+    margin-top: 0;
 }
-
 
 /*Footer*/
 
 .page-footer {
-	font-family: "Montserrat", sans-serif;
-	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.212);
+    font-family: "Montserrat", sans-serif;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.212);
 }
 
 /* Social Media buttons */
 
 .btn-grad {
-	background: #ece9e6;
-	/* fallback for old browsers */
-	background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.68), rgba(236, 233, 230, 0.1));
-	/* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to bottom, rgba(255, 255, 255, 0.68), rgba(192, 190, 188, 0.1));
-	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	color: #5d4e68;
-	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.212);
-	margin-top: 12px;
+    background: #ece9e6;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.68), rgba(236, 233, 230, 0.1));
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.68), rgba(192, 190, 188, 0.1));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #5d4e68;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.212);
+    margin-top: 12px;
 }
 
-.btn-grad:hover{
+.btn-grad:hover {
     background-color: rgba(145, 114, 155, 0.623);
 }
 
 .btn-group {
-	width: 170px;
+    width: 170px;
 }

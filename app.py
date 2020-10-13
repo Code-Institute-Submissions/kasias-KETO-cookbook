@@ -26,10 +26,6 @@ def about():
     return render_template("about.html")
 
 
-
-# ------PROFILE-----#
-
-
 # register account
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -94,7 +90,7 @@ def profile(username):
     # grab the session user's username from database
     user = mongo.db.users.find_one({"username": username.lower()})
     milestones = mongo.db.milestones.find({"created_by": username.lower()})
-    recipes = list(mongo.db.recipes.find({"username": username.lower()}))
+    recipes = list(mongo.db.recipes.find({"created_by": username.lower()}))
 
     if "user" in session:
         return render_template(

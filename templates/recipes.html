@@ -3,100 +3,50 @@
 <h3 class="center-align text-shadow">All Recipes</h3>
 
 <div class="row card-panel search">
-  <form action="{{ url_for('search') }}" method="POST" class="col m12 s12">
-    <div class="row valign-wrapper center-align">
-      <div class="input-field col s12 m8">
-        <input
-          placeholder="i.e. breakfast, dessert, salmon, egg"
-          type="text"
-          name="query"
-          id="query"
-          minlength="3"
-          class="validate"
-          required
-        />
-        <label for="query">Search Recipes</label>
-      </div>
-      <div class="col">
-        <button type="submit" class="btn-flat neutral text-shadow">
-          Search
-        </button>
-        <a
-          href="{{ url_for('get_recipes') }}"
-          class="btn-flat neutral text-shadow"
-          >Reset</a
-        >
-      </div>
-    </div>
-  </form>
+    <form action="{{ url_for('search') }}" method="POST" class="col m12 s12">
+        <div class="row valign-wrapper center-align">
+            <div class="input-field col s12 m8">
+                <input placeholder="i.e. breakfast, dessert, salmon, egg" type="text" name="query" id="query" minlength="3" class="validate" required />
+                <label for="query">Search Recipes</label>
+            </div>
+            <div class="col">
+                <button type="submit" class="btn-flat neutral text-shadow">
+                    Search
+                </button>
+                <a href="{{ url_for('get_recipes') }}" class="btn-flat neutral text-shadow">Reset</a>
+            </div>
+        </div>
+    </form>
 </div>
 
 {% if recipes|length > 0 %}
 
 <div class="row">
-  {% for recipe in recipes %}
-  <div class="col s12 m4">
-    <div class="card large">
-      <div class="card-image">
-        <img
-          class="bg-image responsive-img"
-          src="{{ recipe.recipe_image }}"
-          alt="{{ recipe.recipe_name }}"
-        />
-        <span class="card-title bg-text text-shadow"
-          ><h5>{{ recipe.recipe_name }}</h5>
-          <p class="small-span"><em>Created by: {{ recipe.created_by }}</em></p>
-        </span>
-      </div>
-      <div class="card-content minimalist">
-        <p>Ingredients: {{ recipe.keywords }}</p>
-        <br />
-      </div>
-      <div
-        class="card-action col s12 minimalist center-align"
-        style="border-top-width: 0px;"
-      >
-        <a
-          href="{{url_for('recipe', recipe_id=recipe._id)}}"
-          class="btn neutral"
-          >Cook</a
-        >
-        {% if session.user|lower == recipe.created_by|lower %}
-        <a
-          href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"
-          id="edit"
-          class="btn green neutral"
-          >Edit</a
-        >
-        <a href="#delete-this" class="btn neutral red modal-trigger">Delete</a>
-        
-
-        <div id="delete-this" class="modal">
-          <div class="modal-question-wrapper">
-            <div class="modal-question">
-              <p>
-                Are you absolutely and definitely sure you do not need this
-                recipe in your book? Even Salmon of Wisdom will not be able to
-                bring it back
-              </p>
+    {% for recipe in recipes %}
+    <div class="col s12 m4">
+        <div class="card large">
+            <div class="card-image">
+                <img class="bg-image responsive-img" src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_name }}" />
+                <span class="card-title bg-text text-shadow">
+                    <h5>{{ recipe.recipe_name }}</h5>
+                    <p class="medium-span"><em>{{ recipe.category_name }}</em></p>
+                    <p class="small-span"><em>Added by: {{ recipe.created_by }}</em></p>
+                </span>
             </div>
-            <div class="modal-footer">
-              <a
-                href="{{url_for('delete_recipe', recipe_id=recipe._id)}}"
-                class="btn-small neutral red modal-close"
-                >Delete</a
-              >
-              <a class="btn-small neutral blue modal-close">Cancel</a>
+            <div class="card-content minimalist">
+                <p>Ingredients: {{ recipe.keywords }}</p>
+                <br />
             </div>
-          </div>
+            <div class="card-action col s12 minimalist center-align" style="border-top-width: 0px;">
+                <a href="{{url_for('recipe', recipe_id=recipe._id)}}" class="btn neutral">Cook</a>
+            </div>
         </div>
-
-        {% endif %}
-      </div>
     </div>
-  </div>
-  {% endfor %}
+
+    {% endfor %}
 </div>
+
 {% else %}
 <h3 class="red-text center-align text-shadow">No Results Found</h3>
+
 {% endif %} {% endblock %}
