@@ -146,32 +146,6 @@ h3 {
 	margin-bottom: 0;
 }
 
-.box {
-	position: relative;
-}
-
-.box .text {
-	position: absolute;
-	z-index: 999;
-	margin: 0 auto;
-	left: 0;
-	right: 0;
-	text-align: center;
-	top: 87%;
-	/* Adjust this value to move the positioned div up and down */
-	background: #ece9e6;
-	/* fallback for old browsers */
-	background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.938), rgba(236, 233, 230, 0.3));
-	/* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to bottom, rgba(255, 255, 255, 0.938), rgba(236, 233, 230, 0.3));
-	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	border-radius: 40%;
-	font-family: "Montserrat", sans-serif;
-	color: rgb(35, 29, 37);
-	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.212);
-	width: 44%;
-	/* Set the width of the positioned div */
-}
 
 
 /*All Recipes */
@@ -201,12 +175,27 @@ h3 {
 	color: #4a4250;
 	
 	margin-top: 12px;
-    width:80px;
+    width:90px;
     font-size: 12px;
     font-weight: bold;
     text-align: center;
     padding:0;
 }
+
+/* Media query to reduce size of a button on ipads*/
+
+@media only screen and (max-width: 1024px) and (min-width: 768px){
+	.neutral {
+		width:50px;
+	}
+    h4.text-shadow.wiseman{
+        font-size: 22px;
+    }
+    .card-content.minimalist{
+        padding-left: 10px;
+   }
+}
+
 .neutral:hover{
     background-color: rgba(145, 114, 155, 0.623);
 }
@@ -223,6 +212,7 @@ h3 {
     font-size: 15px;
     text-align: center;
 }
+
 
 div.card-action.minimalist{
     padding:13px;

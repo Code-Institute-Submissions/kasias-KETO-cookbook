@@ -15,10 +15,10 @@
                 <br />
             </div>
             <div class="card-action col s12 minimalist center-align" style="border-top-width: 0px;">
-                <a href="{{url_for('profile', username=user.username|lower)}}" class="btn neutral">Profile</a>
+                <div class="s4 col"><a href="{{url_for('profile', username=user.username|lower)}}" class="btn neutral">Profile</a></div>
                 {% if session.user|lower == user.username|lower %}
-                <a href="{{url_for('edit_profile', username=user.username|lower)}}" id="edit" class="btn green neutral">Edit</a>
-                <a href="#delete-this" class="btn neutral red modal-trigger">Delete</a>
+                <div class="s4 col"><a href="{{url_for('edit_profile', username=user.username|lower)}}" id="edit" class="btn green neutral">Edit</a></div>
+                <div class="s4 col"><a href="#delete-this" class="btn neutral red modal-trigger">Delete</a></div>
 
                 <div id="delete-this" class="modal">
                     <div class="modal-question-wrapper">
