@@ -25,7 +25,7 @@ mongo = PyMongo(app)
 def about():
     return render_template("about.html")
 
- 
+
 
 # ------PROFILE-----#
 
