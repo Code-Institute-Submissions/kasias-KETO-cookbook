@@ -187,12 +187,35 @@ h3 {
 @media only screen and (max-width: 1024px) and (min-width: 768px){
 	.neutral {
 		width:50px;
+        font-size: 9px;
 	}
     h4.text-shadow.wiseman{
         font-size: 22px;
     }
     .card-content.minimalist{
         padding-left: 10px;
+   }
+   p.small-span{
+       font-size:12px;
+   }
+}
+
+/* Media query to reduce size of buttons for screens less than 300 */
+
+@media only screen and (max-width: 300px) and (min-width: 250px){
+	a.btn.neutral {
+		width:60px;
+        font-size: 9px;
+	}
+    div.card-content.minimalist{
+        padding-left: 10px;
+        padding-right:20px;
+   }
+       h4.text-shadow.wiseman{
+        font-size: 26px;
+    }
+      p.small-span{
+       font-size:12px;
    }
 }
 
