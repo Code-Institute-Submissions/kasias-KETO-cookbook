@@ -199,7 +199,7 @@ Some future features may include:
 - MongoDB Atlas - cloud database
 - PyMongo - Python API for MongoDB
 
--W3C HTML Validator & W3C CSS Validator
+- W3C HTML Validator & W3C CSS Validator
 
 
 ## Testing<hr>
