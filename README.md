@@ -4,6 +4,12 @@
 
 # [Salmon of Wisdom, the keto cookbook](https://keto-cookbook.herokuapp.com/)<hr>
 
+[![Salmon of Wisdom on Heroku](https://img.shields.io/badge/Heroku-Salmon%20of%20Wisdom-purple)](https://keto-cookbook.herokuapp.com/) 
+
+
+
+
+
 In the ever evolving world of different diets, the Food Pyramid as we know it no longer applies for most people. Many diets would at this stage have eliminated certain contents of the pyramid, in Keto's case that pyramid has been literally turned up-side-down. This website was developed to assist those who are embarking on their lifestyle change as well as those who are looking for some inspiration to their existing journey.
 
 ## Table of Contents
@@ -35,7 +41,9 @@ The theme of this page is cooking, and there are various types of users this pag
 
 ### User Stories
 
-<ins> *Guest User* </ins>
+```diff
+@@ *Guest User* @@
+```
 - As a guest user of this website I want to just browse - I expect this site to have some content available for me
 - As a guest user I want to know what the website is about when I am visiting first time
 - As a guest user I want to be able to access, search and share recipes
@@ -43,7 +51,9 @@ The theme of this page is cooking, and there are various types of users this pag
 - As a guest user I want to be able to check out Social Networks of this website
 - As a guest user I want to be able to visit some recommended by this website shops
 
-<ins> *Logged in User* </ins>
+```diff
+ @@ *Logged in User* @@
+ ```
 - As a registered user I want to be able to get a confirmation every time I log in
 - As a registered user I want to be able to add recipes
 - As a registered user I want to be able to search recipes
@@ -177,29 +187,34 @@ Some future features may include:
 
 ## Technologies Used<hr>
 
-- Gitpod - Used as my primary IDE for coding
-- Github - Remote storing of my code online
-- Photoshop - to edit the cover photo of the responsive view
-- Goodnotes - to create Wireframes
-- Procreate - to create the main Salmon of Wisdom logo
-- Pixlr.com - used to edit the user images
-- Cloudinary - used to store my images
+[![Gitpod](https://img.shields.io/badge/IDE-Gitpod-blue)](https://www.gitpod.io/) Used as my primary IDE for coding<br>
+[![Github](https://img.shields.io/badge/Remote%20code-Github-white)](https://github.com/) Remote storing of my code online<br>
+[![Photoshop](https://img.shields.io/badge/Photoediting-Photoshop-lightblue)](https://www.adobe.com/ie/products/photoshop.html) to edit the cover photo of the responsive view<br>
+[![Goodnotes](https://img.shields.io/badge/Wireframes-Goodnotes-Orange)](https://www.goodnotes.com/) to create Wireframes<br>
+[![Procreate](https://img.shields.io/badge/Logo-Procreate-yellowgreen)](https://procreate.art/) to create the main Salmon of Wisdom logo<br>
+[![Pixlr.com](https://img.shields.io/badge/Image%20editing-Pixlr-blue)](https://pixlr.com/x/) used to edit the user images<br>
+[![Cloudinary](https://img.shields.io/badge/Cloud%20image%20storing-Cloudinary-0F4E97)](https://cloudinary.com/) used to store my images<br>
 
-- HTML - base for markup text
-- CSS - base for cascading styles
-- jQuery - used as the JS functionality
-- Materialize - used as the overall design framework
 
-- Flask - used as a microframework
-- Jinja - for templating with Flask
-- Werkzeug - password hashing, authentication and authorisation
+[![HTML](https://img.shields.io/badge/Mark%20up%20text-HTML-yellow)](https://www.w3schools.com/html/html_intro.asp) base for markup text<br>
+[![CSS](https://img.shields.io/badge/Styling-CSS-blueviolet)](https://www.w3schools.com/css/) base for cascading styles<br>
+[![jQuery](https://img.shields.io/badge/JS%20Functionality-jQuery-darkgreen)](https://jquery.com/) used as the JS functionality<br>
+[![Materialize](https://img.shields.io/badge/Design%20Framework-Materialize-%23F5A4A7)](https://materializecss.com/) used as the overall design framework<br>
 
-- Heroku - used for app hosting
-- Python - back end programming language
-- MongoDB Atlas - cloud database
-- PyMongo - Python API for MongoDB
+[![Flask](https://img.shields.io/badge/Microframework-Flask-%238B0000)](https://shields.io/) used as a microframework<br>
+[![Jinja](https://img.shields.io/badge/Templating%20with%20Flask-Jinja-%23FF6347)](https://shields.io/) for templating with Flask<br>
+[![Werkzeug](https://img.shields.io/badge/Password%20Hashing-Werkzeug-%09%23FFFF00)](https://werkzeug.palletsprojects.com/en/1.0.x/) password hashing, authentication and authorisation<br>
+[![Shields](https://img.shields.io/badge/Readme%20Badges-Shields-lightgrey)](https://shields.io/) to create a badge<br>
 
-- W3C HTML Validator & W3C CSS Validator
+[![Heroku](https://img.shields.io/badge/App%20Hosting-Heroku-%237B68EE)](https://www.heroku.com/home) used for app hosting<br>
+[![Python](https://img.shields.io/badge/Back%20end%20programming-Python-%09%23008000)](https://shields.io/) to create a badge<br>
+[![MongoDB Atlas](https://img.shields.io/badge/Cloud%20Database-MongoDB%20Atlas-%09%23006400)](https://shields.io/) to create a badge<br>
+
+[![W3C HTML Validator](https://img.shields.io/badge/HTML%20Validator-W3C%20HTML%20Validator-red)](https://validator.w3.org/) to validate HTML<br>
+[![W3C CSS Validator](https://img.shields.io/badge/CSS%20Validator-W3C%20CSS%20Validator-darkred)](https://jigsaw.w3.org/css-validator/) to validate CSS code<br>
+[![Pep8 Online](https://img.shields.io/badge/Python%20Validator-PEP8%20online-white)](http://pep8online.com/) to validate Python code<br>
+[![JShint](https://img.shields.io/badge/JS%2FjQuery%20Validator-JSHint-%23008e94)](https://jshint.com/) to validate JavaScript/jQuery<br>
+
 
 
 ## Testing<hr>
