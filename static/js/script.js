@@ -16,10 +16,3 @@ $(document).ready(function(){
         }
     });
   });
-
-
-
-
-
-
-
