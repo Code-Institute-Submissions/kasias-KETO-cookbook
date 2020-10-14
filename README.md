@@ -41,9 +41,8 @@ The theme of this page is cooking, and there are various types of users this pag
 
 ### User Stories
 
-```diff
-@@ *Guest User* @@
-```
+#### Guest User
+
 - As a guest user of this website I want to just browse - I expect this site to have some content available for me
 - As a guest user I want to know what the website is about when I am visiting first time
 - As a guest user I want to be able to access, search and share recipes
@@ -51,9 +50,8 @@ The theme of this page is cooking, and there are various types of users this pag
 - As a guest user I want to be able to check out Social Networks of this website
 - As a guest user I want to be able to visit some recommended by this website shops
 
-```diff
-@@ *Registered User* @@
-```
+#### Registered User
+
 - As a registered user I want to be able to get a confirmation every time I log in
 - As a registered user I want to be able to add recipes
 - As a registered user I want to be able to search recipes
