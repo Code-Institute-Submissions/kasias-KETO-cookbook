@@ -34,7 +34,6 @@ The theme of this page is cooking, and there are various types of users this pag
 
 *User type 1: Person interested in changing their lifestyle and considering starting KETO*
 
-
 *User type 2: Those already practicing the KETO lifestyle and diet, but looking for inspiration for daily menus*
 
 
@@ -73,12 +72,18 @@ The theme of this page is cooking, and there are various types of users this pag
 - Flask
 ####  :rainbow: Color Scheme
 I opted for a very calm, minimalistic color scheme. Various shades of purple and gray, to ensure the page is not too busy
-#### :bowtie: Icons
-On this project I have used Font Awesome icons. As well as that, I have created icon of my own to illustrate the Instructions (Method) of cooking on both, Add Recipe and Edit Recipe form.
-#### :abc: Typography
-I designed the main logo using a caligraphy font and some addition of Montserrat. The latter is used througout the website for the headings and other main titles. The text is styled with Poppins font.
 
-<p align="center"><img src="https://res.cloudinary.com/dugnokxox/image/upload/v1601398907/Logo/salmon_of_wisdom_tr_bwxbu3.png" alt="Salmon logo"></p>
+<p align="center"><img src="https://res.cloudinary.com/dugnokxox/image/upload/v1602675799/AdobeColor-Salmon_of_Wisdom_yryooh.jpg" alt="Salmon logo"></p>
+
+#### :bowtie: Icons
+On this project I have used Font Awesome icons. As well as that, I have chosen icon from the web to illustrate the Instructions (Method) of cooking on both, Add Recipe and Edit Recipe form.
+<p align="center"><img src="https://res.cloudinary.com/dugnokxox/image/upload/v1600807724/Logo/chef_rbminz.png" width="70" height="70" alt="chef"></p>
+
+#### :abc: Typography
+- Montserrat - used to style main headings and buttons as well as a secondary font within the logo
+- Poppins - used as a secondary logo for paragraphs within the website
+- OnceSignature - utilised while designing the main logo for the website.
+<p align="center"><img src="https://res.cloudinary.com/dugnokxox/image/upload/v1601398907/Logo/salmon_of_wisdom_tr_bwxbu3.png" alt="Typography"></p>
 
 ## Wireframes<hr>
 <details><summary>Base Template</summary>
@@ -137,10 +142,9 @@ I designed the main logo using a caligraphy font and some addition of Montserrat
 # Features<hr>
 
 
-## Existing Features 
+## Existing Features <hr>
 
-Visible to all users
-
+***Visible to all users***
 ### About Keto
 This section is introducing the user to what the page is all about, and it's the Keto diet. The About section is answering to the assumption that not everyone visiting this page will know what Keto is, and if they do, they might need more information about it. The About section delivers this information
 ### All Recipes
@@ -154,8 +158,7 @@ The option to Login is visible to all users, however, only those registered can 
 ### Register
 The option of registering is visible to all users, however, only usernames that do not yet exist in the database can be registered via this route.
 
-Accessible only by registered user
-
+***Accessible only by registered user***
 ### Profile
 This is the page that will welcome a registered user who has just logged onto the site. The layout is very simplistic, a profile photograph with username and the achievement underneath it. This is followed by About section, which allows this registered user tell few words about themselves. 
 ### Add Milestone
@@ -171,8 +174,7 @@ These are available to the users, for they might want to either add their own fa
 ### Delete Recipe
 The third button on the recipe cover card is the Delete button. While the creator of that recipe can freely delete it from the database, the modal will pop up first to ensure the user knows this is final and cannot be reversed.
 
-Accessible only by Administrator
-
+***Accessible only by Administrator***
 ### Manage Categories
 At this time there are three main Categories, however, the page assumes that the Administrator might want to expand on it in the future. Therefore there are three options available here:
 - Add Category
@@ -180,7 +182,7 @@ At this time there are three main Categories, however, the page assumes that the
 - Delete Category
 
 
-## Features Left to Implement 
+## Features Left to Implement <hr>
 Some future features may include:
 - Setting the Diary entries to Private
 - Functionality to share videos of own cooking tutorials
@@ -222,8 +224,8 @@ Some future features may include:
 # Defensive Design<hr>
 
 ## Features Testing<hr>
-Profile<br>
 
+***Profile***<br>
 **Logging in (applicable to a Session User)**<br>
 - if Registered, click on the Login button on the navbar
 - Is the Login form rendered?
@@ -270,7 +272,7 @@ Profile<br>
 - Has the profile been deleted?
 
 
-Recipe<br>
+***Recipe***<br>
 **Creating a Recipe (applicable to a Session User)**<br>
 [**C** in CRUD (Creating)]
 - Click on the Add Recipe option in the navbar
@@ -290,14 +292,14 @@ Recipe<br>
 
 **Editing a Recipe (applicable to a Session User)**<br>
 [**U** in CRUD (Updating)]
-Method 1:
+###### Method 1:
 - Go to the Recipes section
 - Choose a recipe that was created by Session User
 - Click on the Edit button
 - Does the Edit Recipe form renders correctly?
 - Change anything about the recipe and click on save
 - Does the information entered updates correctly on the Recipe card?
-Method 2
+###### Method 2
 - Go to Session User Profile section
 - Scroll down to the second accordion
 - Open recipe for editing
@@ -309,14 +311,14 @@ Method 2
 
 **Deleting a Recipe (applicable to a Session User)**<br>
 [**D** in CRUD (Deleting)]
-Method 1:
+###### Method 1:
 - Go to the Recipes section
 - Choose a recipe that was created by Session User
 - Click on the Delete button
 - Does the modal pop up to ask if you are sure?
 - Click on Cancel button to exit the process
 - Click on Delete button to proceed with deletion
-Method 2
+###### Method 2
 - Go to Session User Profile section
 - Scroll down to the second accordion
 - Open recipe for editing
@@ -331,34 +333,26 @@ Method 2
 
 **Wrong password entered when logging in** <br>
 :heavy_check_mark: returns flash "Incorrect Username and/or Password" to ensure that the non-registered user does not guess one or the other if the incorrect entry is provided.<br>
-
 **Duplicate username registration attempt** <br>
 :heavy_check_mark: returns flash "Username already exists<br>
-
 **Wrong username entered when logging in** <br>
 :heavy_check_mark: returns flash "Incorrect Username and/or Password" to ensure that the non-registered user does not guess one or the other if the incorrect entry is provided.<br>
-
-
 **Attempt to access "/add_category" by non Administrator** <br>
 link for testing: ***http://keto-cookbook.herokuapp.com/add_category***<br> 
 :heavy_check_mark: renders About page if user in session but user is not "Administrator"
-:heavy_check_mark: renders Login page if user is not in session<br><br>
-
+:heavy_check_mark: renders Login page if user is not in session<br>
 **Attempt to access "/get_categories" by non Administrator** <br>
 link for testing: ***http://keto-cookbook.herokuapp.com/get_categories***<br>
 :heavy_check_mark: renders About page if user in session but user is not "Administrator"
-:heavy_check_mark: renders Login page if user is not in session<br><br>
-
+:heavy_check_mark: renders Login page if user is not in session<br>
 **Attempt to access "/edit_category/category_id" by non Administrator**<br>
 link for testing: ***http://keto-cookbook.herokuapp.com/edit_category/5f6a00eadda48a7a60562ada (category_id as example)***<br>
 :heavy_check_mark: renders About page if user in session but user is not "Administrator"
-:heavy_check_mark: renders Login page if user is not in session<br><br>
-
+:heavy_check_mark: renders Login page if user is not in session<br>
 **Attempt to access "/delete_category/category_id" by non Administrator**<br>
 link for testing: ***http://keto-cookbook.herokuapp.com/delete_category/5f6a00eadda48a7a60562ada (category_id as example)***<br>
 :heavy_check_mark: renders About page if user in session but user is not "Administrator"
-:heavy_check_mark: renders Login page if user is not in session<br><br>
-
+:heavy_check_mark: renders Login page if user is not in session<br>
 **As non-logged on user attempt to access "/edit_profile/username"** <br>
 link for testing: ***http://keto-cookbook.herokuapp.com/edit_profile/marie***<br>
 :heavy_check_mark: renders Login page if user is not in session<br><br>
@@ -386,7 +380,7 @@ link for testing: ***http://keto-cookbook.herokuapp.com/edit_recipe/5f844c38884d
 #### As a guest user I want to be able to register and log in easily
 - Once user decides they want a full access to the website, they can easily navigate to the Register button from the Navbar
 #### As a guest user I want to be able to check out Social Networks of this website
-- The footer contains all links to the Social Media
+- The footer contains all links to the Social Media<br><br>
 
 ### *Logged in User*
 #### As a registered user I want to be able to get a confirmation every time I log in
@@ -406,7 +400,8 @@ link for testing: ***http://keto-cookbook.herokuapp.com/edit_recipe/5f844c38884d
 #### As a registered user I want to be able to see other users profiles and check out their achievements
 - From Wise Zone the session user may check out the profiles of other users. This can server as source of inspiration or motivation
 #### As a registered user I want to be able to delete my profile when I am no longer interested in being part of this group
-- From Wise Zone the session user may choose to delete their own profile. The action of profile deletion is preceded by a modal which ensures that the user realises the finality of that action.
+- From Wise Zone the session user may choose to delete their own profile. The action of profile deletion is preceded by a modal which ensures that the user realises the finality of that action.<br><br>
+
 
 
 ## Deployment<hr>
