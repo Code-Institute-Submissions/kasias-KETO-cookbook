@@ -28,7 +28,7 @@ In the ever evolving world of different diets, the Food Pyramid as we know it no
 
 
 
-## UX<hr>
+# UX<hr>
  
 The theme of this page is cooking, and there are various types of users this page may appeal to:
 
@@ -39,7 +39,8 @@ The theme of this page is cooking, and there are various types of users this pag
 
 
 
-### User Stories
+
+## User Stories<hr>
 
 #### Guest User
 
@@ -64,7 +65,8 @@ The theme of this page is cooking, and there are various types of users this pag
 - As a registered user I want to be able to delete my profile when I am no longer interested in being part of this group
 
 
-### Design
+
+## Design<hr>
 #### :framed_picture: Framework
 - Materialize
 - jQuery
@@ -75,6 +77,8 @@ I opted for a very calm, minimalistic color scheme. Various shades of purple and
 On this project I have used Font Awesome icons. As well as that, I have created icon of my own to illustrate the Instructions (Method) of cooking on both, Add Recipe and Edit Recipe form.
 #### :abc: Typography
 I designed the main logo using a caligraphy font and some addition of Montserrat. The latter is used througout the website for the headings and other main titles. The text is styled with Poppins font.
+
+<p align="center"><img src="https://res.cloudinary.com/dugnokxox/image/upload/v1601398907/Logo/salmon_of_wisdom_tr_bwxbu3.png" alt="Salmon logo"></p>
 
 ## Wireframes<hr>
 <details><summary>Base Template</summary>
@@ -129,6 +133,7 @@ I designed the main logo using a caligraphy font and some addition of Montserrat
 </details>
 
 
+
 ## Features<hr>
 
 
@@ -136,39 +141,39 @@ I designed the main logo using a caligraphy font and some addition of Montserrat
 
 <ins>Visible to all users</ins>
 
-##### About Keto
+#### About Keto
 This section is introducing the user to what the page is all about, and it's the Keto diet. The About section is answering to the assumption that not everyone visiting this page will know what Keto is, and if they do, they might need more information about it. The About section delivers this information
-##### All Recipes
+#### All Recipes
 This is the main highlight of the page, it contains the selection of recipes, which combine both recipes added by the users as well as those by the administrators.
-###### Recipe
+##### Recipe
 From All Recipes the user will navigate their way to the Recipe by clicking on the "Cook" button.
-###### Share Recipe
+##### Share Recipe
 On the Recipe card there is an option to choose some networks that this recipe can be shared to. There are few defaults like Facebook, Email or WhatsApp but the user can also click on the plus sign to choose other channels.
-##### Login
+#### Login
 The option to Login is visible to all users, however, only those registered can access it.
-##### Register
+#### Register
 The option of registering is visible to all users, however, only usernames that do not yet exist in the database can be registered via this route.
 
 <ins>Accessible only by registered user</ins>
 
-##### Profile
+#### Profile
 This is the page that will welcome a registered user who has just logged onto the site. The layout is very simplistic, a profile photograph with username and the achievement underneath it. This is followed by About section, which allows this registered user tell few words about themselves. 
 #### Add Milestone
 A diary-like feature, which lets the user to record their progress directly from their profile. These milestones are to motivate them and others that might visit their profile. The milestones are public and visible to all users.
-##### Edit Profile
+#### Edit Profile
 While on the main Wise Zone page, the session user can access profiles of others, plus additional options for their own profile. One of those options is to edit the profile. This gives the session user the opportunity to amend anything in their profile. Since this is a dieting page, the objectives or achievements are subject to amendments.
-##### Delete Profile
+#### Delete Profile
 The other option accessible to the session user is the deletion of the profile. This would be possible once the user decides themselves that they no longer wish to be part of this website. Upon clicking the delete button a modal pops up to inform of the final nature of this action. Once the session user clicks "OK", the profile is removed from database, session cookie removed from the browser and the user is redirected to the Register page.
-##### Wise Zone
+#### Wise Zone
 This page contains a selection of registered users. Anyone can check out their profiles and see what objectives others are headed towards or achievements reached. From here any user can check out others profiles, the session user can access more options related to their own profile, as addressed in detail above.
-##### Add Recipe and Edit Recipe (needs to be implemented!)
+#### Add Recipe and Edit Recipe (needs to be implemented!)
 These are available to the users, for they might want to either add their own favourite creations or note down recipes found in other sources. 
-##### Delete Recipe
+#### Delete Recipe
 The third button on the recipe cover card is the Delete button. While the creator of that recipe can freely delete it from the database, the modal will pop up first to ensure the user knows this is final and cannot be reversed.
 
 <ins>Accessible only by Administrator<ins>
 
-##### Manage Categories
+#### Manage Categories
 At this time there are three main Categories, however, the page assumes that the Administrator might want to expand on it in the future. Therefore there are three options available here:
 - Add Category
 - Edit Category
@@ -213,11 +218,10 @@ Some future features may include:
 [![Pep8 Online](https://img.shields.io/badge/Python%20Validator-PEP8%20online-white)](http://pep8online.com/) to validate Python code<br>
 [![JShint](https://img.shields.io/badge/JS%2FjQuery%20Validator-JSHint-%23008e94)](https://jshint.com/) to validate JavaScript/jQuery<br>
 
+# Defensive Design
 
-
-## Testing<hr>
-
-<ins>Profile</ins><br>
+## Features Testing
+Profile<br>
 
 **Logging in**<br>
 - if Registered, click on the Login button on the navbar
@@ -286,7 +290,7 @@ Some future features may include:
 - Click on Cancel, does the modal cancel the action?
 - Go back to modal and click on delete, does it delete the recipe?
 
-## Defensive Design<hr>
+## Defensive Design Testing<hr>
 
 - **Wrong password entered when logging in** returns flash "Incorrect Username and/or Password" to ensure that the non-registered user does not guess one or the other if the incorrect entry is provided.<br>
 
