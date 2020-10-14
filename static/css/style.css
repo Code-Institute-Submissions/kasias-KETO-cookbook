@@ -297,7 +297,7 @@ h3.profile-name {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     border-radius: 4px;
     box-shadow: 8px 9px 8px rgba(0, 0, 0, 0.2);
-    font-display: flex;
+    
 }
 .profile-desc {
     font-size: 20px;
