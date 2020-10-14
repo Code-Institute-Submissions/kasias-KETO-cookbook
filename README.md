@@ -1,3 +1,7 @@
+<p align="center"><img src="https://res.cloudinary.com/dugnokxox/image/upload/v1601467758/Logo/salmon_clipart__vyx2yu.png" width="100" height="100" alt="Thank you for visiting my Readme"></p>
+
+<hr>
+
 ![](wireframes/screens.png)
 
 
@@ -18,13 +22,14 @@ In the ever evolving world of different diets, the Food Pyramid as we know it no
   * [Design](#design)
   * [Wireframes](#wireframes)
 * [Features](#features)
-  * [Existing Features](#existing-features)
-  * [Features Left to Implement](#features-left-to-implement)
 * [Technologies Used](#technologies-used)
-* [Testing](#testing)
 * [Defensive Design](#defensive-design)
+  * [Features Testing](#features-testing)
+  * [Defensive Design Testing](#defensive-design-testing)
 * [Deployment](#deployment)
 * [Credits and References](#credits)
+
+
 
 
 
@@ -63,7 +68,7 @@ The theme of this page is cooking, and there are various types of users this pag
 - As a registered user I want to be able to add my own milestones to motivate myself and others
 - As a registered user I want to be able to delete my profile when I am no longer interested in being part of this group
 
-
+[Back to top](#table-of-contents)
 
 ## Design<hr>
 #### :framed_picture: Framework
@@ -137,7 +142,7 @@ On this project I have used Font Awesome icons. As well as that, I have chosen i
 ![](wireframes/members.jpg)
 </details>
 
-
+[Back to top](#table-of-contents)
 
 # Features<hr>
 
@@ -169,7 +174,7 @@ While on the main Wise Zone page, the session user can access profiles of others
 The other option accessible to the session user is the deletion of the profile. This would be possible once the user decides themselves that they no longer wish to be part of this website. Upon clicking the delete button a modal pops up to inform of the final nature of this action. Once the session user clicks "OK", the profile is removed from database, session cookie removed from the browser and the user is redirected to the Register page.
 ### Wise Zone
 This page contains a selection of registered users. Anyone can check out their profiles and see what objectives others are headed towards or achievements reached. From here any user can check out others profiles, the session user can access more options related to their own profile, as addressed in detail above.
-### Add Recipe and Edit Recipe (needs to be implemented!)
+### Add Recipe and Edit Recipe
 These are available to the users, for they might want to either add their own favourite creations or note down recipes found in other sources. 
 ### Delete Recipe
 The third button on the recipe cover card is the Delete button. While the creator of that recipe can freely delete it from the database, the modal will pop up first to ensure the user knows this is final and cannot be reversed.
@@ -189,7 +194,7 @@ Some future features may include:
 - Functionality to contact other members
 - Pagination
 
-
+[Back to top](#table-of-contents)
 
 # Technologies Used<hr>
 
@@ -221,13 +226,15 @@ Some future features may include:
 [![Pep8 Online](https://img.shields.io/badge/Python%20Validator-PEP8%20online-white)](http://pep8online.com/) to validate Python code<br>
 [![JShint](https://img.shields.io/badge/JS%2FjQuery%20Validator-JSHint-%23008e94)](https://jshint.com/) to validate JavaScript/jQuery<br>
 
+[Back to top](#table-of-contents)
+
 # Defensive Design<hr>
 
 ## Features Testing<hr>
 
 ***Profile***<br>
 **Logging in (applicable to a Session User)**<br>
-- if Registered, click on the Login button on the navbar
+- If Registered, click on the Login button on the navbar
 - Is the Login form rendered?
 - Submit an empty form, does the system come back with an error to fill in the fields?
 - Fill in less than five characters and submit, does the system come back with a message to match the requested format?
@@ -254,14 +261,12 @@ Some future features may include:
 - Add details and "Save"
 - The Milestone should now be visible within the first accordion in Profile
 
-
 **Editing an Account (applicable to a Session User)**<br>
 - Go to the Profile section
 - Click on the Edit button
 - Enter details to amend
 - Click on Save
 - Are details successfully amended
-
 
 **Deleting an Account (applicable to a Session User)**<br>
 - Go to the Profile section
@@ -328,6 +333,8 @@ Some future features may include:
 - Does the modal pop up to ask if you are sure?
 - Click on Cancel button to exit the process
 - Click on Delete button to proceed with deletion
+
+[Back to top](#table-of-contents)
 
 ## Defensive Design Testing<hr>
 
@@ -402,7 +409,7 @@ link for testing: ***http://keto-cookbook.herokuapp.com/edit_recipe/5f844c38884d
 #### As a registered user I want to be able to delete my profile when I am no longer interested in being part of this group
 - From Wise Zone the session user may choose to delete their own profile. The action of profile deletion is preceded by a modal which ensures that the user realises the finality of that action.<br><br>
 
-
+[Back to top](#table-of-contents)
 
 ## Deployment<hr>
 ***Requirements:***
@@ -486,6 +493,7 @@ SECRET_KEY = [Secret key]
 <br>
 - Go to the Deploy tab and Deploy Branch, ensuring that master branch is selected
 
+[Back to top](#table-of-contents)
 
 # Credits<hr>
 
@@ -505,4 +513,6 @@ The Task Manager Miniproject by <a href="https://codeinstitute.net/">Code Instit
 
 
 <p align="center"><img src="https://res.cloudinary.com/dugnokxox/image/upload/v1601467758/Logo/salmon_clipart__vyx2yu.png" width="100" height="100" alt="Thank you for visiting my Readme"></p>
+
+[Back to top](#table-of-contents)
 
