@@ -457,6 +457,8 @@ https://www.pexels.com/ - Profile photos and some images on the About page
 #### Acknowledgements
 - Tim Nelson - for helpful and timely guidance, thanks to Tim I learned a great deal about good fundamentals of templating. I will be exploring the Python and Flask path, among others, but this one will be with greatest enthusiasm. I am so grateful.
 - Precious Ijege - for mentorship and honest critique
+- Evertyred Mentor - for taking the time to instoduce me to a Fibonacci Sequence and it's benefit in project planning and management
+- Ngiap - for continuous moral support and feedback on my project
 #### Reference
 - The Task Manager Miniproject by Coding Institute used as an excellent source of information on environment, database and templating
 
