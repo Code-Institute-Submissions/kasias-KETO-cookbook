@@ -134,61 +134,62 @@ I designed the main logo using a caligraphy font and some addition of Montserrat
 
 
 
-## Features<hr>
+# Features<hr>
 
 
-### Existing Features 
+## Existing Features 
 
-<ins>Visible to all users</ins>
+Visible to all users
 
-#### About Keto
+### About Keto
 This section is introducing the user to what the page is all about, and it's the Keto diet. The About section is answering to the assumption that not everyone visiting this page will know what Keto is, and if they do, they might need more information about it. The About section delivers this information
-#### All Recipes
+### All Recipes
 This is the main highlight of the page, it contains the selection of recipes, which combine both recipes added by the users as well as those by the administrators.
-##### Recipe
+### Recipe
 From All Recipes the user will navigate their way to the Recipe by clicking on the "Cook" button.
-##### Share Recipe
+### Share Recipe
 On the Recipe card there is an option to choose some networks that this recipe can be shared to. There are few defaults like Facebook, Email or WhatsApp but the user can also click on the plus sign to choose other channels.
-#### Login
+### Login
 The option to Login is visible to all users, however, only those registered can access it.
-#### Register
+### Register
 The option of registering is visible to all users, however, only usernames that do not yet exist in the database can be registered via this route.
 
-<ins>Accessible only by registered user</ins>
+Accessible only by registered user
 
-#### Profile
+### Profile
 This is the page that will welcome a registered user who has just logged onto the site. The layout is very simplistic, a profile photograph with username and the achievement underneath it. This is followed by About section, which allows this registered user tell few words about themselves. 
-#### Add Milestone
+### Add Milestone
 A diary-like feature, which lets the user to record their progress directly from their profile. These milestones are to motivate them and others that might visit their profile. The milestones are public and visible to all users.
-#### Edit Profile
+### Edit Profile
 While on the main Wise Zone page, the session user can access profiles of others, plus additional options for their own profile. One of those options is to edit the profile. This gives the session user the opportunity to amend anything in their profile. Since this is a dieting page, the objectives or achievements are subject to amendments.
-#### Delete Profile
+### Delete Profile
 The other option accessible to the session user is the deletion of the profile. This would be possible once the user decides themselves that they no longer wish to be part of this website. Upon clicking the delete button a modal pops up to inform of the final nature of this action. Once the session user clicks "OK", the profile is removed from database, session cookie removed from the browser and the user is redirected to the Register page.
-#### Wise Zone
+### Wise Zone
 This page contains a selection of registered users. Anyone can check out their profiles and see what objectives others are headed towards or achievements reached. From here any user can check out others profiles, the session user can access more options related to their own profile, as addressed in detail above.
-#### Add Recipe and Edit Recipe (needs to be implemented!)
+### Add Recipe and Edit Recipe (needs to be implemented!)
 These are available to the users, for they might want to either add their own favourite creations or note down recipes found in other sources. 
-#### Delete Recipe
+### Delete Recipe
 The third button on the recipe cover card is the Delete button. While the creator of that recipe can freely delete it from the database, the modal will pop up first to ensure the user knows this is final and cannot be reversed.
 
-<ins>Accessible only by Administrator<ins>
+Accessible only by Administrator
 
-#### Manage Categories
+### Manage Categories
 At this time there are three main Categories, however, the page assumes that the Administrator might want to expand on it in the future. Therefore there are three options available here:
 - Add Category
 - Edit Category
 - Delete Category
 
 
-### Features Left to Implement 
+## Features Left to Implement 
 Some future features may include:
 - Setting the Diary entries to Private
 - Functionality to share videos of own cooking tutorials
 - Functionality to contact other members
+- Pagination
 
 
 
-## Technologies Used<hr>
+# Technologies Used<hr>
 
 [![Gitpod](https://img.shields.io/badge/IDE-Gitpod-blue)](https://www.gitpod.io/) Used as my primary IDE for coding<br>
 [![Github](https://img.shields.io/badge/Remote%20code-Github-white)](https://github.com/) Remote storing of my code online<br>
@@ -218,12 +219,12 @@ Some future features may include:
 [![Pep8 Online](https://img.shields.io/badge/Python%20Validator-PEP8%20online-white)](http://pep8online.com/) to validate Python code<br>
 [![JShint](https://img.shields.io/badge/JS%2FjQuery%20Validator-JSHint-%23008e94)](https://jshint.com/) to validate JavaScript/jQuery<br>
 
-# Defensive Design
+# Defensive Design<hr>
 
-## Features Testing
+## Features Testing<hr>
 Profile<br>
 
-**Logging in**<br>
+**Logging in (applicable to a Session User)**<br>
 - if Registered, click on the Login button on the navbar
 - Is the Login form rendered?
 - Submit an empty form, does the system come back with an error to fill in the fields?
@@ -241,14 +242,27 @@ Profile<br>
 - Does the Flash message confirm registration succeeded?
 - Are all details entered onto the form render correctly?
 
+**Adding a Milestone (applicable to a Session User)**<br>
+- Go to the Profile section
+- Scroll down to the first accordion
+- Click on the "Add New" button
+- Form to Add Milestone should render
+- The Date entry should render a Datepicker
+- All fields are compulsory
+- Add details and "Save"
+- The Milestone should now be visible within the first accordion in Profile
 
-**Editing an Account**<br>
-- Feature still to be implemented
+
+**Editing an Account (applicable to a Session User)**<br>
+- Go to the Profile section
+- Click on the Edit button
+- Enter details to amend
+- Click on Save
+- Are details successfully amended
 
 
-
-**Deleting an Account**<br>
-- Go to the Wise Zone section, scroll down to the Session User
+**Deleting an Account (applicable to a Session User)**<br>
+- Go to the Profile section
 - Click on the Delete button
 - Does the modal pop up to inform of finality of this action?
 - Does the flash message pop up to confirm deletion?
@@ -256,8 +270,8 @@ Profile<br>
 - Has the profile been deleted?
 
 
-<ins>Recipe</ins><br>
-**Creating a Recipe**<br>
+Recipe<br>
+**Creating a Recipe (applicable to a Session User)**<br>
 [**C** in CRUD (Creating)]
 - Click on the Add Recipe option in the navbar
 - Does the Add Recipe form render?
@@ -274,29 +288,55 @@ Profile<br>
 - Click on the Share button underneath the Created By, does the modal with social networks pop up?
 - Cancel out of the modal, does it work?
 
-**Editing a Recipe**<br>
+**Editing a Recipe (applicable to a Session User)**<br>
 [**U** in CRUD (Updating)]
-- Search for recipe created by Session User
+Method 1:
+- Go to the Recipes section
+- Choose a recipe that was created by Session User
 - Click on the Edit button
 - Does the Edit Recipe form renders correctly?
 - Change anything about the recipe and click on save
 - Does the information entered updates correctly on the Recipe card?
+Method 2
+- Go to Session User Profile section
+- Scroll down to the second accordion
+- Open recipe for editing
+- Click "Cook"
+- You are now in the Recipe page, scroll down to the buttons
+- Click on Edit button
+- Enter details
+- Click Save
 
-**Deleting a Recipe**<br>
+**Deleting a Recipe (applicable to a Session User)**<br>
 [**D** in CRUD (Deleting)]
-- Scroll down to the recipe created by the Session User
+Method 1:
+- Go to the Recipes section
+- Choose a recipe that was created by Session User
 - Click on the Delete button
-- Does the modal pop up to inform of the finality of this action?
-- Click on Cancel, does the modal cancel the action?
-- Go back to modal and click on delete, does it delete the recipe?
+- Does the modal pop up to ask if you are sure?
+- Click on Cancel button to exit the process
+- Click on Delete button to proceed with deletion
+Method 2
+- Go to Session User Profile section
+- Scroll down to the second accordion
+- Open recipe for editing
+- Click "Cook"
+- You are now in the Recipe page, scroll down to the buttons
+- Click on the Delete button
+- Does the modal pop up to ask if you are sure?
+- Click on Cancel button to exit the process
+- Click on Delete button to proceed with deletion
 
 ## Defensive Design Testing<hr>
 
-- **Wrong password entered when logging in** returns flash "Incorrect Username and/or Password" to ensure that the non-registered user does not guess one or the other if the incorrect entry is provided.<br>
+**Wrong password entered when logging in** <br>
+:heavy_check_mark: returns flash "Incorrect Username and/or Password" to ensure that the non-registered user does not guess one or the other if the incorrect entry is provided.<br>
 
-- **Duplicate username registration attempt** returns flash "Username already exists<br>
+**Duplicate username registration attempt** <br>
+:heavy_check_mark: returns flash "Username already exists<br>
 
-- **Wrong username entered when logging in** returns flash "Incorrect Username and/or Password" to ensure that the non-registered user does not guess one or the other if the incorrect entry is provided.<br><br>
+**Wrong username entered when logging in** <br>
+:heavy_check_mark: returns flash "Incorrect Username and/or Password" to ensure that the non-registered user does not guess one or the other if the incorrect entry is provided.<br>
 
 
 **Attempt to access "/add_category" by non Administrator** <br>
@@ -351,7 +391,7 @@ link for testing: ***http://keto-cookbook.herokuapp.com/edit_recipe/5f844c38884d
 ### *Logged in User*
 #### As a registered user I want to be able to get a confirmation every time I log in
 - A flash message always pops up to confirm the user has successfully logged in
-#### As a registered user I want to be able to add recipes
+#### As a registered user I want to be able to add and edit recipes
 - The option of Adding a new Recipe is easily accessible from the Navbar
 #### As a registered user I want to be able to search recipes
 - The searchbar is available on top of the All Recipes page, for the ease of search, keywords are included within each recipe, to ensure the user gets as many results to their search as possible
@@ -377,12 +417,12 @@ link for testing: ***http://keto-cookbook.herokuapp.com/edit_recipe/5f844c38884d
 - A MongoDB Atlas account for database development
 
 
-#### Local Deployment
-- Navigate to the Salmon of Wisdom repository: https://github.com/bezebee/kasias-KETO-cookbook
+## Local Deployment<hr>
+- Navigate to the Salmon of Wisdom <a href="https://github.com/bezebee/kasias-KETO-cookbook">repository</a>
 - Click on the green "Code" button
-- Copy the link: https://github.com/bezebee/kasias-KETO-cookbook.git
+- Copy the <a href="https://github.com/bezebee/kasias-KETO-cookbook.git">link</a>
 - Using your terminal, type "git clone" followed by that link
-- Operate within a virtual environment as widely recommended. The instructions will vary depending on your operating system, so refer to Python Documentation: https://docs.python.org/3/library/venv.html
+- Operate within a virtual environment as widely recommended. The instructions will vary depending on your operating system, so refer to <a href="https://docs.python.org/3/library/venv.html">Python Documentation</a>
 
 - Create a file called ".flaskenv" and add the following:
 ```
@@ -430,7 +470,7 @@ about:<string>
 - You should now be able to run this application locally by typing `flask run`
 - The website will be available at `http://127.0.0.1:5000`
 
-#### Heroku
+## Deploying on Heroku<hr>
 - Create a requirements.txt file by typing `pip3 freeze --local > requirements.txt` into the terminal line
 - Create a Procfile by typing `echo web: python app.py > Procfile`.
 - Add, commit and push these changes to Github
@@ -442,27 +482,32 @@ about:<string>
 - Go to Heroku Settings and navigate to Config Vars
 - Set the following:<br>
 ```
-IP = 0.0.0.0 <br>
-MONGO_DBNAME = [Name of MongoDB chosen] <br>
-MONGO_URI = mongodb+srv://:@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority <br>
-PORT = 5000 <br>
-SECRET_KEY = [Secret key chosen]
+IP = 0.0.0.0
+MONGO_DBNAME = [Name of MongoDB] <br>
+MONGO_URI = mongodb+srv://:@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority
+PORT = 5000
+SECRET_KEY = [Secret key]
 ```
 <br>
 - Go to the Deploy tab and Deploy Branch, ensuring that master branch is selected
 
 
-## Credits<hr>
+# Credits<hr>
 
-#### Content
-https://www.dietdoctor.com/ - All Images and all recipes, as well as some of the images on the About page<br>
-https://www.pexels.com/ - Profile photos and some images on the About page
+## Content<hr>
+<a href="https://www.dietdoctor.com/">DietDoctor</a> - All recipes<br>
+The Task Manager Miniproject by <a href="https://codeinstitute.net/">Code Institute</a> used as an excellent source of information on environment, database and templating
 
-#### Acknowledgements
-- Tim Nelson - for helpful and timely guidance, thanks to Tim I learned a great deal about good fundamentals of templating. I will be exploring the Python and Flask path, among others, but this one will be with greatest enthusiasm. I am so grateful.
-- Precious Ijege - for mentorship and honest critique
-- Evertyred Mentor - for taking the time to instoduce me to a Fibonacci Sequence and it's benefit in project planning and management
-- Ngiap - for continuous moral support and feedback on my project
-#### Reference
-- The Task Manager Miniproject by Coding Institute used as an excellent source of information on environment, database and templating
+## Media<hr>
+<a href="https://www.dietdoctor.com/">DietDoctor</a> - All recipe images<br>
+<a href="https://www.pexels.com/">Pexels</a> - Profile photos and some images on the About page
+
+## Acknowledgements<hr>
+<a href="https://github.com/TravelTimN">Tim Nelson</a> - for helpful and timely guidance, thanks to Tim I learned a great deal about good fundamentals of templating. I will be exploring the Python and Flask path, among others, but this one will be with greatest enthusiasm. I am so grateful.<br>
+<a href="https://github.com/precious-ijege">Precious Ijege</a> - for mentorship and honest critique<br>
+<a href="https://github.com/Eventyret">Evertyred Mentor</a> - for taking the time to introduce me to a <a href="https://en.wikipedia.org/wiki/Fibonacci_scale_(agile)">Fibonacci Sequence</a> and its benefit in project planning and management<br>
+<a href="https://github.com/NgiapPuoyKoh">Ngiap</a> - for continuous moral support and feedbacks on my project<br><hr>
+
+
+<p align="center"><img src="https://res.cloudinary.com/dugnokxox/image/upload/v1601467758/Logo/salmon_clipart__vyx2yu.png" width="100" height="100" alt="Thank you for visiting my Readme"></p>
 
