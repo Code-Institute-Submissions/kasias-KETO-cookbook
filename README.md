@@ -26,6 +26,7 @@ In the ever evolving world of different diets, the Food Pyramid as we know it no
 * [Defensive Design](#defensive-design)
   * [Features Testing](#features-testing)
   * [Defensive Design Testing](#defensive-design-testing)
+  * [Browser Compatibility Testing](#browser-compatibility-testing)
 * [Deployment](#deployment)
 * [Credits and References](#credits)
 
@@ -409,9 +410,15 @@ link for testing: ***http://keto-cookbook.herokuapp.com/edit_recipe/5f844c38884d
 #### As a registered user I want to be able to delete my profile when I am no longer interested in being part of this group
 - From Wise Zone the session user may choose to delete their own profile. The action of profile deletion is preceded by a modal which ensures that the user realises the finality of that action.<br><br>
 
+## Browser Compatibility Testing
+
+<p align="center"><img src="https://res.cloudinary.com/dugnokxox/image/upload/v1602681238/Logo/Untitled_spreadsheet-page-001_w8vsed.jpg" alt="Browsers Compatibility"></p>
+
+
+
 [Back to top](#table-of-contents)
 
-## Deployment<hr>
+# Deployment<hr>
 ***Requirements:***
 - Python3 to run your application
 - PIP to install all app requirements
