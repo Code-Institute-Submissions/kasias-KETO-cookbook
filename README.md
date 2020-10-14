@@ -52,8 +52,8 @@ The theme of this page is cooking, and there are various types of users this pag
 - As a guest user I want to be able to visit some recommended by this website shops
 
 ```diff
- @@ *Logged in User* @@
- ```
+@@ *Registered User* @@
+```
 - As a registered user I want to be able to get a confirmation every time I log in
 - As a registered user I want to be able to add recipes
 - As a registered user I want to be able to search recipes
