@@ -4,7 +4,7 @@
 
 # [Salmon of Wisdom, the keto cookbook](https://keto-cookbook.herokuapp.com/)<hr>
 
-[![Salmon of Wisdom on Heroku](https://img.shields.io/badge/Heroku-Salmon%20of%20Wisdom-purple)](https://keto-cookbook.herokuapp.com/) 
+[![Salmon of Wisdom on Heroku](https://img.shields.io/badge/Deployed%20on%20Heroku-Salmon%20of%20Wisdom-5D4E68)](https://keto-cookbook.herokuapp.com/) 
 
 
 
